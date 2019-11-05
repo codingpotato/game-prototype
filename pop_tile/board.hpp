@@ -14,23 +14,6 @@ struct Position {
   int column = 0;
 };
 
-template <typename T>
-struct Matrix {
-  using Column = std::vector<T>;
-
-  Matrix(size_t rows, size_t columns) noexcept
-      : elements(columns, Column(rows, T{})) {}
-
-  const T& at(size_t row, size_t column) const noexcept {
-    return elements[column][row];
-  }
-
-  T& at(size_t row, size_t column) noexcept { return elements[column][row]; }
-
- private:
-  std::vector<Column> elements;
-};
-
 using Row = std::vector<Tile>;
 using Board = std::vector<Row>;
 

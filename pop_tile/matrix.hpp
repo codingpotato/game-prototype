@@ -2,30 +2,21 @@
 
 template <typename T>
 struct matrix {
-  enum class dimension { row, column };
-
-  template <dimension D>
-  struct iterator {
-    iterator(matrix& m, size_t i) noexcept : matrix_{m}, index_{i} {}
-
-    friend bool operator==(const iterator& lhs, const iterator& rhs) noexcept {
-      return &lhs.matrix_ == &rhs.matrix_ && lhs.index_ == rhs.index_;
-    }
-
-    friend bool operator!=(const iterator& lhs, const iterator& rhs) noexcept {
-      return !(lhs == rhs);
-    }
+  struct base_iterator {
+    base_iterator(matrix& m, size_t i) noexcept : matrix_{m}, index_{i} {}
 
     T& operator*() noexcept { return matrix_[index_]; }
 
-    iterator& operator++() noexcept {
-      if constexpr (D == dimension::row) {
-        ++index_;
-        return *this;
-      } else {
-        index_ += matrix_.columns();
-        return *this;
-      }
+    void move_to_next_column() noexcept { ++index_; }
+    void move_to_next_row() noexcept { index_ += matrix_.columns(); }
+
+    friend bool operator==(const base_iterator& lhs,
+                           const base_iterator& rhs) noexcept {
+      return &lhs.matrix_ == &rhs.matrix_ && lhs.index_ == rhs.index_;
+    }
+    friend bool operator!=(const base_iterator& lhs,
+                           const base_iterator& rhs) noexcept {
+      return !(lhs == rhs);
     }
 
    private:
@@ -33,29 +24,58 @@ struct matrix {
     size_t index_;
   };
 
-  template <dimension D>
-  struct view {
-    view(matrix& m, size_t i) noexcept : matrix_{m}, index_{i} {}
+  struct row_iterator : base_iterator {
+    using base_iterator::base_iterator;
 
-    iterator<D> begin() const noexcept {
-      if constexpr (D == dimension::row) {
-        return iterator<D>{matrix_, index_ * matrix_.columns()};
-      } else {
-        return iterator<D>{matrix_, index_};
-      }
+    row_iterator& operator++() noexcept {
+      this->move_to_next_column();
+      return *this;
     }
-    iterator<D> end() const noexcept {
-      if constexpr (D == dimension::row) {
-        return iterator<D>{matrix_, (index_ + 1) * matrix_.columns()};
-      } else {
-        return iterator<D>{matrix_,
-                           matrix_.rows() * matrix_.columns() + index_};
-      }
+  };
+
+  struct column_iterator : base_iterator {
+    using base_iterator::base_iterator;
+
+    column_iterator& operator++() noexcept {
+      this->move_to_next_row();
+      return *this;
+    }
+  };
+
+  struct base_view {
+    base_view(matrix& m, size_t i) noexcept : matrix_{m}, index_{i} {}
+
+    row_iterator begin_of_row() const noexcept {
+      return row_iterator{matrix_, index_ * matrix_.columns()};
+    }
+    row_iterator end_of_row() const noexcept {
+      return row_iterator{matrix_, (index_ + 1) * matrix_.columns()};
+    }
+    column_iterator begin_of_column() const noexcept {
+      return column_iterator{matrix_, index_};
+    }
+    column_iterator end_of_column() const noexcept {
+      return column_iterator{matrix_,
+                             matrix_.rows() * matrix_.columns() + index_};
     }
 
    private:
     matrix& matrix_;
     size_t index_;
+  };
+
+  struct row_view : base_view {
+    using base_view::base_view;
+
+    row_iterator begin() const noexcept { return this->begin_of_row(); }
+    row_iterator end() const noexcept { return this->end_of_row(); }
+  };
+
+  struct column_view : base_view {
+    using base_view::base_view;
+
+    column_iterator begin() const noexcept { return this->begin_of_column(); }
+    column_iterator end() const noexcept { return this->end_of_column(); }
   };
 
   struct position {
@@ -82,14 +102,14 @@ struct matrix {
   template <typename F>
   void for_each_row(F&& f) noexcept {
     for (size_t r = 0; r < rows_; ++r) {
-      std::forward<F>(f)(view<dimension::row>{*this, r});
+      std::forward<F>(f)(row_view{*this, r});
     }
   }
 
   template <typename F>
   void for_each_column(F&& f) noexcept {
     for (size_t c = 0; c < columns_; ++c) {
-      std::forward<F>(f)(view<dimension::column>{*this, c});
+      std::forward<F>(f)(column_view{*this, c});
     }
   }
 

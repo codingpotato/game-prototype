@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Board.hpp"
+#include "board.hpp"
 
 int main() {
   std::srand(std::time(nullptr));
