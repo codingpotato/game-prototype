@@ -1,14 +1,20 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
-#include "Board.hpp"
+#include "board.hpp"
 
-TEST_CASE("init", "[Board]") {
-  Matrix<int> m(1, 2);
-  m.at(0, 0) = 1;
-  for (size_t i = 0; i < 1; ++i) {
-    for (size_t j = 0; j < 2; ++j) {
-      REQUIRE(m.at(i, j) == 0);
-    }
-  }
+TEST_CASE("find match color", "[board]") {
+  std::initializer_list<tile> tiles{{1, 2}, {1, 2}, {1, 2}};
+  board b{1, 3, tiles};
+  auto positions = find_match_color(b);
+  REQUIRE(positions.size() == 1);
+  REQUIRE(positions[0] == position{0, 0});
+}
+
+TEST_CASE("find match color 1", "[board]") {
+  std::initializer_list<tile> tiles{{1, 2}, {1, 2}, {1, 2}};
+  board b{3, 1, tiles};
+  auto positions = find_match_color(b);
+  REQUIRE(positions.size() == 1);
+  REQUIRE(positions[0] == position{0, 0});
 }

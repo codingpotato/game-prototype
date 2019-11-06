@@ -7,7 +7,7 @@ int main() {
   auto board = init_board(20, 4);
   std::cout << board << "\n";
 
-  auto positions = find_match_3(board);
+  auto positions = find_match_color(board);
   for (auto position : positions) {
     std::cout << "{" << position.row << ", " << position.column << "} ";
   }
