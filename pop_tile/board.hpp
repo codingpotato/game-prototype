@@ -42,17 +42,16 @@ inline bool operator!=(const position& lhs, const position& rhs) noexcept {
 using board = matrix<tile>;
 
 inline board init_board(size_t row_count, size_t column_count) {
-  board board(row_count, column_count);
+  board b(row_count, column_count);
   for (size_t r = row_count - 4; r < row_count; ++r) {
-    for (auto& tile : board.view_of_row(r)) {
-      tile = random_tile(4);
-    }
+    b.view_of_row(r).for_each(
+        [](size_t, size_t, tile& t) { t = random_tile(4); });
   }
-  return board;
+  return b;
 }
 
 template <typename V>
-inline void match_same(bool for_row, size_t index, V&& view,
+inline void match_same(size_t index, V&& view,
                        std::vector<position>& positions) {
   auto it = std::forward<V>(view).begin();
   auto last = 0;

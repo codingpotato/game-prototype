@@ -11,7 +11,8 @@ function(add_test_executable)
   add_executable(${ADD_NAME} ${ADD_SOURCES})
   target_compile_features(${ADD_NAME} PUBLIC cxx_std_17)
   target_include_directories(${ADD_NAME}
-                             PUBLIC .. ${catch_SOURCE_DIR}/single_include)
+                             PUBLIC ../../pop_tile
+                                    ${catch_SOURCE_DIR}/single_include)
   parseandaddcatchtests(${ADD_NAME})
 endfunction(add_test_executable)
 

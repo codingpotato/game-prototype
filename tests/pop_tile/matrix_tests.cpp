@@ -7,6 +7,8 @@
 
 TEST_CASE("constructor", "[matrix]") {
   matrix<int> m{2, 3};
+  REQUIRE(m.rows() == 2);
+  REQUIRE(m.columns() == 3);
   for (auto n : m) {
     REQUIRE(n == 0);
   }
@@ -16,9 +18,14 @@ TEST_CASE("operator[]", "[matrix]") {
   constexpr size_t rows = 2;
   constexpr size_t columns = 3;
   matrix<int> m{rows, columns};
+  m[{1, 1}] = 1;
   for (auto r = 0; r < rows; ++r) {
     for (auto c = 0; c < columns; ++c) {
-      REQUIRE(m[{r, c}] == 0);
+      if (r == 1 && c == 1) {
+        REQUIRE(m[{r, c}] == 1);
+      } else {
+        REQUIRE(m[{r, c}] == 0);
+      }
     }
   }
 }
@@ -30,10 +37,10 @@ TEST_CASE("for each row", "[matrix]") {
   matrix<int> m{rows, columns, values};
   auto expected_values = std::array<int, rows * columns>{1, 2, 3, 4, 5, 6};
   auto index = 0;
-  m.for_each_row([&index, &expected_values](size_t r, const auto& row) {
-    for (auto n : row) {
+  m.for_each_row([&index, &expected_values](size_t, auto&& row) {
+    row.for_each([&index, &expected_values](size_t, int n) {
       REQUIRE(n == expected_values[index++]);
-    }
+    });
   });
 }
 
@@ -44,9 +51,9 @@ TEST_CASE("for each column", "[matrix]") {
   matrix<int> m{rows, columns, values};
   auto expected_values = std::array<int, rows * columns>{1, 4, 2, 5, 3, 6};
   auto index = 0;
-  m.for_each_column([&index, &expected_values](size_t c, const auto& column) {
-    for (auto n : column) {
+  m.for_each_column([&index, &expected_values](size_t, auto&& column) {
+    column.for_each([&index, &expected_values](size_t, int n) {
       REQUIRE(n == expected_values[index++]);
-    }
+    });
   });
 }
