@@ -14,7 +14,7 @@ TEST_CASE("constructor", "[matrix]") {
   }
 }
 
-TEST_CASE("operator[]", "[matrix]") {
+TEST_CASE("subscription", "[matrix]") {
   constexpr size_t rows = 2;
   constexpr size_t columns = 3;
   matrix<int> m{rows, columns};
@@ -44,6 +44,20 @@ TEST_CASE("for each row", "[matrix]") {
   });
 }
 
+TEST_CASE("for in row", "[matrix]") {
+  constexpr size_t rows = 2;
+  constexpr size_t columns = 3;
+  std::initializer_list<int> values{1, 2, 3, 4, 5, 6};
+  matrix<int> m{rows, columns, values};
+  auto expected_values = std::array<int, rows * columns>{1, 2, 3, 4, 5, 6};
+  auto index = 0;
+  for (size_t r = 0; r < rows; ++r) {
+    for (auto n : m.view_of_row(r)) {
+      REQUIRE(n == expected_values[index++]);
+    }
+  }
+}
+
 TEST_CASE("for each column", "[matrix]") {
   constexpr size_t rows = 2;
   constexpr size_t columns = 3;
@@ -56,4 +70,18 @@ TEST_CASE("for each column", "[matrix]") {
       REQUIRE(n == expected_values[index++]);
     });
   });
+}
+
+TEST_CASE("for in column", "[matrix]") {
+  constexpr size_t rows = 2;
+  constexpr size_t columns = 3;
+  std::initializer_list<int> values{1, 2, 3, 4, 5, 6};
+  matrix<int> m{rows, columns, values};
+  auto expected_values = std::array<int, rows * columns>{1, 4, 2, 5, 3, 6};
+  auto index = 0;
+  for (size_t c = 0; c < columns; ++c) {
+    for (auto n : m.view_of_column(c)) {
+      REQUIRE(n == expected_values[index++]);
+    }
+  }
 }

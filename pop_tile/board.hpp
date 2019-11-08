@@ -44,14 +44,13 @@ using board = matrix<tile>;
 inline board init_board(size_t row_count, size_t column_count) {
   board b(row_count, column_count);
   for (size_t r = row_count - 4; r < row_count; ++r) {
-    b.view_of_row(r).for_each(
-        [](size_t, size_t, tile& t) { t = random_tile(4); });
+    b.view_of_row(r).for_each([](size_t, tile& t) { t = random_tile(4); });
   }
   return b;
 }
 
 template <typename V>
-inline void match_same(size_t index, V&& view,
+inline void match_same(bool for_row, size_t index, V&& view,
                        std::vector<position>& positions) {
   auto it = std::forward<V>(view).begin();
   auto last = 0;
@@ -78,32 +77,28 @@ inline void match_same(size_t index, V&& view,
 
 inline std::vector<position> find_match_color(board& b) {
   std::vector<position> positions;
-  b.for_each_row([&positions](size_t r, const auto& row) {
+  b.for_each_row([&positions](size_t r, auto&& row) {
     match_same(true, r, row, positions);
   });
-  b.for_each_column([&positions](size_t c, const auto& column) {
+  b.for_each_column([&positions](size_t c, auto&& column) {
     match_same(false, c, column, positions);
   });
   return positions;
 }
 
-std::ostream& operator<<(std::ostream& os, board& board) {
-  auto index = 0;
-  board.for_each_row([&os, &index](size_t, const auto& row) {
-    os << std::setw(2) << index++ << " [ ";
-    auto first = true;
-    for (auto& t : row) {
-      if (!first) {
+std::ostream& operator<<(std::ostream& os, board& b) {
+  b.for_each_row([&os](size_t r, auto&& row) {
+    os << std::setw(2) << r << " [ ";
+    row.for_each([&os](size_t c, tile& t) {
+      if (c > 0) {
         os << "| ";
-      } else {
-        first = false;
       }
       if (t != tile{}) {
         os << "C " << t.color << " N " << t.number << " ";
       } else {
         os << "        ";
       }
-    }
+    });
     os << "]\n";
   });
   return os;
