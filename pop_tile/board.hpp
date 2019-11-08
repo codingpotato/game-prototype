@@ -49,39 +49,47 @@ inline board init_board(size_t row_count, size_t column_count) {
   return b;
 }
 
-template <typename V>
-inline void match_same(bool for_row, size_t index, V&& view,
-                       std::vector<position>& positions) {
-  auto it = std::forward<V>(view).begin();
-  auto last = 0;
-  auto next = 0;
-  while (it != std::forward<V>(view).end()) {
-    auto current = it + 1;
-    next = last + 1;
-    while (current != std::forward<V>(view).end() &&
-           current->color == it->color) {
-      ++current;
-      ++next;
-    }
-    if (next - last >= 3 && *it != tile{}) {
-      if (for_row) {
-        positions.emplace_back(index, last);
-      } else {
-        positions.emplace_back(last, index);
+template <typename V, typename F>
+inline void match_same(size_t index, V&& view, std::vector<position>& positions,
+                       F&& f) {
+  decltype(f(tile{})) last_property;
+  auto last_index = 0;
+  view.for_each([&index, &view, &positions, &f, &last_property, &last_index](
+                    size_t i, tile& t) {
+    if (i == 0) {
+      last_property = f(t);
+      last_index = 0;
+    } else {
+      auto add_position = [&positions](size_t index, size_t last_index) {
+        if constexpr (std::is_same_v<std::decay_t<V>, board::row_view>) {
+          positions.emplace_back(index, last_index);
+        } else {
+          positions.emplace_back(last_index, index);
+        }
+      };
+
+      if (f(t) != last_property) {
+        if (last_property != 0 && i - last_index >= 3) {
+          add_position(index, last_index);
+        }
+        last_property = f(t);
+        last_index = i;
+      } else if (i == view.size() - 1) {
+        if (last_property != 0 && i - last_index + 1 >= 3) {
+          add_position(index, last_index);
+        }
       }
     }
-    it = current;
-    last = next;
-  }
+  });
 }
 
 inline std::vector<position> find_match_color(board& b) {
   std::vector<position> positions;
   b.for_each_row([&positions](size_t r, auto&& row) {
-    match_same(true, r, row, positions);
+    match_same(r, row, positions, [](const tile& t) { return t.color; });
   });
   b.for_each_column([&positions](size_t c, auto&& column) {
-    match_same(false, c, column, positions);
+    match_same(c, column, positions, [](const tile& t) { return t.color; });
   });
   return positions;
 }
