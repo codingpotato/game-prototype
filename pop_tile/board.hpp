@@ -7,7 +7,7 @@
 
 #include "matrix.hpp"
 
-constexpr int max_random = 6;
+constexpr int max_random = 8;
 
 struct tile {
   int color = 0;
