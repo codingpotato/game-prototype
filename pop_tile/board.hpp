@@ -7,6 +7,8 @@
 
 #include "matrix.hpp"
 
+constexpr int max_random = 6;
+
 struct tile {
   int color = 0;
   int number = 0;
@@ -29,8 +31,9 @@ using positions = std::vector<position>;
 
 inline board init_board(size_t row_count, size_t column_count) noexcept {
   board b(row_count, column_count);
-  for (size_t r = row_count - 10; r < row_count; ++r) {
-    b.view_of_row(r).for_each([](size_t, tile& t) { t = random_tile(5); });
+  for (size_t r = row_count - 4; r < row_count; ++r) {
+    b.view_of_row(r).for_each(
+        [](size_t, tile& t) { t = random_tile(max_random); });
   }
   return b;
 }
@@ -121,7 +124,7 @@ inline void fall_down(board& b) noexcept {
   });
 }
 
-inline bool match_same(board& b) noexcept {
+inline int match_same(board& b) noexcept {
   auto ps_color = match_same(b, [](const tile& t) { return t.color; });
   auto ps_number = match_same(b, [](const tile& t) { return t.number; });
   auto remove_same = [](board& b, auto& ps) {
@@ -129,13 +132,10 @@ inline bool match_same(board& b) noexcept {
       b[pos] = tile{};
     }
   };
-  if (ps_color.empty() && ps_number.empty()) {
-    return false;
-  }
   remove_same(b, ps_color);
   remove_same(b, ps_number);
   fall_down(b);
-  return true;
+  return ps_color.size() + ps_number.size();
 }
 
 inline bool is_game_over(board& b) {
@@ -151,7 +151,7 @@ inline void generate_new_row(board& b) {
     }
   });
   b.view_of_row(b.rows() - 1).for_each([](int, tile& t) {
-    t = random_tile(5);
+    t = random_tile(max_random);
   });
 }
 

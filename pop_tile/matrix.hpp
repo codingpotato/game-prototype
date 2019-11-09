@@ -170,6 +170,11 @@ struct matrix {
   int rows() const noexcept { return rows_; }
   int columns() const noexcept { return columns_; }
 
+  bool empty() const noexcept {
+    return std::find_if(elements_.begin(), elements_.end(),
+                        [](const T& t) { return t != T{}; }) == elements_.end();
+  }
+
   auto begin() const noexcept { return elements_.begin(); }
   auto end() const noexcept { return elements_.end(); }
 
