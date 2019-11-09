@@ -2,25 +2,27 @@
 
 #include <vector>
 
+struct position {
+  position(int r, int c) noexcept : row{r}, column{c} {}
+  position(size_t r, size_t c) noexcept
+      : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
+
+  friend bool operator==(const position& lhs, const position& rhs) noexcept {
+    return lhs.row == rhs.row && lhs.column == rhs.column;
+  }
+  friend bool operator!=(const position& lhs, const position& rhs) noexcept {
+    return !(lhs == rhs);
+  }
+  friend bool operator<(const position& lhs, const position& rhs) noexcept {
+    return lhs.row < rhs.row || (lhs.row == rhs.row && lhs.column < rhs.column);
+  }
+
+  int row = 0;
+  int column = 0;
+};
+
 template <typename T>
 struct matrix {
-  struct position {
-    position(int r, int c) noexcept : row{r}, column{c} {}
-    position(size_t r, size_t c) noexcept
-        : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
-
-    friend bool operator==(const position& lhs, const position& rhs) noexcept {
-      return lhs.row == rhs.row && lhs.column == rhs.column;
-    }
-
-    friend bool operator!=(const position& lhs, const position& rhs) noexcept {
-      return !(lhs == rhs);
-    }
-
-    int row = 0;
-    int column = 0;
-  };
-
   struct row_iterator {
     row_iterator(matrix* m, size_t i) noexcept : matrix_{m}, index_{i} {}
 

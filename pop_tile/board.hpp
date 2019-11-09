@@ -2,6 +2,7 @@
 
 #include <iomanip>
 #include <ostream>
+#include <set>
 #include <vector>
 
 #include "matrix.hpp"
@@ -9,15 +10,14 @@
 struct tile {
   int color = 0;
   int number = 0;
+
+  friend bool operator==(const tile& lhs, const tile& rhs) noexcept {
+    return lhs.color == rhs.color && lhs.number == rhs.number;
+  }
+  friend bool operator!=(const tile& lhs, const tile& rhs) noexcept {
+    return !(lhs == rhs);
+  }
 };
-
-inline bool operator==(const tile& lhs, const tile& rhs) noexcept {
-  return lhs.color == rhs.color && lhs.number == rhs.number;
-}
-
-inline bool operator!=(const tile& lhs, const tile& rhs) noexcept {
-  return !(lhs == rhs);
-}
 
 inline tile random_tile(int max_number) noexcept {
   return tile{std::rand() % (max_number - 1) + 1,
@@ -25,7 +25,7 @@ inline tile random_tile(int max_number) noexcept {
 }
 
 using board = matrix<tile>;
-using positions = std::vector<board::position>;
+using positions = std::vector<position>;
 
 inline board init_board(size_t row_count, size_t column_count) noexcept {
   board b(row_count, column_count);
@@ -36,7 +36,8 @@ inline board init_board(size_t row_count, size_t column_count) noexcept {
 }
 
 template <typename V, typename F>
-inline void match_same(size_t index, V&& view, positions& ps, F&& f) noexcept {
+inline void match_same_3(size_t index, V&& view, positions& ps,
+                         F&& f) noexcept {
   decltype(f(tile{})) last_property;
   size_t last_index = 0;
   view.for_each([&index, &view, &ps, &f, &last_property, &last_index](size_t i,
@@ -67,13 +68,42 @@ inline void match_same(size_t index, V&& view, positions& ps, F&& f) noexcept {
 }
 
 template <typename F>
+inline void match_neighber(board& b, position pos, F&& f,
+                           std::set<position>& result,
+                           matrix<int>& visited) noexcept {
+  if (visited[pos] == 0) {
+    result.insert(pos);
+    visited[pos] = 1;
+    const static std::vector<position> ds{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    for (auto& d : ds) {
+      auto r = pos.row + d.row;
+      auto c = pos.column + d.column;
+      if (r >= 0 && static_cast<size_t>(r) < b.rows() && c >= 0 &&
+          static_cast<size_t>(c) < b.columns() && f(b[pos]) == f(b[{r, c}])) {
+        match_neighber(b, {r, c}, f, result, visited);
+      }
+    }
+  }
+}
+
+template <typename F>
+inline positions match_neighber(board& b, const positions& ps, F&& f) noexcept {
+  std::set<position> result;
+  matrix<int> visited(b.rows(), b.columns());
+  for (auto& pos : ps) {
+    match_neighber(b, pos, f, result, visited);
+  }
+  return positions{result.begin(), result.end()};
+}
+
+template <typename F>
 inline positions match_same(board& b, F&& f) noexcept {
   positions ps;
   b.for_each_row(
-      [&ps, &f](size_t r, auto&& row) { match_same(r, row, ps, f); });
+      [&ps, &f](size_t r, auto&& row) { match_same_3(r, row, ps, f); });
   b.for_each_column(
-      [&ps, &f](size_t c, auto&& column) { match_same(c, column, ps, f); });
-  return ps;
+      [&ps, &f](size_t c, auto&& column) { match_same_3(c, column, ps, f); });
+  return match_neighber(b, ps, f);
 }
 
 inline std::pair<positions, positions> match_same(board& b) noexcept {
