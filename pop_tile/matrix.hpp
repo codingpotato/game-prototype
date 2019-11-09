@@ -3,6 +3,7 @@
 #include <vector>
 
 struct position {
+  position() noexcept {}
   position(int r, int c) noexcept : row{r}, column{c} {}
 
   friend bool operator==(const position& lhs, const position& rhs) noexcept {
@@ -181,8 +182,16 @@ struct matrix {
   T& operator[](position pos) noexcept {
     return elements_[pos.row * columns_ + pos.column];
   }
-
   T& operator[](size_t index) noexcept { return elements_[index]; }
+
+  template <typename F>
+  void for_each(F&& f) noexcept {
+    for (int r = 0; r < rows_; ++r) {
+      for (int c = 0; c < columns_; ++c) {
+        std::forward<F>(f)(r, c, (*this)[{r, c}]);
+      }
+    }
+  }
 
   template <typename F>
   void for_each_row(F&& f) noexcept {

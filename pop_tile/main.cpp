@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "board.hpp"
+#include "ai.hpp"
 
 void game_loop() noexcept {
   auto board = init_board(20, 4);
@@ -19,6 +19,9 @@ void game_loop() noexcept {
       std::cout << board << "\n";
     }
   } while (board.empty());
+
+  auto pos = predict(board);
+  std::cout << pos.row << " " << pos.column << "\n";
 }
 
 int main() {

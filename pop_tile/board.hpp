@@ -138,6 +138,29 @@ inline int match_same(board& b) noexcept {
   return ps_color.size() + ps_number.size();
 }
 
+inline int remove_neighber(board& b, int r, int c) noexcept {
+  if (b[{r, c}] == tile{}) return 0;
+  auto ps_color =
+      match_neighber(b, {{r, c}}, [](const tile& t) { return t.color; });
+  auto ps_number =
+      match_neighber(b, {{r, c}}, [](const tile& t) { return t.number; });
+  auto remove_same = [](board& b, auto& ps) {
+    int count = 0;
+    for (auto& pos : ps) {
+      if (b[pos] != tile{}) {
+        b[pos] = tile{};
+        ++count;
+      }
+    }
+    return count;
+  };
+  int count = 0;
+  count += remove_same(b, ps_color);
+  count += remove_same(b, ps_number);
+  fall_down(b);
+  return count;
+}
+
 inline bool is_game_over(board& b) {
   auto view = b.view_of_row(0);
   return std::find_if(view.begin(), view.end(),
