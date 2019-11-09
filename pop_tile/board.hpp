@@ -121,20 +121,41 @@ inline void fall_down(board& b) noexcept {
   });
 }
 
-inline void match_same(board& b) noexcept {
-  auto ps1 = match_same(b, [](const tile& t) { return t.color; });
-  auto ps2 = match_same(b, [](const tile& t) { return t.number; });
+inline bool match_same(board& b) noexcept {
+  auto ps_color = match_same(b, [](const tile& t) { return t.color; });
+  auto ps_number = match_same(b, [](const tile& t) { return t.number; });
   auto remove_same = [](board& b, auto& ps) {
     for (auto& pos : ps) {
       b[pos] = tile{};
     }
   };
-  remove_same(b, ps1);
-  remove_same(b, ps2);
+  if (ps_color.empty() && ps_number.empty()) {
+    return false;
+  }
+  remove_same(b, ps_color);
+  remove_same(b, ps_number);
   fall_down(b);
+  return true;
 }
 
-std::ostream& operator<<(std::ostream& os, board& b) {
+inline bool is_game_over(board& b) {
+  auto view = b.view_of_row(0);
+  return std::find_if(view.begin(), view.end(),
+                      [](const tile& t) { return t != tile{}; }) != view.end();
+}
+
+inline void generate_new_row(board& b) {
+  b.for_each_row([&b](int r, auto&& row) {
+    if (r < b.rows() - 1) {
+      row.for_each([&b, r](int c, tile& t) { t = b[{r + 1, c}]; });
+    }
+  });
+  b.view_of_row(b.rows() - 1).for_each([](int, tile& t) {
+    t = random_tile(5);
+  });
+}
+
+inline std::ostream& operator<<(std::ostream& os, board& b) {
   b.for_each_row([&os](int r, auto&& row) {
     os << std::setw(2) << r << " [ ";
     row.for_each([&os](int c, tile& t) {
