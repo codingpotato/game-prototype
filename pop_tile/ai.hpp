@@ -21,6 +21,5 @@ inline position predict(board& b) noexcept {
       }
     }
   });
-  std::cout << pos.row << " " << pos.column << " " << max_count << "\n";
   return pos;
 }

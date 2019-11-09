@@ -7,7 +7,10 @@
 
 #include "matrix.hpp"
 
-constexpr int max_random = 8;
+static int max_random = 4;
+
+inline void reset_max_random() noexcept { max_random = 4; }
+inline void increase_max_random() noexcept { ++max_random; }
 
 struct tile {
   int color = 0;
