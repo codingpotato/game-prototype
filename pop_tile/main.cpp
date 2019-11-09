@@ -7,8 +7,12 @@ int main() {
   auto board = init_board(20, 4);
   std::cout << board << "\n";
 
-  auto positions = find_match_color(board);
-  for (auto position : positions) {
+  const auto& [ps1, ps2] = match_same(board);
+  for (auto position : ps1) {
+    std::cout << "{" << position.row << ", " << position.column << "} ";
+  }
+  std::cout << "\n";
+  for (auto position : ps2) {
     std::cout << "{" << position.row << ", " << position.column << "} ";
   }
   std::cout << "\n";

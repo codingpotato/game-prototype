@@ -9,6 +9,14 @@ struct matrix {
     position(size_t r, size_t c) noexcept
         : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
 
+    friend bool operator==(const position& lhs, const position& rhs) noexcept {
+      return lhs.row == rhs.row && lhs.column == rhs.column;
+    }
+
+    friend bool operator!=(const position& lhs, const position& rhs) noexcept {
+      return !(lhs == rhs);
+    }
+
     int row = 0;
     int column = 0;
   };
