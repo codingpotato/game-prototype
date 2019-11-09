@@ -124,18 +124,25 @@ inline void fall_down(board& b) noexcept {
   });
 }
 
+inline int remove_same(board& b, const positions& ps) {
+  int count = 0;
+  for (auto& pos : ps) {
+    if (b[pos] != tile{}) {
+      b[pos] = tile{};
+      ++count;
+    }
+  }
+  return count;
+}
+
 inline int match_same(board& b) noexcept {
   auto ps_color = match_same(b, [](const tile& t) { return t.color; });
   auto ps_number = match_same(b, [](const tile& t) { return t.number; });
-  auto remove_same = [](board& b, auto& ps) {
-    for (auto& pos : ps) {
-      b[pos] = tile{};
-    }
-  };
-  remove_same(b, ps_color);
-  remove_same(b, ps_number);
+  int count = 0;
+  count += remove_same(b, ps_color);
+  count += remove_same(b, ps_number);
   fall_down(b);
-  return ps_color.size() + ps_number.size();
+  return count;
 }
 
 inline int remove_neighber(board& b, int r, int c) noexcept {
@@ -144,16 +151,6 @@ inline int remove_neighber(board& b, int r, int c) noexcept {
       match_neighber(b, {{r, c}}, [](const tile& t) { return t.color; });
   auto ps_number =
       match_neighber(b, {{r, c}}, [](const tile& t) { return t.number; });
-  auto remove_same = [](board& b, auto& ps) {
-    int count = 0;
-    for (auto& pos : ps) {
-      if (b[pos] != tile{}) {
-        b[pos] = tile{};
-        ++count;
-      }
-    }
-    return count;
-  };
   int count = 0;
   count += remove_same(b, ps_color);
   count += remove_same(b, ps_number);
