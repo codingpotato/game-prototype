@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <vector>
 
 struct position {
@@ -23,6 +24,12 @@ struct position {
 template <typename T>
 struct matrix {
   struct base_iterator {
+    using iterator_category = std::forward_iterator_tag;
+    using value_type = T;
+    using difference_type = int;
+    using pointer = T*;
+    using reference = T&;
+
     base_iterator(matrix* m, int i) noexcept : matrix_{m}, index_{i} {}
 
     T& operator*() noexcept { return (*matrix_)[index_]; }
@@ -103,16 +110,16 @@ struct matrix {
 
     int size() const noexcept { return matrix_->columns(); }
 
-    row_iterator begin() noexcept {
+    row_iterator begin() const noexcept {
       return row_iterator{matrix_, row_ * matrix_->columns()};
     }
-    row_iterator end() noexcept {
+    row_iterator end() const noexcept {
       return row_iterator{matrix_, (row_ + 1) * matrix_->columns()};
     }
-    row_riterator rbegin() noexcept {
+    row_riterator rbegin() const noexcept {
       return row_riterator{matrix_, (row_ + 1) * matrix_->columns() - 1};
     }
-    row_riterator rend() noexcept {
+    row_riterator rend() const noexcept {
       return row_riterator{matrix_, row_ * matrix_->columns() - 1};
     }
 
@@ -133,18 +140,18 @@ struct matrix {
 
     int size() const noexcept { return matrix_->rows(); }
 
-    column_iterator begin() noexcept {
+    column_iterator begin() const noexcept {
       return column_iterator{matrix_, column_};
     }
-    column_iterator end() noexcept {
+    column_iterator end() const noexcept {
       return column_iterator{matrix_,
                              matrix_->rows() * matrix_->columns() + column_};
     }
-    column_riterator rbegin() noexcept {
+    column_riterator rbegin() const noexcept {
       return column_riterator{
           matrix_, (matrix_->rows() - 1) * matrix_->columns() + column_};
     }
-    column_riterator rend() noexcept {
+    column_riterator rend() const noexcept {
       return column_riterator{matrix_, column_ - matrix_->columns()};
     }
 

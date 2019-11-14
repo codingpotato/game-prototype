@@ -53,8 +53,8 @@ int game_loop() noexcept {
 
 int main() {
   std::srand(std::time(nullptr));
-  auto max_score = INT_MIN;
-  auto min_score = INT_MAX;
+  auto max_score = std::numeric_limits<int>::min();
+  auto min_score = std::numeric_limits<int>::max();
   auto score_sum = 0;
   auto count = 1000;
   for (auto i = 0; i < count; ++i) {
