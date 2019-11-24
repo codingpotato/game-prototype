@@ -2,8 +2,8 @@
 
 #include <vector>
 
-struct Position {
-  Position(int r, int c) noexcept : row{r}, column{c} {}
+struct position {
+  position(int r, int c) noexcept : row{r}, column{c} {}
 
   int row = 0;
   int column = 0;
@@ -25,15 +25,15 @@ struct matrix {
   constexpr size_t rows() const noexcept { return rows_; }
   constexpr size_t columns() const noexcept { return columns_; }
 
-  T& operator[](Position pos) noexcept {
+  T& operator[](position pos) noexcept {
     return elements_[index_of_position(pos)];
   }
-  const T& operator[](Position pos) const noexcept {
+  const T& operator[](position pos) const noexcept {
     return elements_[index_of_position(pos)];
   }
 
  private:
-  size_t index_of_position(Position pos) const noexcept {
+  size_t index_of_position(position pos) const noexcept {
     return index_of_position(pos.row, pos.column);
   }
   size_t index_of_position(int row, int column) const noexcept {
