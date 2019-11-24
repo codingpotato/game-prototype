@@ -1,2 +1,2 @@
-# game-prototype
-Game Prototype
+# puzzle-prototype
+Puzzle Prototype
