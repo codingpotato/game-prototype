@@ -11,4 +11,5 @@ int main() {
            {6, 6, 7, 8, 8, 5, 5},
            {6, 6, 8, 8, 8, 5, 5}}};
   std::cout << b;
+  std::cout << generate_enclosure_board(b);
 }

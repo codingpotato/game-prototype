@@ -11,6 +11,8 @@ struct Position {
 
 template <typename T>
 struct matrix {
+  matrix(size_t rows, size_t columns) noexcept
+      : rows_{rows}, columns_{columns}, elements_(rows * columns, T{}) {}
   matrix(std::vector<std::vector<T>> elements) noexcept
       : rows_{elements.size()}, columns_{elements[0].size()} {
     for (auto& row : elements) {
@@ -23,7 +25,12 @@ struct matrix {
   constexpr size_t rows() const noexcept { return rows_; }
   constexpr size_t columns() const noexcept { return columns_; }
 
-  T& operator[](Position pos) { return elements_[index_of_position(pos)]; }
+  T& operator[](Position pos) noexcept {
+    return elements_[index_of_position(pos)];
+  }
+  const T& operator[](Position pos) const noexcept {
+    return elements_[index_of_position(pos)];
+  }
 
  private:
   size_t index_of_position(Position pos) const noexcept {
