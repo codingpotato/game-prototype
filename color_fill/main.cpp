@@ -55,6 +55,58 @@ std::vector<board> boards{
     }},
 };
 
+struct solution {
+  solution(int r, int c) noexcept : row{r}, column{c} {}
+
+  int row;
+  int column;
+  std::vector<position> shown_positions;
+  std::vector<position> hidden_positions;
+};
+
+inline solution get_solution(const board& b, const matrix<status>& status_m,
+                             position pos) {
+  solution s{pos.row, pos.column};
+  if (status_m[pos] == status::unknown) {
+    s.shown_positions.push_back(pos);
+  }
+  constexpr size_t direction = 8;
+  const std::array<position, direction> moves{
+      position{-1, 0}, position{-1, -1}, position{0, -1}, position{1, -1},
+      position{1, 0},  position{1, 1},   position{0, 1},  position{-1, 1}};
+  for (auto& move : moves) {
+    position new_pos{pos.row + move.row, pos.column + move.column};
+    if (is_in_matrix(b, new_pos) && status_m[new_pos] == status::unknown) {
+      if (b[pos] == b[new_pos]) {
+        s.hidden_positions.push_back(new_pos);
+      } else {
+        s.shown_positions.push_back(new_pos);
+      }
+    }
+  }
+  return s;
+}
+
+inline std::vector<solution> get_solutions(const board& b,
+                                           const matrix<status>& status_m) {
+  std::vector<solution> ss;
+  for (size_t row = 0; row < b.rows(); ++row) {
+    for (size_t column = 0; column < b.columns(); ++column) {
+      position pos{static_cast<int>(row), static_cast<int>(column)};
+      if (auto s = get_solution(b, status_m, pos);
+          s.shown_positions.size() > 0 || s.hidden_positions.size() > 0) {
+        ss.push_back(s);
+      }
+    }
+  }
+  std::sort(ss.begin(), ss.end(), [](const solution& s1, const solution& s2) {
+    return s1.shown_positions.size() < s2.shown_positions.size() ||
+           (s1.shown_positions.size() == s2.shown_positions.size() &&
+            s1.hidden_positions.size() > s2.hidden_positions.size());
+  });
+  return ss;
+}
+
 int main() {
   for (auto& b : boards) {
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
@@ -62,8 +114,19 @@ int main() {
     auto enclosure = generate_enclosure_board(b);
     std::cout << enclosure;
 
-    matrix<int> visited(b.rows(), b.columns());
-    auto status_m = generate_status_matrix(b, enclosure, visited);
+    matrix<status> status_m{b.rows(), b.columns()};
+    while (true) {
+      auto solutions = get_solutions(b, status_m);
+      if (solutions.size() == 0) {
+        break;
+      }
+      for (auto& pos : solutions[0].shown_positions) {
+        status_m[pos] = status::shown;
+      }
+      for (auto& pos : solutions[0].hidden_positions) {
+        status_m[pos] = status::hidden;
+      }
+    }
     std::cout << status_m;
   }
 }
