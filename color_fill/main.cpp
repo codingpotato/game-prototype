@@ -107,7 +107,7 @@ inline std::vector<solution> get_solutions(const board& b,
   return ss;
 }
 
-int main() {
+inline void print_solutions() noexcept {
   for (auto& b : boards) {
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     std::cout << b;
@@ -129,4 +129,29 @@ int main() {
     }
     std::cout << status_m;
   }
+}
+
+int main() {
+  std::srand(std::time(nullptr));
+  board b{6, 6};
+  fill_board(b, 6);
+  std::cout << b;
+
+  auto enclosure = generate_enclosure_board(b);
+  std::cout << enclosure;
+
+  matrix<status> status_m{b.rows(), b.columns()};
+  while (true) {
+    auto solutions = get_solutions(b, status_m);
+    if (solutions.size() == 0) {
+      break;
+    }
+    for (auto& pos : solutions[0].shown_positions) {
+      status_m[pos] = status::shown;
+    }
+    for (auto& pos : solutions[0].hidden_positions) {
+      status_m[pos] = status::hidden;
+    }
+  }
+  std::cout << status_m;
 }

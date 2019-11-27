@@ -23,12 +23,65 @@ inline std::ostream& operator<<(std::ostream& os, status s) {
   return os;
 }
 
-using board = matrix<int>;
-
 template <typename T>
 inline bool is_in_matrix(const matrix<T>& m, position pos) {
   return pos.row >= 0 && static_cast<size_t>(pos.row) < m.rows() &&
          pos.column >= 0 && static_cast<size_t>(pos.column) < m.columns();
+}
+
+using tile = int;
+using board = matrix<tile>;
+
+template <typename F>
+inline std::vector<position> filter(const board& b, F&& f) {
+  std::vector<position> positions;
+  b.for_each([&f, &positions](position pos, const tile& t) {
+    if (std::forward<F>(f)(pos, t)) {
+      positions.push_back(pos);
+    }
+  });
+  return positions;
+}
+
+inline void fill_first_color(board& b, int color) noexcept {
+  auto positions = filter(b, [](position, const tile& t) { return t == 0; });
+  auto pos = positions[std::rand() % positions.size()];
+  b[pos] = color;
+}
+
+inline std::vector<tile> neighbers(const board& b, position pos) noexcept {
+  constexpr size_t direction = 4;
+  static const std::array<position, direction> moves{
+      position{-1, 0},
+      position{0, -1},
+      position{1, 0},
+      position{0, 1},
+  };
+  std::vector<tile> tiles;
+  for (auto move : moves) {
+    position new_pos{pos.row + move.row, pos.column + move.column};
+    if (is_in_matrix(b, new_pos) && b[new_pos] != tile{}) {
+      tiles.push_back(b[new_pos]);
+    }
+  }
+  return tiles;
+}
+
+inline void fill_board(board& b, int colors) noexcept {
+  for (auto i = 1; i <= colors; ++i) {
+    fill_first_color(b, i);
+  }
+  while (true) {
+    auto positions = filter(b, [&b](position pos, const tile& t) {
+      return t == tile{} && !neighbers(b, pos).empty();
+    });
+    if (positions.empty()) {
+      break;
+    }
+    auto pos = positions[std::rand() % positions.size()];
+    auto ns = neighbers(b, pos);
+    b[pos] = ns[std::rand() % ns.size()];
+  }
 }
 
 template <typename F>

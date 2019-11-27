@@ -25,18 +25,27 @@ struct matrix {
   constexpr size_t rows() const noexcept { return rows_; }
   constexpr size_t columns() const noexcept { return columns_; }
 
-  T& operator[](position pos) noexcept {
-    return elements_[index_of_position(pos)];
-  }
+  T& operator[](position pos) noexcept { return elements_[index_of(pos)]; }
   const T& operator[](position pos) const noexcept {
-    return elements_[index_of_position(pos)];
+    return elements_[index_of(pos)];
+  }
+
+  template <typename F>
+  void for_each(F&& f) const noexcept {
+    for (size_t row = 0; row < rows_; ++row) {
+      for (size_t column = 0; column < columns_; ++column) {
+        std::forward<F>(f)(
+            position{static_cast<int>(row), static_cast<int>(column)},
+            elements_[index_of(row, column)]);
+      }
+    }
   }
 
  private:
-  size_t index_of_position(position pos) const noexcept {
-    return index_of_position(pos.row, pos.column);
+  size_t index_of(position pos) const noexcept {
+    return index_of(pos.row, pos.column);
   }
-  size_t index_of_position(int row, int column) const noexcept {
+  size_t index_of(int row, int column) const noexcept {
     return row * columns_ + column;
   }
 
