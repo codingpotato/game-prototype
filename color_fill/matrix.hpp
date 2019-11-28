@@ -1,9 +1,12 @@
 #pragma once
 
+#include <array>
 #include <vector>
 
 struct position {
   position(int r, int c) noexcept : row{r}, column{c} {}
+  position(size_t r, size_t c) noexcept
+      : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
 
   int row = 0;
   int column = 0;
@@ -13,8 +16,10 @@ template <typename T>
 struct matrix {
   matrix(size_t rows, size_t columns) noexcept
       : rows_{rows}, columns_{columns}, elements_(rows * columns, T{}) {}
-  matrix(std::vector<std::vector<T>> elements) noexcept
-      : rows_{elements.size()}, columns_{elements[0].size()} {
+
+  template <size_t ROWS, size_t COLUMNS>
+  matrix(std::array<std::array<T, COLUMNS>, ROWS> elements) noexcept
+      : rows_{ROWS}, columns_{COLUMNS} {
     for (auto& row : elements) {
       for (auto& element : row) {
         elements_.push_back(element);
@@ -34,9 +39,8 @@ struct matrix {
   void for_each(F&& f) const noexcept {
     for (size_t row = 0; row < rows_; ++row) {
       for (size_t column = 0; column < columns_; ++column) {
-        std::forward<F>(f)(
-            position{static_cast<int>(row), static_cast<int>(column)},
-            elements_[index_of(row, column)]);
+        std::forward<F>(f)(position{row, column},
+                           elements_[index_of(row, column)]);
       }
     }
   }
