@@ -6,22 +6,6 @@
 
 #include "matrix.hpp"
 
-template <typename T>
-inline std::ostream& operator<<(std::ostream& os, const matrix<T>& m) {
-  for (size_t r = 0; r < m.rows(); ++r) {
-    os << " [ ";
-    for (size_t c = 0; c < m.columns(); ++c) {
-      if (c > 0) {
-        os << "| ";
-      }
-      os << m[position(r, c)] << " ";
-    }
-    os << "]\n";
-  }
-  os << "\n";
-  return os;
-}
-
 using tile = size_t;
 using board = matrix<tile>;
 
@@ -186,4 +170,23 @@ inline status_board generate_solution(board& b) noexcept {
     }
   }
   return sb;
+}
+
+inline void show_board(const board& b, const status_board& sb) noexcept {
+  for (size_t row = 0; row < b.rows(); ++row) {
+    std::cout << " [ ";
+    for (size_t column = 0; column < b.columns(); ++column) {
+      if (column > 0) {
+        std::cout << "| ";
+      }
+      position pos{row, column};
+      if (sb[pos].t == status::type::shown) {
+        std::cout << b[pos] << "," << sb[pos].enclosure_number << " ";
+      } else {
+        std::cout << "    ";
+      }
+    }
+    std::cout << "]\n";
+  }
+  std::cout << "\n";
 }
