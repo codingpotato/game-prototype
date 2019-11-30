@@ -134,12 +134,10 @@ inline void print_solutions() noexcept {
 int main() {
   std::srand(std::time(nullptr));
   board b{6, 6};
-  initialize_board(b, 6);
-  std::cout << b;
-  /*fill_board(b, 6);
+  fill_board(b, 6);
   std::cout << b;
 
-  auto enclosure = generate_enclosure_board(b);
+  /*auto enclosure = generate_enclosure_board(b);
   std::cout << enclosure;
 
   matrix<status> status_m{b.rows(), b.columns()};

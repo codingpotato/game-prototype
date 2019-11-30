@@ -66,3 +66,24 @@ inline void initialize_board(board& b, size_t colors) noexcept {
     fill_two_neighber_pairs(b, c);
   }
 }
+
+inline void fill_board(board& b, size_t colors) noexcept {
+  initialize_board(b, colors);
+  while (true) {
+    auto ps = b.all_positions_if([&b](position pos, const tile& t) {
+      auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
+      return t == tile{} &&
+             std::count_if(nv.begin(), nv.end(),
+                           [](const tile& t) { return t != tile{}; }) > 0;
+    });
+    if (ps.empty()) {
+      break;
+    }
+    auto pos = ps[std::rand() % ps.size()];
+    auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
+    std::vector<tile> neighbers;
+    std::copy_if(nv.begin(), nv.end(), std::back_inserter(neighbers),
+                 [](const tile& t) { return t != tile{}; });
+    b[pos] = neighbers[std::rand() % neighbers.size()];
+  }
+}
