@@ -9,9 +9,14 @@ struct position {
   int row = 0;
   int column = 0;
 
+  constexpr position() noexcept = default;
   constexpr position(int r, int c) noexcept : row{r}, column{c} {}
   constexpr position(size_t r, size_t c) noexcept
       : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
+  constexpr position(const position& pos) = default;
+  constexpr position(position&& pos) = default;
+  position& operator=(const position& pos) = default;
+  position& operator=(position&& pos) = default;
 
   friend bool operator==(const position& pos1, const position& pos2) noexcept {
     return pos1.row == pos2.row && pos1.column == pos2.column;
@@ -57,6 +62,11 @@ struct matrix {
         check_valid();
       }
 
+      constexpr position pos() const noexcept {
+        return position{nv_.pos_.row + nv_.direction(index_).row,
+                        nv_.pos_.column + nv_.direction(index_).column};
+      }
+
       iterator& operator++() noexcept {
         ++index_;
         check_valid();
@@ -80,11 +90,6 @@ struct matrix {
         while (index_ < nv_.directions_size() && !nv_.matrix_.is_valid(pos())) {
           ++index_;
         }
-      }
-
-      position pos() const noexcept {
-        return position{nv_.pos_.row + nv_.direction(index_).row,
-                        nv_.pos_.column + nv_.direction(index_).column};
       }
 
       const neighber_view& nv_;

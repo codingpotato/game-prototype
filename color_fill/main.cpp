@@ -134,7 +134,7 @@ inline void print_solutions() noexcept {
 int main() {
   std::srand(std::time(nullptr));
   board b{6, 6};
-  fill_two_neighber_pairs(b, 1);
+  initialize_board(b, 6);
   std::cout << b;
   /*fill_board(b, 6);
   std::cout << b;

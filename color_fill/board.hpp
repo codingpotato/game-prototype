@@ -1,5 +1,9 @@
 #pragma once
 
+#include <algorithm>
+#include <iostream>
+#include <optional>
+
 #include "matrix.hpp"
 
 template <typename T>
@@ -18,50 +22,47 @@ inline std::ostream& operator<<(std::ostream& os, const matrix<T>& m) {
   return os;
 }
 
-struct tile {
-  size_t color;
-};
-
-bool operator==(const tile& t1, const tile& t2) noexcept {
-  return t1.color == t2.color;
-}
-
-inline std::ostream& operator<<(std::ostream& os, const tile& t) {
-  os << t.color;
-  return os;
-}
-
+using tile = size_t;
 using board = matrix<tile>;
 
 template <typename T>
-inline positions empty_neighbers(const matrix<T>& m, position pos) noexcept {
-  positions ps;
-  std::array<position, 4> moves{position{-1, 0}, position{1, 0},
-                                position{0, -1}, position{0, 1}};
-  for (auto& move : moves) {
-    auto row = pos.row + move.row;
-    auto column = pos.column + move.column;
-    if (m[position{row, column}] == T{}) {
-      ps.emplace_back(row, column);
+inline std::optional<std::pair<position, position>> random_empty_neighber_pair(
+    matrix<T>& m) noexcept {
+  auto ps = m.all_positions_if([&m](position pos, const T& t) {
+    if (t != T{}) {
+      return false;
+    }
+    auto nv = m.neighber_view_of(pos, neighber_type::no_diagonal);
+    return std::count(nv.begin(), nv.end(), T{}) > 0;
+  });
+  if (ps.empty()) {
+    return {};
+  }
+
+  auto pos = ps[std::rand() % ps.size()];
+  auto nv = m.neighber_view_of(pos, neighber_type::no_diagonal);
+  positions neighbers;
+  for (auto it = nv.begin(); it != nv.end(); ++it) {
+    if (*it == T{}) {
+      neighbers.push_back(it.pos());
     }
   }
-  return ps;
-}
-
-template <typename T>
-inline std::pair<position, position> random_empty_neighber_pair(
-    const matrix<T>& m) noexcept {
-  auto ps = m.all_positions_if([&m](position pos, const T&) {
-    return !empty_neighbers(m, pos).empty();
-  });
-  auto pos = ps[std::rand() % ps.size()];
-  auto neighbers = empty_neighbers(m, pos);
-  return {pos, neighbers[std::rand() % neighbers.size()]};
+  return std::make_optional<std::pair<position, position>>(
+      pos, neighbers[std::rand() % neighbers.size()]);
 }
 
 inline bool fill_two_neighber_pairs(board& b, size_t color) noexcept {
-  auto [pos, neighber] = random_empty_neighber_pair(b);
-  b[pos] = {color};
-  b[neighber] = {color};
-  return true;
+  if (auto neighber_pair = random_empty_neighber_pair(b)) {
+    auto [pos, neighber] = *neighber_pair;
+    b[pos] = color;
+    b[neighber] = color;
+    return true;
+  }
+  return false;
+}
+
+inline void initialize_board(board& b, size_t colors) noexcept {
+  for (size_t c = 1; c <= colors; ++c) {
+    fill_two_neighber_pairs(b, c);
+  }
 }
