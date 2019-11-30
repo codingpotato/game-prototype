@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "algorithm.hpp"
+#include "board.hpp"
 
-std::vector<board> boards{
+/*std::vector<board> boards{
     {{
         {1, 1, 1, 2},
         {1, 1, 1, 2},
@@ -129,12 +129,14 @@ inline void print_solutions() noexcept {
     }
     std::cout << status_m;
   }
-}
+}*/
 
 int main() {
   std::srand(std::time(nullptr));
   board b{6, 6};
-  fill_board(b, 6);
+  fill_two_neighber_pairs(b, 1);
+  std::cout << b;
+  /*fill_board(b, 6);
   std::cout << b;
 
   auto enclosure = generate_enclosure_board(b);
@@ -153,5 +155,5 @@ int main() {
       status_m[pos] = status::hidden;
     }
   }
-  std::cout << status_m;
+  std::cout << status_m;*/
 }

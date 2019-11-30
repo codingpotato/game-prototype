@@ -22,6 +22,10 @@ function(add_test_executable)
 endfunction(add_test_executable)
 
 add_test_executable(NAME
+                    board_tests
+                    SOURCES
+                    board_tests.cpp)
+add_test_executable(NAME
                     matrix_tests
                     SOURCES
                     matrix_tests.cpp)
