@@ -10,13 +10,14 @@ struct position {
   int column = 0;
 
   constexpr position() noexcept = default;
-  constexpr position(int r, int c) noexcept : row{r}, column{c} {}
-  constexpr position(size_t r, size_t c) noexcept
-      : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
   constexpr position(const position& pos) = default;
   constexpr position(position&& pos) = default;
   position& operator=(const position& pos) = default;
   position& operator=(position&& pos) = default;
+
+  constexpr position(int r, int c) noexcept : row{r}, column{c} {}
+  constexpr position(size_t r, size_t c) noexcept
+      : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
 
   friend bool operator==(const position& pos1, const position& pos2) noexcept {
     return pos1.row == pos2.row && pos1.column == pos2.column;
@@ -117,9 +118,9 @@ struct matrix {
     position pos_;
     neighber_type type_;
 
-    static constexpr std::array<position, 4> directions_{
-        position{0, -1}, position{0, 1}, position{-1, 0}, position{1, 0}};
-    static constexpr std::array<position, 8> directions_diagonal_{
+    static constexpr std::array directions_{position{0, -1}, position{0, 1},
+                                            position{-1, 0}, position{1, 0}};
+    static constexpr std::array directions_diagonal_{
         position{0, -1},  position{0, 1},  position{-1, 0}, position{1, 0},
         position{-1, -1}, position{1, -1}, position{-1, 1}, position{1, 1}};
   };

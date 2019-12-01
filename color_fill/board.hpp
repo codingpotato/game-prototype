@@ -1,40 +1,28 @@
 #pragma once
 
 #include <algorithm>
-#include <iostream>
 #include <optional>
 
 #include "matrix.hpp"
 
-using tile = size_t;
-using board = matrix<tile>;
+using color = size_t;
 
-struct status {
-  enum class type { unknown, shown, hidden };
+inline color null_color() noexcept { return 0; }
+inline bool is_null(color c) noexcept { return c == null_color(); }
 
-  int enclosure_number = 0;
-  type t = type::unknown;
-};
-
-inline std::ostream& operator<<(std::ostream& os, const status& s) {
-  switch (s.t) {
-    case status::type::unknown:
-      os << " ";
-      break;
-    case status::type::hidden:
-      os << "H";
-      break;
-    case status::type::shown:
-      os << "S";
-      break;
-  }
-  return os;
-}
-
-using status_board = matrix<status>;
+using board = matrix<color>;
 
 struct solution {
-  solution(int r, int c) noexcept : row{r}, column{c} {}
+  enum status { unknown, shown, hidden };
+
+  int enclosure_number = 0;
+  status s = unknown;
+};
+
+using solution_board = matrix<solution>;
+
+struct candidate {
+  candidate(int r, int c) noexcept : row{r}, column{c} {}
 
   int row;
   int column;
@@ -42,46 +30,47 @@ struct solution {
   positions hidden_positions;
 };
 
-using solutions = std::vector<solution>;
+using candidates = std::vector<candidate>;
 
-template <typename T>
-inline std::optional<std::pair<position, position>> random_empty_neighber_pair(
-    matrix<T>& m) noexcept {
-  auto ps = m.all_positions_if([&m](position pos, const T& t) {
-    if (t != T{}) {
+using position_pair = std::pair<position, position>;
+
+inline std::optional<position_pair> random_empty_neighber_pair(
+    board& b) noexcept {
+  auto ps = b.all_positions_if([&b](position pos, color c) {
+    if (!is_null(c)) {
       return false;
     }
-    auto nv = m.neighber_view_of(pos, neighber_type::no_diagonal);
-    return std::count(nv.begin(), nv.end(), T{}) > 0;
+    auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
+    return std::count(nv.begin(), nv.end(), null_color()) > 0;
   });
   if (ps.empty()) {
     return {};
   }
 
   auto pos = ps[std::rand() % ps.size()];
-  auto nv = m.neighber_view_of(pos, neighber_type::no_diagonal);
+  auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
   positions neighbers;
   for (auto it = nv.begin(); it != nv.end(); ++it) {
-    if (*it == T{}) {
+    if (is_null(*it)) {
       neighbers.push_back(it.pos());
     }
   }
-  return std::make_optional<std::pair<position, position>>(
+  return std::make_optional<position_pair>(
       pos, neighbers[std::rand() % neighbers.size()]);
 }
 
-inline bool fill_two_neighber_pairs(board& b, size_t color) noexcept {
+inline bool fill_two_neighber_pairs(board& b, color c) noexcept {
   if (auto neighber_pair = random_empty_neighber_pair(b)) {
     auto [pos, neighber] = *neighber_pair;
-    b[pos] = color;
-    b[neighber] = color;
+    b[pos] = c;
+    b[neighber] = c;
     return true;
   }
   return false;
 }
 
 inline void initialize_board(board& b, size_t colors) noexcept {
-  for (size_t c = 1; c <= colors; ++c) {
+  for (color c = 1; c <= colors; ++c) {
     fill_two_neighber_pairs(b, c);
   }
 }
@@ -89,44 +78,43 @@ inline void initialize_board(board& b, size_t colors) noexcept {
 inline void fill_board(board& b, size_t colors) noexcept {
   initialize_board(b, colors);
   while (true) {
-    auto ps = b.all_positions_if([&b](position pos, const tile& t) {
+    auto ps = b.all_positions_if([&b](position pos, color c) {
       auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-      return t == tile{} &&
-             std::count_if(nv.begin(), nv.end(),
-                           [](const tile& t) { return t != tile{}; }) > 0;
+      return is_null(c) && std::count_if(nv.begin(), nv.end(), [](color c) {
+                             return !is_null(c);
+                           }) > 0;
     });
     if (ps.empty()) {
       break;
     }
     auto pos = ps[std::rand() % ps.size()];
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-    std::vector<tile> neighbers;
+    std::vector<color> neighbers;
     std::copy_if(nv.begin(), nv.end(), std::back_inserter(neighbers),
-                 [](const tile& t) { return t != tile{}; });
+                 [](color c) { return !is_null(c); });
     b[pos] = neighbers[std::rand() % neighbers.size()];
   }
 }
 
-inline void calculate_enclosure_number(board& b, status_board& sb) noexcept {
+inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {
   for (auto it = b.begin(); it != b.end(); ++it) {
     auto pos = it.pos();
     auto nv = b.neighber_view_of(pos, neighber_type::diagonal);
-    sb[pos].enclosure_number =
-        std::count_if(nv.begin(), nv.end(),
-                      [&b, &pos](const tile& t) { return t == b[pos]; });
+    sb[pos].enclosure_number = std::count_if(
+        nv.begin(), nv.end(), [&b, &pos](color c) { return c == b[pos]; });
   }
 }
 
-inline solution get_solution(board& b, status_board& sb,
-                             position pos) noexcept {
-  solution s{pos.row, pos.column};
-  if (sb[pos].t == status::type::unknown) {
+inline candidate candidate_of(board& b, solution_board& sb,
+                              position pos) noexcept {
+  candidate s{pos.row, pos.column};
+  if (sb[pos].s == solution::unknown) {
     s.shown_positions.emplace_back(pos.row, pos.column);
   }
   auto nv = b.neighber_view_of(pos, neighber_type::diagonal);
   for (auto it = nv.begin(); it != nv.end(); ++it) {
     auto neighber_pos = it.pos();
-    if (sb[neighber_pos].t == status::type::unknown) {
+    if (sb[neighber_pos].s == solution::unknown) {
       if (b[pos] == b[neighber_pos]) {
         s.hidden_positions.emplace_back(neighber_pos.row, neighber_pos.column);
       } else {
@@ -137,16 +125,16 @@ inline solution get_solution(board& b, status_board& sb,
   return s;
 }
 
-inline solutions get_solutions(board& b, status_board& sb) noexcept {
-  solutions ss;
+inline candidates get_candidates(board& b, solution_board& sb) noexcept {
+  candidates ss;
   for (auto it = b.begin(); it != b.end(); ++it) {
     auto pos = it.pos();
-    if (auto s = get_solution(b, sb, pos);
+    if (auto s = candidate_of(b, sb, pos);
         s.shown_positions.size() > 0 || s.hidden_positions.size() > 0) {
       ss.emplace_back(s);
     }
   }
-  std::sort(ss.begin(), ss.end(), [](const solution& s1, const solution& s2) {
+  std::sort(ss.begin(), ss.end(), [](const candidate& s1, const candidate& s2) {
     return s1.shown_positions.size() < s2.shown_positions.size() ||
            (s1.shown_positions.size() == s2.shown_positions.size() &&
             s1.hidden_positions.size() > s2.hidden_positions.size());
@@ -154,39 +142,20 @@ inline solutions get_solutions(board& b, status_board& sb) noexcept {
   return ss;
 }
 
-inline status_board generate_solution(board& b) noexcept {
-  status_board sb{b.rows(), b.columns()};
+inline solution_board generate_solution(board& b) noexcept {
+  solution_board sb{b.rows(), b.columns()};
   calculate_enclosure_number(b, sb);
   while (true) {
-    auto ss = get_solutions(b, sb);
+    auto ss = get_candidates(b, sb);
     if (ss.empty()) {
       break;
     }
     for (auto pos : ss[0].shown_positions) {
-      sb[pos].t = status::type::shown;
+      sb[pos].s = solution::shown;
     }
     for (auto pos : ss[0].hidden_positions) {
-      sb[pos].t = status::type::hidden;
+      sb[pos].s = solution::hidden;
     }
   }
   return sb;
-}
-
-inline void show_board(const board& b, const status_board& sb) noexcept {
-  for (size_t row = 0; row < b.rows(); ++row) {
-    std::cout << " [ ";
-    for (size_t column = 0; column < b.columns(); ++column) {
-      if (column > 0) {
-        std::cout << "| ";
-      }
-      position pos{row, column};
-      if (sb[pos].t == status::type::shown) {
-        std::cout << b[pos] << "," << sb[pos].enclosure_number << " ";
-      } else {
-        std::cout << "    ";
-      }
-    }
-    std::cout << "]\n";
-  }
-  std::cout << "\n";
 }
