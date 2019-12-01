@@ -2,7 +2,8 @@
 
 #include "board.hpp"
 
-constexpr std::array symbols{' ', '@', '#', '$', '%', '&', '*', 'o'};
+constexpr std::array symbols{' ', 'a', 'b', 'c', 'd', 'e',
+                             'f', 'g', 'h', 'i', 'j', 'k'};
 
 inline void show_board(const board& b, const solution_board& sb) noexcept {
   std::cout << "  ";
@@ -59,6 +60,17 @@ int main() {
   std::srand(std::time(nullptr));
   board b{7, 7};
   fill_board(b, 7);
+
+  std::array<color, 8> counts{0, 0, 0, 0, 0, 0, 0, 0};
+  for (color c : b) {
+    counts[c]++;
+  }
+  std::sort(counts.begin(), counts.end());
+  for (auto c : counts) {
+    std::cout << c << " ";
+  }
+  std::cout << "\n";
+
   auto sb = generate_solution(b);
   play(b, sb);
 }
