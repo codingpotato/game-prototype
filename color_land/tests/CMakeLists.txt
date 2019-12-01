@@ -8,17 +8,17 @@ function(add_test_executable)
                         NAME
                         SOURCES
                         ${ARGN})
-  add_executable(${ADD_NAME}_color_fill ${ADD_SOURCES})
-  target_compile_features(${ADD_NAME}_color_fill PUBLIC cxx_std_17)
-  target_compile_options(${ADD_NAME}_color_fill
+  add_executable(${ADD_NAME}_color_land ${ADD_SOURCES})
+  target_compile_features(${ADD_NAME}_color_land PUBLIC cxx_std_17)
+  target_compile_options(${ADD_NAME}_color_land
                          PRIVATE -Wall
                                  -Wextra
                                  -Werror
                                  -Wpedantic
                                  -pedantic-errors)
-  target_include_directories(${ADD_NAME}_color_fill
+  target_include_directories(${ADD_NAME}_color_land
                              PUBLIC .. ${catch_SOURCE_DIR}/single_include)
-  parseandaddcatchtests(${ADD_NAME}_color_fill)
+  parseandaddcatchtests(${ADD_NAME}_color_land)
 endfunction(add_test_executable)
 
 add_test_executable(NAME

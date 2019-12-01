@@ -12,7 +12,7 @@ include(catch2)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_subdirectory(color_fill)
+add_subdirectory(color_land)
 add_subdirectory(pop_tile)
 
 add_subdirectory(tests/pop_tile)
