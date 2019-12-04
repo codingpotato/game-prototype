@@ -46,6 +46,6 @@ TEST_CASE("neighber_view", "[matrix]") {
   }
   REQUIRE(count == 2);
 
-  auto nv = m.neighber_view_of({0, 0}, neighber_type::diagonal);
+  auto nv = m.neighber_view_of({0, 0}, neighber_type::all);
   REQUIRE(std::count(nv.begin(), nv.end(), 0) == 3);
 }

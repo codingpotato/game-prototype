@@ -3,13 +3,13 @@
 #include <array>
 #include <vector>
 
-enum class neighber_type { no_diagonal, diagonal };
+enum class neighber_type { no_diagonal, all };
 
 struct position {
   int row = 0;
   int column = 0;
 
-  constexpr position() noexcept = default;
+  constexpr position() = default;
   constexpr position(const position& pos) = default;
   constexpr position(position&& pos) = default;
   position& operator=(const position& pos) = default;
