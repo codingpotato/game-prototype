@@ -1,3 +1,4 @@
+#include <ctime>
 #include <iostream>
 
 #include "board.hpp"

@@ -3,7 +3,7 @@
 #include <array>
 #include <vector>
 
-enum class neighber_type { no_diagonal, diagonal };
+enum class neighber_type { no_diagonal, all };
 
 struct position {
   int row = 0;

@@ -139,7 +139,7 @@ inline void fill_board(board& b, size_t colors) noexcept {
 inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {
   for (auto it = b.begin(); it != b.end(); ++it) {
     auto pos = it.pos();
-    auto nv = b.neighber_view_of(pos, neighber_type::diagonal);
+    auto nv = b.neighber_view_of(pos, neighber_type::all);
     sb[pos].enclosure_number = std::count_if(
         nv.begin(), nv.end(), [&b, &pos](color c) { return c == b[pos]; });
   }
@@ -147,7 +147,7 @@ inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {
 
 inline int known_enclosure_number(board& b, solution_board& sb,
                                   position pos) noexcept {
-  auto nv = b.neighber_view_of(pos, neighber_type::diagonal);
+  auto nv = b.neighber_view_of(pos, neighber_type::all);
   auto count = 0;
   for (auto it = nv.begin(); it != nv.end(); ++it) {
     if (sb[it.pos()].s != solution::unknown && *it == b[pos]) {
@@ -166,7 +166,7 @@ inline candidate candidate_of(board& b, solution_board& sb,
   }
   auto t = sb[pos].enclosure_number - known_enclosure_number(b, sb, pos) == 1
                ? neighber_type::no_diagonal
-               : neighber_type::diagonal;
+               : neighber_type::all;
   auto nv = b.neighber_view_of(pos, t);
   for (auto it = nv.begin(); it != nv.end(); ++it) {
     auto neighber_pos = it.pos();
@@ -202,7 +202,7 @@ inline candidates get_candidates(board& b, solution_board& sb,
 inline void update_information(board& b, solution_board& sb,
                                information_board& ib, position pos) noexcept {
   if (sb[pos].enclosure_number == known_enclosure_number(b, sb, pos)) {
-    auto nv = b.neighber_view_of(pos, neighber_type::diagonal);
+    auto nv = b.neighber_view_of(pos, neighber_type::all);
     for (auto it = nv.begin(); it != nv.end(); ++it) {
       if (sb[it.pos()].s == solution::unknown) {
         ib[it.pos()].impossible_colors.insert(b[pos]);
@@ -214,7 +214,7 @@ inline void update_information(board& b, solution_board& sb,
 inline void update_neighber_information(board& b, solution_board& sb,
                                         information_board& ib,
                                         position pos) noexcept {
-  auto nv = b.neighber_view_of(pos, neighber_type::diagonal);
+  auto nv = b.neighber_view_of(pos, neighber_type::all);
   for (auto it = nv.begin(); it != nv.end(); ++it) {
     update_information(b, sb, ib, it.pos());
   }

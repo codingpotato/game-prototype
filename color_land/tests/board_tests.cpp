@@ -24,9 +24,9 @@ inline void show_board(const board& b) noexcept {
 
 TEST_CASE("constructor", "[board]") {
   board b{6, 6};
-  initialize_board(b, 6);
-  for (auto c = 1; c <= 6; ++c) {
-    REQUIRE(std::count(b.begin(), b.end(), c) == 2);
+  fill_seeds_in_board(b, 6);
+  for (auto value = 1; value <= 6; ++value) {
+    REQUIRE(std::count(b.begin(), b.end(), color{value}) == 2);
   }
 }
 
