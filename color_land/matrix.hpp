@@ -9,12 +9,7 @@ struct position {
   int row = 0;
   int column = 0;
 
-  constexpr position() noexcept = default;
-  constexpr position(const position& pos) = default;
-  constexpr position(position&& pos) = default;
-  position& operator=(const position& pos) = default;
-  position& operator=(position&& pos) = default;
-
+  constexpr position() noexcept {}
   constexpr position(int r, int c) noexcept : row{r}, column{c} {}
   constexpr position(size_t r, size_t c) noexcept
       : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}

@@ -6,10 +6,30 @@
 
 #include "matrix.hpp"
 
-using color = size_t;
+struct color {
+  int raw_value = null_value;
 
-inline color null_color() noexcept { return 0; }
-inline bool is_null(color c) noexcept { return c == null_color(); }
+  constexpr static color null() noexcept { return color{}; }
+  constexpr static color stone() noexcept { return color{stone_value}; }
+
+  constexpr color() noexcept {}
+  constexpr color(int value) noexcept : raw_value{value} {}
+
+  constexpr bool is_null() const noexcept { return raw_value == null_value; }
+  constexpr bool is_stone() const noexcept { return raw_value == stone_value; }
+
+  friend bool operator==(color lhs, color rhs) noexcept {
+    return lhs.raw_value == rhs.raw_value;
+  }
+
+  friend bool operator<(color lhs, color rhs) noexcept {
+    return lhs.raw_value < rhs.raw_value;
+  }
+
+ private:
+  static constexpr int null_value = -1;
+  static constexpr int stone_value = 0;
+};
 
 using board = matrix<color>;
 
@@ -41,11 +61,26 @@ using candidates = std::vector<candidate>;
 
 using position_pair = std::pair<position, position>;
 
+inline void fill_stones(board& b) noexcept {
+  auto stones = std::rand() % 4;
+  if (stones > 0) {
+    auto positions = b.all_positions_if([&b](position pos, color) {
+      return pos.row > 0 && pos.row < static_cast<int>(b.rows()) - 1 &&
+             pos.column > 0 && pos.column < static_cast<int>(b.columns()) - 1;
+    });
+    for (auto index = 0; index < stones; ++index) {
+      std::swap(positions[index],
+                positions[index + std::rand() % (positions.size() - index)]);
+      b[positions[index]] = color::stone();
+    }
+  }
+}
+
 inline std::optional<position_pair> random_empty_neighber_pair(
     board& b) noexcept {
   auto ps = b.all_positions_if([&b](position pos, color c) {
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-    return is_null(c) && std::count(nv.begin(), nv.end(), null_color()) > 0;
+    return c.is_null() && std::count(nv.begin(), nv.end(), color::null()) > 0;
   });
   if (ps.empty()) {
     return {};
@@ -55,7 +90,7 @@ inline std::optional<position_pair> random_empty_neighber_pair(
   auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
   positions neighbers;
   for (auto it = nv.begin(); it != nv.end(); ++it) {
-    if (is_null(*it)) {
+    if (it->is_null()) {
       neighbers.push_back(it.pos());
     }
   }
@@ -63,7 +98,7 @@ inline std::optional<position_pair> random_empty_neighber_pair(
       pos, neighbers[std::rand() % neighbers.size()]);
 }
 
-inline bool fill_two_neighber_pairs(board& b, color c) noexcept {
+inline bool fill_two_connected_seeds(board& b, color c) noexcept {
   if (auto neighber_pair = random_empty_neighber_pair(b)) {
     auto [pos, neighber] = *neighber_pair;
     b[pos] = c;
@@ -73,20 +108,21 @@ inline bool fill_two_neighber_pairs(board& b, color c) noexcept {
   return false;
 }
 
-inline void initialize_board(board& b, size_t colors) noexcept {
-  for (color c = 1; c <= colors; ++c) {
-    fill_two_neighber_pairs(b, c);
+inline void fill_seeds_in_board(board& b, int colors) noexcept {
+  for (auto value = 1; value <= colors; ++value) {
+    fill_two_connected_seeds(b, color{value});
   }
 }
 
 inline void fill_board(board& b, size_t colors) noexcept {
-  initialize_board(b, colors);
-  while (true) {
+  fill_stones(b);
+  fill_seeds_in_board(b, colors);
+  /*while (true) {
     auto ps = b.all_positions_if([&b](position pos, color c) {
       auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-      return is_null(c) && std::count_if(nv.begin(), nv.end(), [](color c) {
-                             return !is_null(c);
-                           }) > 0;
+      return c.is_null() && std::count_if(nv.begin(), nv.end(), [](color c) {
+                              return !c.is_null();
+                            }) > 0;
     });
     if (ps.empty()) {
       break;
@@ -95,9 +131,9 @@ inline void fill_board(board& b, size_t colors) noexcept {
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
     std::vector<color> neighbers;
     std::copy_if(nv.begin(), nv.end(), std::back_inserter(neighbers),
-                 [](color c) { return !is_null(c); });
+                 [](color c) { return !c.is_null(); });
     b[pos] = neighbers[std::rand() % neighbers.size()];
-  }
+  }*/
 }
 
 inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {

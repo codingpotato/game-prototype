@@ -3,10 +3,36 @@
 
 #include "board.hpp"
 
-TEST_CASE("constructor", "[matrix]") {
+inline void show_board(const board& b) noexcept {
+  std::cout << "  ";
+  for (size_t column = 0; column < b.columns(); ++column) {
+    std::cout << " " << column << "  ";
+  }
+  std::cout << "\n";
+  for (size_t row = 0; row < b.rows(); ++row) {
+    std::cout << row << " [ ";
+    for (size_t column = 0; column < b.columns(); ++column) {
+      if (column > 0) {
+        std::cout << "| ";
+      }
+      std::cout << b[position{row, column}].raw_value << " ";
+    }
+    std::cout << "]\n";
+  }
+  std::cout << "\n";
+}
+
+TEST_CASE("constructor", "[board]") {
   board b{6, 6};
   initialize_board(b, 6);
-  for (tile c = 1; c <= 6; ++c) {
+  for (auto c = 1; c <= 6; ++c) {
     REQUIRE(std::count(b.begin(), b.end(), c) == 2);
   }
+}
+
+TEST_CASE("all", "[board]") {
+  std::srand(std::time(nullptr));
+  board b{7, 7};
+  fill_board(b, 8);
+  show_board(b);
 }
