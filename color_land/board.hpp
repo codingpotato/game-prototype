@@ -17,6 +17,9 @@ struct color {
 
   constexpr bool is_null() const noexcept { return raw_value == null_value; }
   constexpr bool is_stone() const noexcept { return raw_value == stone_value; }
+  constexpr bool is_color() const noexcept {
+    return raw_value != null_value && raw_value != stone_value;
+  }
 
   friend bool operator==(color lhs, color rhs) noexcept {
     return lhs.raw_value == rhs.raw_value;
@@ -117,12 +120,13 @@ inline void fill_seeds_in_board(board& b, int colors) noexcept {
 inline void fill_board(board& b, size_t colors) noexcept {
   fill_stones(b);
   fill_seeds_in_board(b, colors);
-  /*while (true) {
+  while (true) {
     auto ps = b.all_positions_if([&b](position pos, color c) {
       auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-      return c.is_null() && std::count_if(nv.begin(), nv.end(), [](color c) {
-                              return !c.is_null();
-                            }) > 0;
+      return c.is_null() &&
+             std::count_if(nv.begin(), nv.end(), [](color neighber_color) {
+               return neighber_color.is_color();
+             }) > 0;
     });
     if (ps.empty()) {
       break;
@@ -130,10 +134,11 @@ inline void fill_board(board& b, size_t colors) noexcept {
     auto pos = ps[std::rand() % ps.size()];
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
     std::vector<color> neighbers;
-    std::copy_if(nv.begin(), nv.end(), std::back_inserter(neighbers),
-                 [](color c) { return !c.is_null(); });
+    std::copy_if(
+        nv.begin(), nv.end(), std::back_inserter(neighbers),
+        [](color neighber_color) { return neighber_color.is_color(); });
     b[pos] = neighbers[std::rand() % neighbers.size()];
-  }*/
+  }
 }
 
 inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {
