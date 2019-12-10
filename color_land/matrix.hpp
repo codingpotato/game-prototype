@@ -108,17 +108,6 @@ struct matrix {
     iterator begin() const noexcept { return iterator{*this, 0}; }
     iterator end() const noexcept { return iterator{*this, directions_size()}; }
 
-    template <typename F>
-    int count_if(F&& f) noexcept {
-      int count = 0;
-      for (auto it = begin(); it != end(); ++it) {
-        if (f(it.pos(), *it)) {
-          ++count;
-        }
-      }
-      return count;
-    }
-
    private:
     matrix<T>& matrix_;
     position pos_;
@@ -177,20 +166,6 @@ struct matrix {
     }
   }
 
-  template <typename F>
-  positions all_positions_if(F&& f) const noexcept {
-    positions ps;
-    for (size_t row = 0; row < rows_; ++row) {
-      for (size_t column = 0; column < columns_; ++column) {
-        if (std::forward<F>(f)(position{row, column},
-                               elements_[index_of(row, column)])) {
-          ps.emplace_back(row, column);
-        }
-      }
-    }
-    return ps;
-  }
-
  private:
   size_t index_of(position pos) const noexcept {
     return index_of(pos.row, pos.column);
@@ -203,3 +178,41 @@ struct matrix {
   size_t columns_;
   std::vector<T> elements_;
 };
+
+namespace color_land {
+
+template <typename Iterator, typename F>
+inline void for_each(Iterator&& first, Iterator&& last, F&& f) noexcept {
+  for (auto it = std::forward<Iterator>(first);
+       it != std::forward<Iterator>(last); ++it) {
+    std::forward<F>(f)(it.pos(), *it);
+  }
+}
+
+}  // namespace color_land
+
+template <typename Iterator>
+inline positions all_positions(Iterator&& first, Iterator&& last,
+                               typename Iterator::value_type v) noexcept {
+  positions ps;
+  for (auto it = std::forward<Iterator>(first);
+       it != std::forward<Iterator>(last); ++it) {
+    if (*it == v) {
+      ps.push_back(it.pos());
+    }
+  }
+  return ps;
+}
+
+template <typename Iterator, typename F>
+inline positions all_positions_if(Iterator&& first, Iterator&& last,
+                                  F&& f) noexcept {
+  positions ps;
+  for (auto it = std::forward<Iterator>(first);
+       it != std::forward<Iterator>(last); ++it) {
+    if (std::forward<F>(f)(it.pos(), *it)) {
+      ps.push_back(it.pos());
+    }
+  }
+  return ps;
+}

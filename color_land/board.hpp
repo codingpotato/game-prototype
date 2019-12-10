@@ -64,51 +64,53 @@ using candidates = std::vector<candidate>;
 
 using position_pair = std::pair<position, position>;
 
+template <typename T>
+inline std::optional<T> random_element_of_vector(std::vector<T> v) noexcept {
+  if (v.empty()) {
+    return {};
+  } else {
+    return v[std::rand() % v.size()];
+  }
+}
+
 inline void fill_stones(board& b) noexcept {
   auto stones = std::rand() % 5;
   if (stones > 0) {
     for (auto stone = 0; stone < stones; ++stone) {
-      auto positions = b.all_positions_if([&b](position pos, color) {
+      auto ps = all_positions_if(b.begin(), b.end(), [&b](position pos, color) {
         auto nv = b.neighber_view_of(pos, neighber_type::all);
-        auto count = std::count_if(nv.begin(), nv.end(),
-                                   [](color c) { return c.is_stone(); });
-        if (pos.row == 0 || pos.column == 0 ||
-            pos.row == static_cast<int>(b.rows()) - 1 ||
-            pos.column == static_cast<int>(b.columns()) - 1) {
-          return count == 0;
-        } else {
-          return count <= 1;
-        }
+        auto count = std::count(nv.begin(), nv.end(), color::stone());
+        return pos.row == 0 || pos.column == 0 ||
+                       pos.row == static_cast<int>(b.rows()) - 1 ||
+                       pos.column == static_cast<int>(b.columns()) - 1
+                   ? count == 0
+                   : count <= 1;
       });
-      b[positions[std::rand() % positions.size()]] = color::stone();
+      if (auto pos = random_element_of_vector(ps)) {
+        b[*pos] = color::stone();
+      }
     }
   }
 }
 
-inline std::optional<position_pair> random_empty_neighber_pair(
+inline std::optional<position_pair> random_connected_empty_positions(
     board& b) noexcept {
-  auto ps = b.all_positions_if([&b](position pos, color c) {
+  auto ps = all_positions_if(b.begin(), b.end(), [&b](position pos, color c) {
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
     return c.is_null() && std::count(nv.begin(), nv.end(), color::null()) > 0;
   });
-  if (ps.empty()) {
-    return {};
-  }
-
-  auto pos = ps[std::rand() % ps.size()];
-  auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-  positions neighbers;
-  for (auto it = nv.begin(); it != nv.end(); ++it) {
-    if (it->is_null()) {
-      neighbers.push_back(it.pos());
+  if (auto pos = random_element_of_vector(ps)) {
+    auto nv = b.neighber_view_of(*pos, neighber_type::no_diagonal);
+    auto neighbers = all_positions(nv.begin(), nv.end(), color::null());
+    if (auto neighber = random_element_of_vector(neighbers)) {
+      return std::make_optional<position_pair>(*pos, *neighber);
     }
   }
-  return std::make_optional<position_pair>(
-      pos, neighbers[std::rand() % neighbers.size()]);
+  return {};
 }
 
 inline bool fill_two_connected_seeds(board& b, color c) noexcept {
-  if (auto neighber_pair = random_empty_neighber_pair(b)) {
+  if (auto neighber_pair = random_connected_empty_positions(b)) {
     auto [pos, neighber] = *neighber_pair;
     b[pos] = c;
     b[neighber] = c;
@@ -123,27 +125,61 @@ inline void fill_seeds_in_board(board& b, int colors) noexcept {
   }
 }
 
+inline std::vector<std::pair<color, int>> sorted_color_counts(
+    board& b) noexcept {
+  std::map<color, int> counts_map;
+  color_land::for_each(b.begin(), b.end(), [&counts_map](position, color c) {
+    if (counts_map.find(c) != counts_map.end()) {
+      ++counts_map[c];
+    } else {
+      counts_map[c] = 1;
+    }
+  });
+  std::vector<std::pair<color, int>> counts;
+  std::copy(counts_map.begin(), counts_map.end(), std::back_inserter(counts));
+  std::sort(counts.begin(), counts.end(), [](const auto& lhs, const auto& rhs) {
+    return lhs.second < rhs.second;
+  });
+  return counts;
+}
+
+inline std::vector<std::pair<position, positions>> positionsWithEmptyNeighbers(
+    board& b, color expected_color) noexcept {
+  std::vector<std::pair<position, positions>> results;
+  color_land::for_each(
+      b.begin(), b.end(),
+      [&b, expected_color, &results](position pos, color c) {
+        if (c == expected_color) {
+          auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
+          auto empty_neighbers =
+              all_positions(nv.begin(), nv.end(), color::null());
+          if (empty_neighbers.size() > 0) {
+            results.emplace_back(pos, empty_neighbers);
+          }
+        }
+      });
+  std::sort(results.begin(), results.end(),
+            [](const auto& lhs, const auto& rhs) {
+              return lhs.second.size() > rhs.second.size();
+            });
+  return results;
+}
+
 inline void fill_board(board& b, size_t colors) noexcept {
   fill_stones(b);
   fill_seeds_in_board(b, colors);
-  while (true) {
-    auto ps = b.all_positions_if([&b](position pos, color c) {
-      auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-      return c.is_null() &&
-             std::count_if(nv.begin(), nv.end(), [](color neighber_color) {
-               return neighber_color.is_color();
-             }) > 0;
-    });
-    if (ps.empty()) {
-      break;
+  auto has_empty_neighbers = true;
+  while (has_empty_neighbers) {
+    has_empty_neighbers = false;
+    for (auto [c, count] : sorted_color_counts(b)) {
+      auto positions = positionsWithEmptyNeighbers(b, c);
+      if (positions.size() > 0) {
+        b[*random_element_of_vector(positions[0].second)] =
+            b[positions[0].first];
+        has_empty_neighbers = true;
+        break;
+      }
     }
-    auto pos = ps[std::rand() % ps.size()];
-    auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-    std::vector<color> neighbers;
-    std::copy_if(
-        nv.begin(), nv.end(), std::back_inserter(neighbers),
-        [](color neighber_color) { return neighber_color.is_color(); });
-    b[pos] = neighbers[std::rand() % neighbers.size()];
   }
 }
 
