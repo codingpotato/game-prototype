@@ -1,10 +1,13 @@
 #include <ctime>
 #include <iostream>
+#include <map>
 
 #include "board.hpp"
 
-constexpr std::array symbols{' ', 'a', 'b', 'c', 'd', 'e',
-                             'f', 'g', 'h', 'i', 'j', 'k'};
+std::map<color, char> symbols{{color{1}, 'a'}, {color{2}, 'b'}, {color{3}, 'c'},
+                              {color{3}, 'd'}, {color{3}, 'e'}, {color{3}, 'f'},
+                              {color{3}, 'g'}, {color{3}, 'h'}, {color{3}, 'i'},
+                              {color{3}, 'j'}, {color{3}, 'k'}};
 
 inline void show_board(const board& b, const solution_board& sb) noexcept {
   std::cout << "  ";
@@ -30,10 +33,7 @@ inline void show_board(const board& b, const solution_board& sb) noexcept {
   std::cout << "\n";
 }
 
-inline color color_of(char ch) noexcept {
-  return std::distance(symbols.begin(),
-                       std::find(symbols.begin(), symbols.end(), ch));
-}
+inline color color_of(char ch) noexcept { return color{ch - 'a' + 1}; }
 
 inline void play(const board& b, solution_board& sb) noexcept {
   while (true) {
@@ -62,13 +62,13 @@ int main() {
   board b{7, 7};
   fill_board(b, 7);
 
-  std::array<color, 8> counts{0, 0, 0, 0, 0, 0, 0, 0};
+  std::array<int, 8> counts{0, 0, 0, 0, 0, 0, 0, 0};
   for (color c : b) {
-    counts[c]++;
+    counts[c.raw_value]++;
   }
   std::sort(counts.begin(), counts.end());
-  for (auto c : counts) {
-    std::cout << c << " ";
+  for (auto count : counts) {
+    std::cout << count << " ";
   }
   std::cout << "\n";
 

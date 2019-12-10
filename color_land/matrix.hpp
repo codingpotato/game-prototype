@@ -108,6 +108,17 @@ struct matrix {
     iterator begin() const noexcept { return iterator{*this, 0}; }
     iterator end() const noexcept { return iterator{*this, directions_size()}; }
 
+    template <typename F>
+    int count_if(F&& f) noexcept {
+      int count = 0;
+      for (auto it = begin(); it != end(); ++it) {
+        if (f(it.pos(), *it)) {
+          ++count;
+        }
+      }
+      return count;
+    }
+
    private:
     matrix<T>& matrix_;
     position pos_;

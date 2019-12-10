@@ -65,16 +65,22 @@ using candidates = std::vector<candidate>;
 using position_pair = std::pair<position, position>;
 
 inline void fill_stones(board& b) noexcept {
-  auto stones = std::rand() % 4;
+  auto stones = std::rand() % 5;
   if (stones > 0) {
-    auto positions = b.all_positions_if([&b](position pos, color) {
-      return pos.row > 0 && pos.row < static_cast<int>(b.rows()) - 1 &&
-             pos.column > 0 && pos.column < static_cast<int>(b.columns()) - 1;
-    });
-    for (auto index = 0; index < stones; ++index) {
-      std::swap(positions[index],
-                positions[index + std::rand() % (positions.size() - index)]);
-      b[positions[index]] = color::stone();
+    for (auto stone = 0; stone < stones; ++stone) {
+      auto positions = b.all_positions_if([&b](position pos, color) {
+        auto nv = b.neighber_view_of(pos, neighber_type::all);
+        auto count = std::count_if(nv.begin(), nv.end(),
+                                   [](color c) { return c.is_stone(); });
+        if (pos.row == 0 || pos.column == 0 ||
+            pos.row == static_cast<int>(b.rows()) - 1 ||
+            pos.column == static_cast<int>(b.columns()) - 1) {
+          return count == 0;
+        } else {
+          return count <= 1;
+        }
+      });
+      b[positions[std::rand() % positions.size()]] = color::stone();
     }
   }
 }
