@@ -1,6 +1,8 @@
 #pragma once
 
 #include <algorithm>
+#include <iterator>
+#include <map>
 #include <optional>
 #include <set>
 
@@ -70,16 +72,15 @@ template <typename T>
 inline std::optional<T> random_element_of_vector(std::vector<T> v) noexcept {
   if (v.empty()) {
     return {};
-  } else {
-    return v[std::rand() % v.size()];
   }
+  return v[std::rand() % v.size()];
 }
 
 inline void fill_stones(board& b) noexcept {
   auto stones = std::rand() % 5;
   if (stones > 0) {
     for (auto stone = 0; stone < stones; ++stone) {
-      auto ps = all_positions_if(b.begin(), b.end(), [&b](position pos, color) {
+      auto ps = all_positions_if(b.begin(), b.end(), [&](position pos, color) {
         auto nv = b.neighber_view_of(pos, neighber_type::all);
         auto count = std::count(nv.begin(), nv.end(), color::stone());
         return pos.row == 0 || pos.column == 0 ||
@@ -97,7 +98,7 @@ inline void fill_stones(board& b) noexcept {
 
 inline std::optional<position_pair> random_connected_empty_positions(
     board& b) noexcept {
-  auto ps = all_positions_if(b.begin(), b.end(), [&b](position pos, color c) {
+  auto ps = all_positions_if(b.begin(), b.end(), [&](position pos, color c) {
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
     return c.is_null() && std::count(nv.begin(), nv.end(), color::null()) > 0;
   });
@@ -130,7 +131,7 @@ inline void fill_seeds_in_board(board& b, int colors) noexcept {
 inline std::vector<std::pair<color, int>> sorted_color_counts(
     board& b) noexcept {
   std::map<color, int> counts_map;
-  color_land::for_each(b.begin(), b.end(), [&counts_map](position, color c) {
+  color_land::for_each(b.begin(), b.end(), [&](position, color c) {
     if (c.is_color()) {
       if (counts_map.find(c) != counts_map.end()) {
         ++counts_map[c];
@@ -150,18 +151,15 @@ inline std::vector<std::pair<color, int>> sorted_color_counts(
 inline std::vector<std::pair<position, positions>> positionsWithEmptyNeighbers(
     board& b, color expected_color) noexcept {
   std::vector<std::pair<position, positions>> results;
-  color_land::for_each(
-      b.begin(), b.end(),
-      [&b, expected_color, &results](position pos, color c) {
-        if (c == expected_color) {
-          auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
-          auto empty_neighbers =
-              all_positions(nv.begin(), nv.end(), color::null());
-          if (empty_neighbers.size() > 0) {
-            results.emplace_back(pos, empty_neighbers);
-          }
-        }
-      });
+  color_land::for_each(b.begin(), b.end(), [&](position pos, color c) {
+    if (c == expected_color) {
+      auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
+      auto empty_neighbers = all_positions(nv.begin(), nv.end(), color::null());
+      if (empty_neighbers.size() > 0) {
+        results.emplace_back(pos, empty_neighbers);
+      }
+    }
+  });
   std::sort(results.begin(), results.end(),
             [](const auto& lhs, const auto& rhs) {
               return lhs.second.size() > rhs.second.size();
@@ -192,8 +190,7 @@ inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {
   for (auto it = b.begin(); it != b.end(); ++it) {
     auto pos = it.pos();
     auto nv = b.neighber_view_of(pos, neighber_type::all);
-    sb[pos].enclosure_number = std::count_if(
-        nv.begin(), nv.end(), [&b, &pos](color c) { return c == b[pos]; });
+    sb[pos].enclosure_number = std::count(nv.begin(), nv.end(), b[pos]);
   }
 }
 
@@ -234,8 +231,8 @@ inline candidate candidate_of(board& b, solution_board& sb,
   return s;
 }
 
-inline candidates get_candidates(board& b, solution_board& sb,
-                                 const information_board& ib) noexcept {
+inline candidates calculate_candidates(board& b, solution_board& sb,
+                                       const information_board& ib) noexcept {
   candidates ss;
   for (auto it = b.begin(); it != b.end(); ++it) {
     if (auto s = candidate_of(b, sb, ib, it.pos());
@@ -272,22 +269,36 @@ inline void update_neighber_information(board& b, solution_board& sb,
   }
 }
 
+inline std::optional<candidate> random_less_shown_candidate(
+    const candidates& cs) noexcept {
+  if (cs.empty()) {
+    return {};
+  }
+  size_t index = 1;
+  while (index < cs.size() &&
+         cs[index].shown_positions.size() <= cs[0].shown_positions.size()) {
+    ++index;
+  }
+  return cs[std::rand() % index];
+}
+
 inline solution_board generate_solution(board& b) noexcept {
   solution_board sb{b.rows(), b.columns()};
   calculate_enclosure_number(b, sb);
   information_board ib{b.rows(), b.columns()};
   while (true) {
-    auto cs = get_candidates(b, sb, ib);
-    if (cs.empty()) {
+    auto cs = calculate_candidates(b, sb, ib);
+    if (auto candidate = random_less_shown_candidate(cs)) {
+      for (auto pos : candidate->shown_positions) {
+        sb[pos].s = solution::shown;
+        update_neighber_information(b, sb, ib, pos);
+      }
+      for (auto pos : candidate->hidden_positions) {
+        sb[pos].s = solution::hidden;
+        update_neighber_information(b, sb, ib, pos);
+      }
+    } else {
       break;
-    }
-    for (auto pos : cs[0].shown_positions) {
-      sb[pos].s = solution::shown;
-      update_neighber_information(b, sb, ib, pos);
-    }
-    for (auto pos : cs[0].hidden_positions) {
-      sb[pos].s = solution::hidden;
-      update_neighber_information(b, sb, ib, pos);
     }
   }
   return sb;

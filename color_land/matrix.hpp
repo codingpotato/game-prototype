@@ -2,6 +2,7 @@
 
 #include <array>
 #include <vector>
+
 namespace color_land {
 
 enum class neighber_type { no_diagonal, all };

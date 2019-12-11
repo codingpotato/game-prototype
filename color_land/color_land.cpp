@@ -4,13 +4,9 @@
 
 #include "board.hpp"
 
-std::map<color_land::color, char> symbols{
-    {color_land::color{1}, 'a'}, {color_land::color{2}, 'b'},
-    {color_land::color{3}, 'c'}, {color_land::color{3}, 'd'},
-    {color_land::color{3}, 'e'}, {color_land::color{3}, 'f'},
-    {color_land::color{3}, 'g'}, {color_land::color{3}, 'h'},
-    {color_land::color{3}, 'i'}, {color_land::color{3}, 'j'},
-    {color_land::color{3}, 'k'}};
+inline char char_of_color(color_land::color c) noexcept {
+  return c.is_stone() ? '@' : 'a' + c.raw_value - 1;
+}
 
 inline void show_board(const color_land::board& b,
                        const color_land::solution_board& sb) noexcept {
@@ -27,7 +23,8 @@ inline void show_board(const color_land::board& b,
       }
       color_land::position pos{row, column};
       if (sb[pos].s == color_land::solution::shown) {
-        std::cout << symbols[b[pos]] << "," << sb[pos].enclosure_number << " ";
+        std::cout << char_of_color(b[pos]) << "," << sb[pos].enclosure_number
+                  << " ";
       } else {
         std::cout << "    ";
       }
@@ -66,18 +63,8 @@ inline void play(const color_land::board& b,
 
 int main() {
   std::srand(std::time(nullptr));
-  board b{7, 7};
+  color_land::board b{7, 7};
   fill_board(b, 7);
-
-  std::array<int, 8> counts{0, 0, 0, 0, 0, 0, 0, 0};
-  for (color c : b) {
-    counts[c.raw_value]++;
-  }
-  std::sort(counts.begin(), counts.end());
-  for (auto count : counts) {
-    std::cout << count << " ";
-  }
-  std::cout << "\n";
 
   auto sb = generate_solution(b);
   play(b, sb);
