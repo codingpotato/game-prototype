@@ -2,6 +2,7 @@
 
 #include <array>
 #include <vector>
+namespace color_land {
 
 enum class neighber_type { no_diagonal, all };
 
@@ -14,8 +15,8 @@ struct position {
   constexpr position(size_t r, size_t c) noexcept
       : row{static_cast<int>(r)}, column{static_cast<int>(c)} {}
 
-  friend bool operator==(const position& pos1, const position& pos2) noexcept {
-    return pos1.row == pos2.row && pos1.column == pos2.column;
+  friend bool operator==(const position& lhs, const position& rhs) noexcept {
+    return lhs.row == rhs.row && lhs.column == rhs.column;
   }
 };
 
@@ -39,11 +40,11 @@ struct matrix {
     T& operator*() const noexcept { return matrix_[index_]; }
     T* operator->() const noexcept { return &matrix_[index_]; }
 
-    friend bool operator==(const iterator& it1, const iterator& it2) noexcept {
-      return &it1.matrix_ == &it2.matrix_ && it1.index_ == it2.index_;
+    friend bool operator==(const iterator& lhs, const iterator& rhs) noexcept {
+      return &lhs.matrix_ == &rhs.matrix_ && lhs.index_ == rhs.index_;
     }
-    friend bool operator!=(const iterator& it1, const iterator& it2) noexcept {
-      return !(it1 == it2);
+    friend bool operator!=(const iterator& lhs, const iterator& rhs) noexcept {
+      return !(lhs == rhs);
     }
 
    private:
@@ -72,13 +73,13 @@ struct matrix {
       T& operator*() const noexcept { return nv_.matrix_[pos()]; }
       T* operator->() const noexcept { return &nv_.matrix_[pos()]; }
 
-      friend bool operator==(const iterator& it1,
-                             const iterator& it2) noexcept {
-        return &it1.nv_ == &it2.nv_ && it1.index_ == it2.index_;
+      friend bool operator==(const iterator& lhs,
+                             const iterator& rhs) noexcept {
+        return &lhs.nv_ == &rhs.nv_ && lhs.index_ == rhs.index_;
       }
-      friend bool operator!=(const iterator& it1,
-                             const iterator& it2) noexcept {
-        return !(it1 == it2);
+      friend bool operator!=(const iterator& lhs,
+                             const iterator& rhs) noexcept {
+        return !(lhs == rhs);
       }
 
      private:
@@ -157,11 +158,10 @@ struct matrix {
   }
 
   template <typename F>
-  void for_each(F&& f) const noexcept {
+  void for_each(F f) const noexcept {
     for (size_t row = 0; row < rows_; ++row) {
       for (size_t column = 0; column < columns_; ++column) {
-        std::forward<F>(f)(position{row, column},
-                           elements_[index_of(row, column)]);
+        f(position{row, column}, elements_[index_of(row, column)]);
       }
     }
   }
@@ -179,24 +179,18 @@ struct matrix {
   std::vector<T> elements_;
 };
 
-namespace color_land {
-
 template <typename Iterator, typename F>
-inline void for_each(Iterator&& first, Iterator&& last, F&& f) noexcept {
-  for (auto it = std::forward<Iterator>(first);
-       it != std::forward<Iterator>(last); ++it) {
-    std::forward<F>(f)(it.pos(), *it);
+inline void for_each(Iterator first, Iterator last, F f) noexcept {
+  for (auto it = first; it != last; ++it) {
+    f(it.pos(), *it);
   }
 }
 
-}  // namespace color_land
-
 template <typename Iterator>
-inline positions all_positions(Iterator&& first, Iterator&& last,
+inline positions all_positions(Iterator first, Iterator last,
                                typename Iterator::value_type v) noexcept {
   positions ps;
-  for (auto it = std::forward<Iterator>(first);
-       it != std::forward<Iterator>(last); ++it) {
+  for (auto it = first; it != last; ++it) {
     if (*it == v) {
       ps.push_back(it.pos());
     }
@@ -205,14 +199,14 @@ inline positions all_positions(Iterator&& first, Iterator&& last,
 }
 
 template <typename Iterator, typename F>
-inline positions all_positions_if(Iterator&& first, Iterator&& last,
-                                  F&& f) noexcept {
+inline positions all_positions_if(Iterator first, Iterator last, F f) noexcept {
   positions ps;
-  for (auto it = std::forward<Iterator>(first);
-       it != std::forward<Iterator>(last); ++it) {
-    if (std::forward<F>(f)(it.pos(), *it)) {
+  for (auto it = first; it != last; ++it) {
+    if (f(it.pos(), *it)) {
       ps.push_back(it.pos());
     }
   }
   return ps;
 }
+
+}  // namespace color_land

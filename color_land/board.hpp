@@ -6,6 +6,8 @@
 
 #include "matrix.hpp"
 
+namespace color_land {
+
 struct color {
   int raw_value = null_value;
 
@@ -129,10 +131,12 @@ inline std::vector<std::pair<color, int>> sorted_color_counts(
     board& b) noexcept {
   std::map<color, int> counts_map;
   color_land::for_each(b.begin(), b.end(), [&counts_map](position, color c) {
-    if (counts_map.find(c) != counts_map.end()) {
-      ++counts_map[c];
-    } else {
-      counts_map[c] = 1;
+    if (c.is_color()) {
+      if (counts_map.find(c) != counts_map.end()) {
+        ++counts_map[c];
+      } else {
+        counts_map[c] = 1;
+      }
     }
   });
   std::vector<std::pair<color, int>> counts;
@@ -171,11 +175,12 @@ inline void fill_board(board& b, size_t colors) noexcept {
   auto has_empty_neighbers = true;
   while (has_empty_neighbers) {
     has_empty_neighbers = false;
-    for (auto [c, count] : sorted_color_counts(b)) {
-      auto positions = positionsWithEmptyNeighbers(b, c);
-      if (positions.size() > 0) {
-        b[*random_element_of_vector(positions[0].second)] =
-            b[positions[0].first];
+    for (auto color_count : sorted_color_counts(b)) {
+      auto positionsAndNeighbers =
+          positionsWithEmptyNeighbers(b, color_count.first);
+      if (positionsAndNeighbers.size() > 0) {
+        b[*random_element_of_vector(positionsAndNeighbers[0].second)] =
+            b[positionsAndNeighbers[0].first];
         has_empty_neighbers = true;
         break;
       }
@@ -287,3 +292,5 @@ inline solution_board generate_solution(board& b) noexcept {
   }
   return sb;
 }
+
+}  // namespace color_land
