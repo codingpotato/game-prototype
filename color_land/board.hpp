@@ -188,9 +188,11 @@ inline void fill_board(board& b, size_t colors) noexcept {
 
 inline void calculate_enclosure_number(board& b, solution_board& sb) noexcept {
   for (auto it = b.begin(); it != b.end(); ++it) {
-    auto pos = it.pos();
-    auto nv = b.neighber_view_of(pos, neighber_type::all);
-    sb[pos].enclosure_number = std::count(nv.begin(), nv.end(), b[pos]);
+    if (it->is_color()) {
+      auto pos = it.pos();
+      auto nv = b.neighber_view_of(pos, neighber_type::all);
+      sb[pos].enclosure_number = std::count(nv.begin(), nv.end(), b[pos]);
+    }
   }
 }
 
@@ -284,6 +286,11 @@ inline std::optional<candidate> random_less_shown_candidate(
 
 inline solution_board generate_solution(board& b) noexcept {
   solution_board sb{b.rows(), b.columns()};
+  b.for_each([&](position pos, color c) {
+    if (c.is_stone()) {
+      sb[pos].s = solution::shown;
+    }
+  });
   calculate_enclosure_number(b, sb);
   information_board ib{b.rows(), b.columns()};
   while (true) {

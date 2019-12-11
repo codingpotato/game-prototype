@@ -43,8 +43,8 @@ inline void show_solution(const color_land::solution_board& sb) noexcept {
 
 int main() {
   std::srand(std::time(nullptr));
-  color_land::board b{7, 7};
-  fill_board(b, 8);
+  color_land::board b{4, 4};
+  fill_board(b, 6);
   auto sb = generate_solution(b);
   show_board(b);
   show_solution(sb);
