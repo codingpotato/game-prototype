@@ -76,10 +76,9 @@ inline std::optional<T> random_element_of_vector(std::vector<T> v) noexcept {
   return v[std::rand() % v.size()];
 }
 
-inline void fill_stones(board& b) noexcept {
-  auto stones = std::rand() % 5;
+inline void fill_stones(board& b, size_t stones) noexcept {
   if (stones > 0) {
-    for (auto stone = 0; stone < stones; ++stone) {
+    for (size_t stone = 0; stone < stones; ++stone) {
       auto ps = all_positions_if(b.begin(), b.end(), [&](position pos, color) {
         auto nv = b.neighber_view_of(pos, neighber_type::all);
         auto count = std::count(nv.begin(), nv.end(), color::stone());
@@ -167,8 +166,8 @@ inline std::vector<std::pair<position, positions>> positionsWithEmptyNeighbers(
   return results;
 }
 
-inline void fill_board(board& b, size_t colors) noexcept {
-  fill_stones(b);
+inline void fill_board(board& b, size_t colors, size_t stones) noexcept {
+  fill_stones(b, stones);
   fill_seeds_in_board(b, colors);
   auto has_empty_neighbers = true;
   while (has_empty_neighbers) {
