@@ -33,7 +33,7 @@ struct color {
     return lhs.raw_value < rhs.raw_value;
   }
 
- private:
+private:
   static constexpr int null_value_ = -1;
   static constexpr int stone_value_ = 0;
 };
@@ -72,7 +72,7 @@ inline std::optional<T> random_element_of(std::vector<T> v) noexcept {
   return v[std::rand() % v.size()];
 }
 
-inline void fill_stones(board& b, size_t stones) noexcept {
+inline void fill_stones(board &b, size_t stones) noexcept {
   if (stones == 0) {
     return;
   }
@@ -92,8 +92,8 @@ inline void fill_stones(board& b, size_t stones) noexcept {
   }
 }
 
-inline std::optional<position_pair> random_connected_empty_positions(
-    board& b) noexcept {
+inline std::optional<position_pair>
+random_connected_empty_positions(board &b) noexcept {
   auto ps = all_positions_if(b.begin(), b.end(), [&](position pos, color c) {
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
     return c.is_null() && std::count(nv.begin(), nv.end(), color::null()) > 0;
@@ -108,7 +108,7 @@ inline std::optional<position_pair> random_connected_empty_positions(
   return {};
 }
 
-inline bool fill_two_connected_seeds(board& b, color c) noexcept {
+inline bool fill_two_connected_seeds(board &b, color c) noexcept {
   if (auto neighber_pair = random_connected_empty_positions(b)) {
     auto [pos, neighber] = *neighber_pair;
     b[pos] = c;
@@ -118,14 +118,14 @@ inline bool fill_two_connected_seeds(board& b, color c) noexcept {
   return false;
 }
 
-inline void fill_seeds_in_board(board& b, int colors) noexcept {
+inline void fill_seeds_in_board(board &b, int colors) noexcept {
   for (auto value = 1; value <= colors; ++value) {
     fill_two_connected_seeds(b, color{value});
   }
 }
 
-inline std::vector<std::pair<color, int>> sorted_color_counts(
-    board& b) noexcept {
+inline std::vector<std::pair<color, int>>
+sorted_color_counts(board &b) noexcept {
   std::map<color, int> counts_map;
   color_land::for_each(b.begin(), b.end(), [&](position, color c) {
     if (c.is_color()) {
@@ -138,14 +138,14 @@ inline std::vector<std::pair<color, int>> sorted_color_counts(
   });
   std::vector<std::pair<color, int>> counts;
   std::copy(counts_map.begin(), counts_map.end(), std::back_inserter(counts));
-  std::sort(counts.begin(), counts.end(), [](const auto& lhs, const auto& rhs) {
+  std::sort(counts.begin(), counts.end(), [](const auto &lhs, const auto &rhs) {
     return lhs.second < rhs.second;
   });
   return counts;
 }
 
 inline std::vector<std::pair<position, positions>>
-positions_with_empty_neighbers(board& b, color expected_color) noexcept {
+positions_with_empty_neighbers(board &b, color expected_color) noexcept {
   std::vector<std::pair<position, positions>> results;
   color_land::for_each(b.begin(), b.end(), [&](position pos, color c) {
     if (c == expected_color) {
@@ -157,13 +157,13 @@ positions_with_empty_neighbers(board& b, color expected_color) noexcept {
     }
   });
   std::sort(results.begin(), results.end(),
-            [](const auto& lhs, const auto& rhs) {
+            [](const auto &lhs, const auto &rhs) {
               return lhs.second.size() > rhs.second.size();
             });
   return results;
 }
 
-inline void fill_board(board& b, size_t colors, size_t stones) noexcept {
+inline void fill_board(board &b, size_t colors, size_t stones) noexcept {
   fill_stones(b, stones);
   fill_seeds_in_board(b, colors);
   auto has_empty_neighbers = true;
@@ -182,8 +182,8 @@ inline void fill_board(board& b, size_t colors, size_t stones) noexcept {
   }
 }
 
-inline void calculate_enclosure_number(board& b,
-                                       information_board& ib) noexcept {
+inline void calculate_enclosure_number(board &b,
+                                       information_board &ib) noexcept {
   for (auto it = b.begin(); it != b.end(); ++it) {
     if (it->is_color()) {
       auto pos = it.pos();
@@ -193,32 +193,32 @@ inline void calculate_enclosure_number(board& b,
   }
 }
 
-inline int known_enclosure_number(board& b, puzzle_board& sb,
+inline int known_enclosure_number(board &b, puzzle_board &pb,
                                   position pos) noexcept {
   auto nv = b.neighber_view_of(pos, neighber_type::all);
   auto count = 0;
   for (auto it = nv.begin(); it != nv.end(); ++it) {
-    if (sb[it.pos()].stat != puzzle::unknown && *it == b[pos]) {
+    if (pb[it.pos()].stat != puzzle::unknown && *it == b[pos]) {
       ++count;
     }
   }
   return count;
 }
 
-inline candidate candidate_of(board& b, puzzle_board& sb,
-                              const information_board& ib,
+inline candidate candidate_of(board &b, puzzle_board &pb,
+                              const information_board &ib,
                               position pos) noexcept {
   candidate result{pos};
-  if (sb[pos].stat == puzzle::unknown) {
+  if (pb[pos].stat == puzzle::unknown) {
     result.shown_positions.emplace_back(pos.row, pos.column);
   }
-  auto type = ib[pos].enclosure_number - known_enclosure_number(b, sb, pos) == 1
+  auto type = ib[pos].enclosure_number - known_enclosure_number(b, pb, pos) == 1
                   ? neighber_type::no_diagonal
                   : neighber_type::all;
   auto nv = b.neighber_view_of(pos, type);
   for (auto it = nv.begin(); it != nv.end(); ++it) {
     auto neighber_pos = it.pos();
-    if (sb[neighber_pos].stat == puzzle::unknown) {
+    if (pb[neighber_pos].stat == puzzle::unknown) {
       if (*it == b[pos]) {
         result.hidden_positions.emplace_back(neighber_pos.row,
                                              neighber_pos.column);
@@ -236,48 +236,48 @@ inline candidate candidate_of(board& b, puzzle_board& sb,
   return result;
 }
 
-inline candidates calculate_candidates(board& b, puzzle_board& sb,
-                                       const information_board& ib) noexcept {
+inline candidates calculate_candidates(board &b, puzzle_board &pb,
+                                       const information_board &ib) noexcept {
   candidates result;
   for (auto it = b.begin(); it != b.end(); ++it) {
-    if (auto cand = candidate_of(b, sb, ib, it.pos());
+    if (auto cand = candidate_of(b, pb, ib, it.pos());
         cand.shown_positions.size() > 0 || cand.hidden_positions.size() > 0) {
-      result.emplace_back(cand);
+      result.push_back(std::move(cand));
     }
   }
-  std::sort(
-      result.begin(), result.end(),
-      [](const candidate& lhs, const candidate& rhs) {
-        return lhs.shown_positions.size() < rhs.shown_positions.size() ||
-               (lhs.shown_positions.size() == rhs.shown_positions.size() &&
-                lhs.is_difficult);
-      });
+  std::sort(result.begin(), result.end(),
+            [](const candidate &lhs, const candidate &rhs) {
+              return lhs.shown_positions.size() < rhs.shown_positions.size() ||
+                     (lhs.shown_positions.size() ==
+                          rhs.shown_positions.size() &&
+                      lhs.is_difficult && !rhs.is_difficult);
+            });
   return result;
 }
 
-inline void update_information(board& b, puzzle_board& sb,
-                               information_board& ib, position pos) noexcept {
-  if (ib[pos].enclosure_number == known_enclosure_number(b, sb, pos)) {
+inline void update_information(board &b, puzzle_board &pb,
+                               information_board &ib, position pos) noexcept {
+  if (ib[pos].enclosure_number == known_enclosure_number(b, pb, pos)) {
     auto nv = b.neighber_view_of(pos, neighber_type::all);
     for (auto it = nv.begin(); it != nv.end(); ++it) {
-      if (sb[it.pos()].stat == puzzle::unknown) {
+      if (pb[it.pos()].stat == puzzle::unknown) {
         ib[it.pos()].impossible_colors.insert(b[pos]);
       }
     }
   }
 }
 
-inline void update_neighber_information(board& b, puzzle_board& sb,
-                                        information_board& ib,
+inline void update_neighber_information(board &b, puzzle_board &pb,
+                                        information_board &ib,
                                         position pos) noexcept {
   auto nv = b.neighber_view_of(pos, neighber_type::all);
   for (auto it = nv.begin(); it != nv.end(); ++it) {
-    update_information(b, sb, ib, it.pos());
+    update_information(b, pb, ib, it.pos());
   }
 }
 
-inline std::optional<candidate> random_less_shown_candidate(
-    const candidates& cs, bool is_difficult) noexcept {
+inline std::optional<candidate>
+random_less_shown_candidate(const candidates &cs, bool is_difficult) noexcept {
   if (cs.empty()) {
     return {};
   }
@@ -290,31 +290,31 @@ inline std::optional<candidate> random_less_shown_candidate(
   return cs[std::rand() % index];
 }
 
-inline puzzle_board generate_puzzle(board& b, bool is_difficult) noexcept {
-  puzzle_board sb{b.rows(), b.columns()};
+inline puzzle_board generate_puzzle(board &b, bool is_difficult) noexcept {
+  puzzle_board pb{b.rows(), b.columns()};
   b.for_each([&](position pos, color c) {
     if (c.is_stone()) {
-      sb[pos].stat = puzzle::shown;
+      pb[pos].stat = puzzle::shown;
     }
   });
   information_board ib{b.rows(), b.columns()};
   calculate_enclosure_number(b, ib);
   while (true) {
-    auto cs = calculate_candidates(b, sb, ib);
+    auto cs = calculate_candidates(b, pb, ib);
     if (auto candidate = random_less_shown_candidate(cs, is_difficult)) {
       for (auto pos : candidate->shown_positions) {
-        sb[pos].stat = puzzle::shown;
-        update_neighber_information(b, sb, ib, pos);
+        pb[pos].stat = puzzle::shown;
+        update_neighber_information(b, pb, ib, pos);
       }
       for (auto pos : candidate->hidden_positions) {
-        sb[pos].stat = puzzle::hidden;
-        update_neighber_information(b, sb, ib, pos);
+        pb[pos].stat = puzzle::hidden;
+        update_neighber_information(b, pb, ib, pos);
       }
     } else {
       break;
     }
   }
-  return sb;
+  return pb;
 }
 
-}  // namespace color_land
+} // namespace color_land
