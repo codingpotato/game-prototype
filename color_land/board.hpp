@@ -33,7 +33,7 @@ struct color {
     return lhs.raw_value < rhs.raw_value;
   }
 
-private:
+ private:
   static constexpr int null_value_ = -1;
   static constexpr int stone_value_ = 0;
 };
@@ -92,8 +92,8 @@ inline void fill_stones(board &b, size_t stones) noexcept {
   }
 }
 
-inline std::optional<position_pair>
-random_connected_empty_positions(board &b) noexcept {
+inline std::optional<position_pair> random_connected_empty_positions(
+    board &b) noexcept {
   auto ps = all_positions_if(b.begin(), b.end(), [&](position pos, color c) {
     auto nv = b.neighber_view_of(pos, neighber_type::no_diagonal);
     return c.is_null() && std::count(nv.begin(), nv.end(), color::null()) > 0;
@@ -124,8 +124,8 @@ inline void fill_seeds_in_board(board &b, int colors) noexcept {
   }
 }
 
-inline std::vector<std::pair<color, int>>
-sorted_color_counts(board &b) noexcept {
+inline std::vector<std::pair<color, int>> sorted_color_counts(
+    board &b) noexcept {
   std::map<color, int> counts_map;
   color_land::for_each(b.begin(), b.end(), [&](position, color c) {
     if (c.is_color()) {
@@ -245,13 +245,13 @@ inline candidates calculate_candidates(board &b, puzzle_board &pb,
       result.push_back(std::move(cand));
     }
   }
-  std::sort(result.begin(), result.end(),
-            [](const candidate &lhs, const candidate &rhs) {
-              return lhs.shown_positions.size() < rhs.shown_positions.size() ||
-                     (lhs.shown_positions.size() ==
-                          rhs.shown_positions.size() &&
-                      lhs.is_difficult && !rhs.is_difficult);
-            });
+  std::sort(
+      result.begin(), result.end(),
+      [](const candidate &lhs, const candidate &rhs) {
+        return lhs.shown_positions.size() < rhs.shown_positions.size() ||
+               (lhs.shown_positions.size() == rhs.shown_positions.size() &&
+                lhs.is_difficult && !rhs.is_difficult);
+      });
   return result;
 }
 
@@ -276,8 +276,8 @@ inline void update_neighber_information(board &b, puzzle_board &pb,
   }
 }
 
-inline std::optional<candidate>
-random_less_shown_candidate(const candidates &cs, bool is_difficult) noexcept {
+inline std::optional<candidate> random_less_shown_candidate(
+    const candidates &cs, bool is_difficult) noexcept {
   if (cs.empty()) {
     return {};
   }
@@ -290,14 +290,18 @@ random_less_shown_candidate(const candidates &cs, bool is_difficult) noexcept {
   return cs[std::rand() % index];
 }
 
-inline puzzle_board generate_puzzle(board &b, bool is_difficult) noexcept {
-  puzzle_board pb{b.rows(), b.columns()};
+inline void set_shown_status_for_stones(board &b, puzzle_board &pb) noexcept {
   b.for_each([&](position pos, color c) {
     if (c.is_stone()) {
       pb[pos].stat = puzzle::shown;
     }
   });
+}
+
+inline puzzle_board generate_puzzle(board &b, bool is_difficult) noexcept {
+  puzzle_board pb{b.rows(), b.columns()};
   information_board ib{b.rows(), b.columns()};
+  set_shown_status_for_stones(b, pb);
   calculate_enclosure_number(b, ib);
   while (true) {
     auto cs = calculate_candidates(b, pb, ib);
@@ -317,4 +321,4 @@ inline puzzle_board generate_puzzle(board &b, bool is_difficult) noexcept {
   return pb;
 }
 
-} // namespace color_land
+}  // namespace color_land
