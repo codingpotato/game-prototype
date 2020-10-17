@@ -1,0 +1,619 @@
+Degree:degree,master,certificate,doctor,bachelor,diploma
+Mineral:emerald,quartz,graphite,agate,bismuth,halite
+Salad Dressing:oil and vinegar,house dressing,blue cheese,thousand island,French dressing,ranch,vinegar
+Bill:write a check,account number,check book,credit card,amount due,cash,overdue
+Continent:South America,North America,Australia,Europe,Africa,Asia,Antarctica
+Day of Week:Friday,Monday,Sunday,Tuesday,Saturday,Thursday,Wednesday
+Money:bill,quarter,dollar,cent,coin,penny,nickel,dime
+Storage:bureau,cabinet,chest,buffet,bookshelf,bookcase,sideboard,credenza
+Luggage:carry on bag,makeup case,tote bag,garment bag,duffle bag,luggage carrier,trunk,suitcase,knapsack
+New Year:January,December,party,calendar,holiday,resolution,midnight,celebrate,countdown
+Football:end,middle guard,guard,tackle,quarterback,linebacker,cornerback,fullback,halfback
+Headgear:baseball cat,cap,hat,ear muffs,helmet,scarf,bandana,beret,hardhat
+Linguistics:regular,marked,descriptive,taxonomic,figurative,generative,unproductive,diachronic,synchronic
+Harbor:ship,dock,crane,lighthouse,wharf,buoy,shipyard,breakwater,tugboat
+Prepositions:of,to,in,alongside of,for,on,by,with,from,at
+Family Related:do the laundry,make the bed,buy the groceries,clean the house,clean the room,pay the bills,walk the dog,take out garbage,fix things,iron clothes
+Frequency:all the time,on the first of every month,off and on,now and then,once in a while,once in a blue moon,every now and then,once a year,a few times,twice a month
+Time Related:in the mornings,by and by,now and then,once in a while,in a few minutes,from time to time,for a long time,once upon a time,after,later than
+Place Related:to,outside of,next to,on top of,on,up,out,over,under,off
+Crime:break the law,break in,commit a crime,get away with,hold up,break out,get away,police car,store detective,legal
+Job Related:date of birth,next of kin,reason for leaving,first name,date,name,state,last name,city,family name
+Quantity:lots of,all,one,other,any,some,add,each,many,both
+Corporate:buy in,information,service,data,product,system,item,international,report,national
+State:district of columbia,new york,new mexico,new hampshire,south carolina,north carolina,south dakota,texas,north dakota,washington
+Hotel:check in,single with bath,information desk,room service,hotel,service charge,room number,gift shop,single room,tax
+Sport:track and field,home,out,game,team,box,play,car racing,field,club
+Airport:check in,time difference,departure time,time zones,boarding time,security check,body check,personal effects,baggage claim check,customs officer
+House:chest of drawers,mobile home,office,house,room,book shelf,TV room,table,study,sun room
+Christmas:Prince of Peace,party,red,family reunion,star,cards,baby,white sauce,green,gold
+Web:page,search,view,click,post,message,send,type,area,link
+Computer:search,help,click,find,name,data,number,software,line,type
+Test:study for,take an exam,get through,test,ID card,test paper,pass,answer sheet,grade,fail
+Weapon:bow and arrow,club,land mine,hand grenade,stone,gun,tank,nuclear bomb,knife,bomb
+Tool:trap and drain auger,file,garden line,large level,open end wrench,post hole digger,box end wrench,small hand cultivator,portable power saw,small wrecking bar
+Fire Fighting:hook and ladder truck,search light,fire department,volunteer fire department,fire alarm box,fire,fire chief,fire escape,fire extinguisher,fire hydrant
+Baseball:home team,home plate,one ball,strike one,tag out,strike out,day game,first baseman,strike two,two balls
+Military:can,state,music,post,part,line,file,section,house,guide
+Book:page number,title page,half title page,copyright,book,best seller,index,picture book,reference book,text
+City Name:new york,new orleans,new delhi,jersey city,kansas city,oklahoma city,long beach,london,washington,north las vegas
+Dinnerware:gravy boat and stand,water pitcher,cup,tea cup,fish platter,serving bowl,coffee mug,sugar bowl,salad plate,soup bowl
+Business:buy,product,add,support,message,order,report,send,check,own
+Music:time,click,send,right,take,control,property,card,left,note
+Time:date,year,day,after,before,today,computer,during,digital,cell phone
+Shopping:service,price,product,store,check,total,shop,directory,return,account
+Subject:home economics,health,music,world geography,law,history,art,computer science,science,English
+Algorithms:free,online,best,local,complete,average,simple,active,mean,lower
+Building:school,post office,university,book store,hotel,store,department store,school building,house,office building
+Physics:free,work,open,power,current,second,body,energy,natural,period
+Geometry:web,center,line,right,type,area,form,point,model,range
+Age:new,current,old,advanced,recent,young,mature,modern,fresh,vintage
+Dessert:pie a la mode,chocolate bar,ice cream,sweet roll,apple pie,birthday cake,fruit,sweet rolls,chocolate cake,chocolate chip cookie
+Phones:number,message,store,area,phone,game,download,text,digital,application
+Geography:world,city,map,area,south,north,country,source,west,key
+Post Office:mail,post card,post office box,personal mail,address,picture post car,air mail,return address,insurance,sea mail
+Month:May,January,December,June,October,November,March,September,July,April
+3D Graphics:world,group,map,life,text,image,point,join,model,body
+Downtown:garbage can,news stand,car,department store,street sign,shop window,street light,neon sign,traffic light,traffic island
+Accounting:price,book,report,change,account,stock,plan,cost,paper,interest
+History:time,date,history,age,journal,archive,calendar,culture,classic,century
+School:high school,university,office,junior high school,technical school,graduate school,elementary school,college,library,student
+Telephone:area code,listed number,international call,house phone,local call,white pages,mobile phone,recorded message,telephone book,unlisted number
+Place:school,post office,book store,department store,house,office building,library,convenience store,fire department,barber shop
+Travel:date,city,hotel,travel,rate,class,space,conference,transfer,agent
+Newspaper:back page,front page,TV guide,newspaper office,lead story,morning edition,evening edition,editor,feature,extra
+Number:one,two,three,four,five,six,ten,seven,eight,nine
+Design:line,type,design,file,guide,value,print,point,register,space
+Communicate:contact,message,phone,text,call,talk,chat,express,ring,speak
+Bank:time deposit account,check,account,money,save,customer,credit card,credit,pay,security guard
+Algorithm:list,set,link,model,performance,language,key,range,child,head
+Gaming:order,map,game,level,class,team,action,model,player,points
+Container:can,case,box,glass,bin,basket,bag,pocket,plate,carrier
+Manupulation:add,order,file,place,change,create,put,edit,sort,turn
+Data Structure:list,set,map,image,table,field,record,union,tree,bin
+Startup:user,design,content,customer,team,market,model,plan,mobile,space
+Construction:post,section,board,level,title,course,story,light,run,fall
+Real Estate:use,index,title,interest,term,lot,mortgage,taking,contract,survey
+Filmmaking:music,set,stock,test,key,light,film,director,sound,camera
+Software:data,program,code,server,event,function,build,object,client,command
+Typography:center,type,family,point,body,color,style,en,weight,copy
+Character:free,simple,quick,kind,friendly,independent,happy,strong,creative,helpful
+Radio:media,board,rating,level,play,share,radio,format,log,edit
+Country:United States,United Kingdom,Canada,South Africa,South Korea,China,North Korea,France,Germany,India
+City:post office,store,street,park,road,building,bank,fire station,police station,station
+Size:long,big,small,little,large,short,average,wide,huge,medium
+Programming:make,code,link,release,run,step,build,develop,install,patch
+Classroom:book,map,computer,white board,bulletin board,calendar,dictionary,chair,desk,clock
+Network:internet,address,link,server,error,domain,active,port,client,traffic
+Color:black,white,red,light blue,blue,green,gold,yellow green,yellow,silver
+Catering:water,main course,food,course,equipment,dining room,environment,menu,glass,secure
+Body:back,body,hand,head,heart,face,blood,hair,feet,skin
+Teeth:first molar,first premolar,back teeth,second molar,second premolar,baby teeth,central incisor,front teeth,adult teeth,third molar
+Weather:great,air,hot,light,sun,weather,clear,nice,degree,cool
+Halloween:trick or treat,October,black cat,ghost,candy,costume,bat,witch,vampire,pumpkin
+Education:school,education,student,president,graduate student,head teacher,vice president,teacher,graduate assistant,lab assistant
+Restaurant:order,check,water,bill,menu,cup,coffee,breakfast,drink,tea
+People Related:good looking,old,young,middle class,popular,responsible,friendly,happy,beautiful,poor
+Justice:community service,court case,court,cell,fine,trial,death penalty,justice,capital punishment,defense
+Linear Algebra:map,form,image,space,function,basis,column,flag,row,matrix
+Creation:make,start,create,base,build,improve,develop,begin,produce,establish
+Look:view,check,look,scan,glance,glimpse,peek,stare,glare,peep
+Swimming:water,life guard,deep end,shallow end,diving board,lake,turn,river,dog paddle,swimming pool
+Shoe and Footwear:work boots,T strap shoes,high heel shoes,training shoes,golf shoes,shoes,basketball shoes,dress shoes,tennis shoes,casual shoes
+Stationery:book ends,appointment book,paper,rotary file,filing box,paper clips,paper punch,expanding files,letter scales,letter opener
+3D Printing:support,model,step,printer,structure,bed,resolution,sheet,motor,concept
+Set theory:set,member,class,union,limit,element,pair,universe,partition,complement
+Water:source,run,island,sound,lake,bay,river,port,channel,spring
+Vehicle:car,sports car,police car,fire engine,road grader,bus,container truck,tank,dump truck,crane truck
+Smoking:non smoking section,tax,legal age,smoking section,non smoker,package,light smoker,filter,lung cancer,vending machine
+Valentine's Day:love,card,red,February,heart,rose,flower,sweet,chocolate,valentine
+Angle:point,straight line,right angle,curved line,zigzag line,parallel lines,straight angle,corresponding angle,opposite angle,acute angle
+Thought:know,think,plan,focus,reason,reflect,conclude,concentrate,ponder,speculate
+Cooking:can opener,paper towels,heat,measuring cup,rolling pin,mixing bowl,burn,knife,steam,grill
+Sports:board,save,stop,score,pass,hit,block,trip,jump,fight
+Writing:copyright,journal,editor,agent,advance,canon,draft,editorial,proposal,hardcover
+Shape:full,star,wide,round,fat,flat,square,solid,straight,compact
+Art:design,print,color,display,cast,mix,draw,paint,chip,exhibit
+Movement:march,run,rock,speed,stay,turn,race,stand,skip,jump
+Machine Learning:class,database,function,loss,decision,feature,prior,transfer,factor,accuracy
+Food:water,food,oil,kitchen,wine,fish,coffee,ice,roll,drink
+Car Parts:CD player,light,air cleaner,gasoline level gauge,front seat,engine block,sun visor,turn signal,door,license plate
+Complexity:hard,easy,direct,clear,simple,basic,complex,plain,pure,obvious
+Insurance:rate,value,agreement,agent,benefit,limit,audit,accident,asset,attachment
+Gardening:water,sell,cover,sort,plant,pick,mix,thin,spray,tie
+Material:paper,gold,silver,glass,metal,skin,wood,steel,leather,stone
+Motorcycle:back tire,engine,tail light,turn signal,front tire,gas tank,chain,gear shift,seat,disk brake
+Driving:road,drive,turn,stop,hill,pass,coast,avenue,bridge,handle
+Chemistry:energy,term,base,force,volume,charge,element,atom,acid,frequency
+Adverb:never,almost never,almost,simply,recently,hardly ever,sometimes,generally,frequently,nearly
+Fruit:date,apple,orange,fig,cherry,lemon,berry,blackberry,banana,lime
+Nationality:American,British,Canadian,Chinese,German,Australian,Russian,Italian,Greek,Swiss
+Grphics:group,clear,scale,fill,delete,zoom,replace,mask,stretch,extract
+Transportation:car,ship,horse,bus,passenger ship,boat,truck,train,swimming,jet
+Job:author,printer,editor,teacher,fire fighter,professor,doctor,criminal,judge,lawyer
+Drink:water,green tea,wine,coffee,ice coffee,ice tea,soft drink,tea,orange juice,milk
+Hair:black hair,red hair,brown hair,straight hair,gray hair,auburn hair,blond hair,kinky hair,curly hair,wavy hair
+Corporate job:director,manager,executive,agent,officer,buyer,developer,assistant,associate,designer
+Liquid:water,oil,blood,coffee,tea,cream,alcohol,milk,juice,soup
+Furniture:table,baby bed,bed,hall stand,chair,desk,seat,cabinet,lamp,chest
+Clothes:T shirt,shoes,shirt,mini skirt,dress,cap,hat,sweat shirt,suit,boots
+Plants:garden,bush,tree,wood,forest,palm,root,flower,fruit,seed
+Winter:December,season,winter,ice,cold,Merry Christmas,hat,boots,coat,candle
+Wood Burning Stove:poker,air inlet control,log carrier,log tongs,loading door,chimney pipe,trim collar,flue pipe,chimney pipe elbow,ash lid
+Refrigerator:thermostat control,glass cover,storage door,fan,switch,handle,freezer door,ice cube tray,drain pan,shelf
+Car:light,door,filter,switch,motor,joint,wheel,transmission,converter,mirror
+Collection:group,mass,draw,capture,collect,cluster,aggregate,gather,unite,herd
+Beef:T bone,short ribs,chuck short rib,cross rib,rib eye,plate,neck,wing,sirloin tip,shoulder
+Speed:fast,quick,late,express,instant,slow,immediate,rapid,prompt,swift
+Bread:white bread,English muffins,hard rolls,brown bread,coffee cake,sweet rolls,cookies,cake,corn bread,cheese sticks
+Metal:gold,silver,lead,steel,iron,mercury,platinum,copper,brass,aluminum
+Vegetable:water cress,green pepper,green beans,green onion,Chinese cabbage,Japanese radish,snow peas,sweet potato,broad beans,corn
+Automobile:car,van,truck,hybrid,jeep,taxi,convertible,wagon,coupe,sedan
+Animal:dog,horse,fish,cat,bear,bird,fly,turkey,fox,chicken
+Punctuation Marks:question mark,period,exclamation point,single quotation marks,quotation marks,dash,colon,brackets,asterisk,slash
+Gasoline Engine:air filter,engine block,oil pan,oil drain hole,spark plug cable,fan belt,cooling fan,gasoline pump,distributor,starter
+Hospital:security guard,medical technician,patient,doctor,specialist,visitor,physician,nurse,surgeon,psychiatrist
+Meat:hot dog,heart,chicken breast,turkey,chicken,chicken leg,chicken wing,buffalo,beef,tongue
+Predator:human,monitor,ray,bear,fox,python,eagle,tiger,wolf,lion
+Apex Predators:human,monitor,ray,bear,fox,python,eagle,tiger,wolf,lion
+Head:head,bald head,eye,lower jaw,mouth,upper jaw,temple,ear,nose,tongue
+Appearance:light,dark,flat,clean,bright,burning,brilliant,sunny,worn,pale
+Olympic:table tennis,football,baseball,basketball,modern pentathlon,tennis,hockey,shooting,athletics,cycling
+Emotions:cross,kind,happy,cold,crazy,mad,glad,sad,afraid,excited
+Injury:black eye,sun burn,cut,broken bone,burn,scratch,lump,fracture,swelling,splinter
+Men's Clothes:button down collar,V necked sweater,shirt,sport coat,belt,pants,suit coat,crew neck sweater,bow tie,socks
+Bicycle:air valve,front brake,front tire,chain,chain guard,rear brake,rear tire,tire pump,baggage carrier,spoke
+Instruments:drum set,tom tom,steel drums,bass drum,drum,ride cymbal,bell lyre,orchestra bells,tenor drum,crash cymbals
+Temperature:hot,cool,cold,warm,burning,chill,freezing,icy,molten,frosty
+Pet:dog,horse,cat,tropical fish,bird,chicken,monkey,rabbit,snake,pigeon
+Astronomy:energy,core,mass,density,dust,fusion,omega,electron,radius,gravity
+Dental Care:gum line,cup,root canal,dental surgeon,smile,breath,teeth,filling,tooth fairy,erosion
+Building Material:particle board,wood,floor tile,metal lath,wood shingle,ceiling tile,flooring,foam insulation,cement,fiberglass insulation
+Hand:little finger,third finger,palm,middle finger,nail,fore finger,fist,thumb,wrist,knuckle
+Family:son,mother,father,brother,daughter,sister,uncle,aunt,cousin,grandmother
+Fortification:keep,station,fort,tower,castle,canal,bunker,outpost,citadel,turret
+Organ:small intestine,large intestine,appendix,hearts,liver,lung,stomach,gall bladder,pancreas,diaphragm
+Dinner Table:glass,cup,salt,plate,sugar,bowl,dish,knife,pepper,salad
+Infrastructure:road,wall,bridge,dam,tunnel,canal,levee,aqueduct,viaduct,skyway
+Thanksgiving:thanks,native,turkey,dinner,sweet potato,corn,autumn,harvest,treaty,parade
+Cowboy:brand,horse,gun,gun belt,cowboy hat,cowboy boots,ranch,bullet,rifle,saddle
+Grain:long grain rice,short grain rice,brown rice,rice,corn,wheat,soy beans,barley,rye,oats
+Word Ending in ful:beautiful,useful,helpful,powerful,careful,painful,harmful,awful,colorful,handful
+Screen Writing:act,audience,actor,atmosphere,aside,actress,adaptation,antagonist,archetype,allegory
+Gas:air,carbon dioxide,oxygen,carbon monoxide,hydrogen,nitrogen,neon,nitric oxide,propane,methane
+Fruits:white grapefruit,orange,pink grapefruit,Mandarin orange,navel orange,lemon,lime,grapefruit,tangerine,kumquat
+Chinese Calendar Sign:dog,horse,dragon,tiger,rat,monkey,rabbit,sheep,snake,pig
+Cosmetic:body lotion,foundation,cream,soap,mask,perfume,fragrance,makeup,shampoo,lipstick
+Sewing:safety pins,pattern,tape measure,buttons,pin cushion,tracing wheel,cloth,skirt marker,pins,magnet
+Condiment:oil,salt,sweet pickle,sour cream,sauce,honey,butter,pepper,olive,onion
+Fire:light,char,burn,bake,torch,toast,roast,melt,blaze,blister
+Snake:Green Snake,King Cobra,Brown Snake,Python,Rat Snake,Coral Snake,Cobra,Viper,Boa,Rattlesnake
+Seasoning:bay,salt,sugar,mint,pepper,lemon,sage,ginger,curry,soda
+Bird:martin,turkey,chicken,rail,jay,eagle,duck,chick,hawk,swift
+Instrument:double bass,French horn,bass drum,piano,recorder,triangle,snare drum,violin,flute,trumpet
+Architecture:panel,column,tower,arcade,projection,arch,patio,terrace,pavilion,bracket
+Measurement:foot,inch,meter,mile,yard,pound,ton,grams,gallon,ounces
+Castle:wall,watch tower,knight,shield,sword,cannon,samurai,archer,dungeon,moat
+Cheese:blue,swiss,brick,colby,romano,cheddar,parmesan,mozzarella,brie,feta
+Destrcution:break,split,crack,crash,destroy,scratch,squash,crush,smash,melt
+Cotton:jersey,oxford,terry,canvas,heather,fleece,velvet,denim,plaid,twill
+Ghost:spirit,soul,angel,ghost,phantom,demon,specter,sprite,wraith,apparition
+Materials of Clothes:leather,cotton,rubber,silk,wool,linen,denim,straw,suede,woolen
+Makeup:liquid foundation,eye shadow,powder,powder puff,blush brush,brow brush,eyebrow pencil,lipstick,mascara,eyeliner
+Taste:sweet,dry,plain,mild,bitter,sour,spicy,creamy,moist,tart
+Pasta Type:stars,wheels,thin spaghetti,thin macaroni,alphabet,shells,spaghetti,elbow macaroni,bows,noodles
+Fast Food:sub,frank,wrap,sandwich,burger,melt,philly,taco,clubhouse,slider
+Imaginary People and Animal:spirit,phoenix,dragon,robot,vampire,mermaid,unicorn,snowman,Martian,capricorn
+Kitchen Knife:kitchen knife,bread knife,butter knife,ham knife,steak knife,oyster knife,butcher knife,grapefruit knife,paring knife,boning knife
+Wine:port,champagne,noir,burgundy,blanc,sherry,mead,cabernet,sauvignon,madeira
+Sound:soft,quiet,silent,loud,gentle,piercing,noisy,faint,mute,roaring
+Wood:oak,pine,cherry,maple,cedar,ash,walnut,bamboo,birch,mahogany
+Fish:bass,sole,cod,salmon,shark,trout,tuna,carp,herring,marlin
+Insect:fly,cricket,bee,butterfly,ant,tick,beetle,flea,mosquito,dragonfly
+Fish and Things in Water:bass,cod,salmon,shark,trout,pike,shrimp,crab,lobster,tuna
+Cat:tom,oriental,persian,ginger,bombay,bengal,siberian,burmese,himalayan,calico
+Bug:fly,cricket,spider,bee,insects,mosquito,dragonfly,caterpillar,wasp,locust
+Tree:oak,pine,maple,ash,willow,weeping willow,birch,spruce,beech,fir
+Flower:rose,daisy,lily,iris,violet,orchid,jasmine,tulip,thistle,sunflower
+Farm Machinery:disk harrow,seed drill,combine harvester,fertilizer distributor,tractor,rotary hoe,harrow,manure spreader,subsoil plow,ribbing plow
+Japanese Words:anime,tsunami,samurai,sushi,karate,bonsai,judo,kamikaze,kendo,ikebana
+Ache:infection,sore throat,fever,runny nose,headache,stomach ache,cough,chills,earache,backache
+Underwear:slip,panties,bra,briefs,panty hose,tights,girdle,knickers,underpants,undershirt
+Aircraft:jet,fighter,helicopter,jumbo,bomber,airbus,glider,tanker,airship,biplane
+Criminal:spy,terrorist,thief,murderer,burglar,robber,vandal,smuggler,hijacker,mugger
+Words Ending in less:nevertheless,homeless,endless,useless,restless,helpless,hopeless,fearless,careless,doubtless
+Dog:terrier,boxer,retriever,hound,maltese,husky,pug,spaniel,rottweiler,beagle
+Spirit:rum,brandy,vodka,scotch,gin,whisky,bourbon,tequila,cognac,liqueur
+Ship:submarine,kayak,barge,tanker,galley,dugout,outrigger,gondola,rafts,hovercraft
+Halloween:trick or treat,October,black cat,ghost,candy,costume,bat,witch,vampire,pumpkin,carve
+Organ:small intestine,large intestine,appendix,hearts,liver,lung,stomach,gall bladder,pancreas,diaphragm,spleen
+Infrastructure:road,wall,bridge,dam,tunnel,canal,levee,aqueduct,viaduct,skyway,cistern
+Grain:long grain rice,short grain rice,brown rice,rice,corn,wheat,soy beans,barley,rye,oats,millet
+Castle:wall,watch tower,knight,shield,sword,cannon,samurai,archer,dungeon,moat,drawbridge
+Makeup:liquid foundation,eye shadow,powder,powder puff,blush brush,brow brush,eyebrow pencil,lipstick,mascara,eyeliner,eyelash curler
+Japanese Words:anime,tsunami,samurai,sushi,karate,bonsai,judo,kamikaze,kendo,ikebana,zori
+Month:May,January,December,June,October,November,March,September,July,April,August,February
+Look:view,check,look,scan,glance,glimpse,peek,stare,glare,peep,leer,squint
+Chinese Calendar Sign:dog,horse,dragon,tiger,rat,monkey,rabbit,sheep,snake,pig,ox,rooster
+Kitchen Knife:kitchen knife,bread knife,butter knife,ham knife,steak knife,oyster knife,butcher knife,grapefruit knife,paring knife,boning knife,filleting knife,cleaver
+Farm Machinery:disk harrow,seed drill,combine harvester,fertilizer distributor,tractor,rotary hoe,harrow,manure spreader,subsoil plow,ribbing plow,baler,cultivator
+Family Related:do the laundry,make the bed,buy the groceries,clean the house,clean the room,pay the bills,walk the dog,take out garbage,fix things,iron clothes,cook dinner,wash dishes,babysit
+Teeth:first molar,first premolar,back teeth,second molar,second premolar,baby teeth,central incisor,front teeth,adult teeth,third molar,wisdom teeth,canine,lateral incisor
+Thought:know,think,plan,focus,reason,reflect,conclude,concentrate,ponder,speculate,contemplate,mull,meditate
+Liquid:water,oil,blood,coffee,tea,cream,alcohol,milk,juice,soup,gasoline,grease,syrup
+Pet:dog,horse,cat,tropical fish,bird,chicken,monkey,rabbit,snake,pigeon,carp,hamster,goldfish
+Gas:air,carbon dioxide,oxygen,carbon monoxide,hydrogen,nitrogen,neon,nitric oxide,propane,methane,helium,butane,freon
+Cosmetic:body lotion,foundation,cream,soap,mask,perfume,fragrance,makeup,shampoo,lipstick,deodorant,aftershave,eyeliner
+Bug:fly,cricket,spider,bee,insects,mosquito,dragonfly,caterpillar,wasp,locust,grasshopper,cockroach,cicada
+Place Related:to,outside of,next to,on top of,on,up,out,over,under,off,near,outside,towards,nearby
+Programming:make,code,link,release,run,step,build,develop,install,patch,generate,debug,execute,compile
+Angle:point,straight line,right angle,curved line,zigzag line,parallel lines,straight angle,corresponding angle,opposite angle,acute angle,complementary angle,equilateral sides,obtuse angle,spiral
+Punctuation Marks:question mark,period,exclamation point,single quotation marks,quotation marks,dash,colon,brackets,asterisk,slash,comma,parentheses,semicolon,ellipses
+Hospital:security guard,medical technician,patient,doctor,specialist,visitor,physician,nurse,surgeon,psychiatrist,pediatrician,ophthalmologist,dietician,anesthesiologist
+Ghost:spirit,soul,angel,ghost,phantom,demon,specter,sprite,wraith,apparition,spook,poltergeist,ghoul,phantasm
+Tree:oak,pine,maple,ash,willow,weeping willow,birch,spruce,beech,fir,sycamore,yew,conifer,larch
+Valentine's Day:love,card,red,February,heart,rose,flower,sweet,chocolate,valentine,kiss,candy,arrow,hug,cupid
+Gasoline Engine:air filter,engine block,oil pan,oil drain hole,spark plug cable,fan belt,cooling fan,gasoline pump,distributor,starter,exhaust manifold,piston,carburetor,flywheel,camshaft
+Injury:black eye,sun burn,cut,broken bone,burn,scratch,lump,fracture,swelling,splinter,blister,scrape,dislocation,bruise,sprain
+Building Material:particle board,wood,floor tile,metal lath,wood shingle,ceiling tile,flooring,foam insulation,cement,fiberglass insulation,asphalt shingle,plaster,plywood,perforated hardboard,plasterboard
+Imaginary People and Animal:spirit,phoenix,dragon,robot,vampire,mermaid,unicorn,snowman,Martian,capricorn,sphinx,werewolf,abominable snowman,ogre,android
+Criminal:spy,terrorist,thief,murderer,burglar,robber,vandal,smuggler,hijacker,mugger,kidnapper,pickpocket,arsonist,shoplifter,blackmailer
+Words Ending in less:nevertheless,homeless,endless,useless,restless,helpless,hopeless,fearless,careless,doubtless,tasteless,senseless,colorless,lifeless,sightless
+Set theory:set,member,class,union,limit,element,pair,universe,partition,complement,subset,tuple,cardinality,superset,poset,powerset
+Complexity:hard,easy,direct,clear,simple,basic,complex,plain,pure,obvious,fancy,bare,complicated,elaborate,intricate,convoluted
+Wood Burning Stove:poker,air inlet control,log carrier,log tongs,loading door,chimney pipe,trim collar,flue pipe,chimney pipe elbow,ash lid,pothole lid,broom,shovel,flue damper,firebox,baffle
+Temperature:hot,cool,cold,warm,burning,chill,freezing,icy,molten,frosty,sizzling,blistering,searing,frigid,scalding,nippy
+Dinner Table:glass,cup,salt,plate,sugar,bowl,dish,knife,pepper,salad,fork,mug,spoon,pitcher,saucer,napkin
+Sewing:safety pins,pattern,tape measure,buttons,pin cushion,tracing wheel,cloth,skirt marker,pins,magnet,needles,needle threader,zipper,scissor,pinking shears,thimble
+Ship:submarine,kayak,barge,tanker,galley,dugout,outrigger,gondola,rafts,hovercraft,icebreaker,tugboat,motorboat,rowboat,dredger,sampan
+Airport:check in,time difference,departure time,time zones,boarding time,security check,body check,personal effects,baggage claim check,customs officer,boarding pass,immigration counter,visa,departure lounge,customs declaration,customs,passport
+Dinnerware:gravy boat and stand,water pitcher,cup,tea cup,fish platter,serving bowl,coffee mug,sugar bowl,salad plate,soup bowl,butter dish,salad bowl,salt shaker,rim soup bowl,pepper shaker,platter,saucer
+Hair:black hair,red hair,brown hair,straight hair,gray hair,auburn hair,blond hair,kinky hair,curly hair,wavy hair,permanent,beard,bangs,mustache,ponytail,pigtails,sideburns
+Collection:group,mass,draw,capture,collect,cluster,aggregate,gather,unite,herd,assemble,pluck,corral,stockpile,cull,hoard,amass
+Family:son,mother,father,brother,daughter,sister,uncle,aunt,cousin,grandmother,nephew,grandson,niece,granddaughter,stepmother,stepson,stepdaughter
+Fortification:keep,station,fort,tower,castle,canal,bunker,outpost,citadel,turret,bastion,moat,watchtower,palisade,stockade,drawbridge,redoubt
+Cowboy:brand,horse,gun,gun belt,cowboy hat,cowboy boots,ranch,bullet,rifle,saddle,rodeo,pistol,herd,holster,stampede,corral,lasso
+Measurement:foot,inch,meter,mile,yard,pound,ton,grams,gallon,ounces,quart,pint,kilometer,kilograms,millimeter,centimeter,lier
+Destrcution:break,split,crack,crash,destroy,scratch,squash,crush,smash,melt,erase,wreck,explode,splinter,shatter,demolish,detonate
+Test:study for,take an exam,get through,test,ID card,test paper,pass,answer sheet,grade,fail,examination,examine,cheat,pencil,examiner,proctor,eraser,retake
+Weapon:bow and arrow,club,land mine,hand grenade,stone,gun,tank,nuclear bomb,knife,bomb,atomic bomb,sword,cannon,missile,rifle,spear,revolver,blowgun
+Swimming:water,life guard,deep end,shallow end,diving board,lake,turn,river,dog paddle,swimming pool,ocean,swimming lane,diving,synchronized swimming,butterfly,crawl,backstroke,breaststroke
+Adverb:never,almost never,almost,simply,recently,hardly ever,sometimes,generally,frequently,nearly,normally,regularly,partly,merely,hardly,rarely,seldom,scarcely
+Beef:T bone,short ribs,chuck short rib,cross rib,rib eye,plate,neck,wing,sirloin tip,shoulder,blade,strip loin,shank,flank,tenderloin,sirloin,brisket,porterhouse
+Speed:fast,quick,late,express,instant,slow,immediate,rapid,prompt,swift,lazy,speedy,agile,sluggish,hasty,nimble,spry,poky
+Pasta Type:stars,wheels,thin spaghetti,thin macaroni,alphabet,shells,spaghetti,elbow macaroni,bows,noodles,curly lasagna,ribbed macaroni,lasagna,ravioli,turrets,tortellini,vermicelli,cappelletti
+Sound:soft,quiet,silent,loud,gentle,piercing,noisy,faint,mute,roaring,booming,grating,rowdy,thundering,muffled,hushed,deafening,blaring
+Downtown:garbage can,news stand,car,department store,street sign,shop window,street light,neon sign,traffic light,traffic island,bus stop,train station,bus,subway station,parking meter,taxi stand,litter basket,pedestrian crossing,billboard
+History:time,date,history,age,journal,archive,calendar,culture,classic,century,biography,era,manuscript,mythology,chronology,epoch,artifact,antiquity,provenance
+Size:long,big,small,little,large,short,average,wide,huge,medium,flat,broad,massive,tiny,giant,tall,miniature,immense,humongous
+Gardening:water,sell,cover,sort,plant,pick,mix,thin,spray,tie,gather,transplant,rake,hoe,sow,plow,shovel,mulch,fertilize
+Metal:gold,silver,lead,steel,iron,mercury,platinum,copper,brass,aluminum,tin,bronze,chrome,titanium,nickel,zinc,alloy,aluminium,tungsten
+Fire:light,char,burn,bake,torch,toast,roast,melt,blaze,blister,ignite,broil,sear,scorch,kindle,singe,smolder,parch,swelter
+Wood:oak,pine,cherry,maple,cedar,ash,walnut,bamboo,birch,mahogany,hickory,spruce,beech,fir,teak,poplar,acacia,sycamore,cocobolo
+Insect:fly,cricket,bee,butterfly,ant,tick,beetle,flea,mosquito,dragonfly,caterpillar,moth,wasp,lice,termite,ladybug,grasshopper,cockroach,maggot
+Frequency:once in a blue moon,every now and then,once a year,a few times,twice a month,three times a week,not often,at times,all day,every time,four times an hour,every year,most times,many times,every two months,every third day,very often,three times,every week,four times
+Prepositions:on,by,with,from,at,as,about,away from,up,like,than,over,into,next,after,through,under,off,before,within
+Time Related:from time to time,for a long time,once upon a time,after,later than,last week,before,earlier than,many times,many years ago,today,during,long ago,never,always,usually,often,soon,recently,sometimes
+Job Related:name,state,last name,city,family name,high school,phone number,middle name,education,address,area code,junior high school,telephone number,children,graduate school,country,elementary school,college,present address,previous experience
+Computer:data,number,software,line,type,Internet,code,file,open,network,text,digital,save,process,select,comment,memory,format,close,database
+Corporate:system,item,international,report,national,address,community,technology,network,content,customer,value,source,process,table,market,action,model,human,application
+Business:order,report,send,check,own,change,return,department,description,reply,customer,provide,process,stock,join,sales,market,industry,plan,feedback
+Web:message,send,type,area,link,open,download,access,profile,title,property,visit,source,gallery,action,browse,event,share,log,close
+Baseball:strike out,day game,first baseman,strike two,two balls,game,play off,call,night game,center fielder,foul line,right fielder,field,exhibition game,strike three,three balls,run,farm team,visiting team,short stop
+Military:line,file,section,house,guide,board,rate,level,man,party,range,hand,head,track,log,director,island,front,cover,watch
+Shopping:total,shop,directory,return,account,department,customer,sale,credit,box,category,market,cart,payment,seller,purchase,discount,cash,owner,retail
+Quantity:some,add,each,many,both,another,every,few,several,either,none,increase,remove,reduce,grow,raise,numerous,extend,boost,decrease
+Building:store,department store,school building,house,office building,gallery,market,library,convenience store,fire department,shopping mall,barber shop,movie theater,bank,church,apartment building,airport,gas station,station,hall
+Music:control,property,card,left,note,staff,play,key,browse,audio,event,major,cell,format,window,region,record,lyrics,step,bit
+Telephone:white pages,mobile phone,recorded message,telephone book,unlisted number,credit card call,cell phone,long distance call,yellow pages,conference call,desk phone,dial phone,telephone card,collect call,touch tone phone,telephone,telephone operator,telephone booth,busy tone,dial tone
+Time:today,computer,during,digital,cell phone,week,second,never,always,month,usually,often,watch,soon,season,hour,recently,century,sometimes,zone
+Book:best seller,index,picture book,reference book,text,title,comic book,head,cover,running head,magazine,chapter,contents,inside margin,edge,explanatory notes,dictionary,paperback,joint,column
+Geography:north,country,source,west,key,east,range,beach,land,region,island,sound,lake,bay,river,capital,channel,degree,hill,valley
+House:book shelf,TV room,table,study,sun room,living room,key,picture,garden,radio,dining room,coffee table,window,air conditioner,apartment building,furniture,foundation,bed,glass,hall
+Number:one,two,three,four,five,six,ten,seven,eight,nine,twenty,twelve,fifteen,eleven,sixteen,thirteen,eighteen,fourteen,seventeen,nineteen
+Subject:history,art,computer science,science,English,physical education,social studies,language arts,reading,engineering,writing,French,statistics,band,medicine,German,literature,architecture,economics,physics
+Hotel:service charge,room number,gift shop,single room,tax,money exchange,coffee shop,double room,morning call,twin room,room maid,inn,extra bed,floor,restaurant,suite,checkout,tip,youth hostel,reservation
+3D Graphics:image,point,join,model,body,light,color,material,unit,camera,position,fire,death,speed,force,move,object,sample,hair,distance
+Post Office:picture post car,air mail,return address,insurance,sea mail,postal money order,deliver mail,zip code,junk mail,PO box,letter,printed matter,stamp machine,postal clerk,postage,stamp,cancelled stamp,commemorative stamp,mailman,mailbox
+Bank:customer,credit card,credit,pay,security guard,bounced check,joint account,interest,savings account,checking account,foreign currency rate,bill,loan,manager,cash,mortgage,foreign exchange,currency,savings,guard
+Geometry:area,form,point,model,range,similar,net,central,period,face,base,mean,degree,focus,regular,normal,surface,fixed,square,couple
+Sport:box,play,car racing,field,club,major,net,table tennis,player,weight,golf,base,field hockey,move,score,win,sport,golf clothes,fitness,football
+Phones:game,download,text,digital,application,camera,wireless,bar,screen,exchange,band,contract,browser,voice,skin,coverage,touch,speaker,frequency,carrier
+Software:data,program,code,server,event,function,build,object,client,command,input,output,bug,variable,expression,loop,commit,container,app,artifact
+Crime:break out,get away,police car,store detective,legal,car alarm,private detective,child abuse,police,charge,rape,judge,lawyer,kill,gun,illegal,alarm,rob,prison,escape
+City Name:oklahoma city,long beach,london,washington,north las vegas,san francisco,san diego,san antonio,virginia beach,san jose,la rochelle,valkenburg aan de geul,san bernardino,nice,chicago,mexico,saint paul,los angeles,boston,paris
+Place:house,office building,library,convenience store,fire department,barber shop,movie theater,bank,church,apartment building,airport,gas station,hospital,bus stop,restaurant,museum,train station,mall,bowling alley,supermarket
+Algorithm:language,key,range,child,head,window,function,weight,sort,mean,union,mode,degree,cut,distance,tree,string,block,capacity,flow
+School:graduate school,elementary school,college,library,student,president,junior college,locker room,baseball field,soccer field,teacher,secretary,professor,swimming pool,lab,principal,coach,cook,classroom,bathroom
+Physics:second,body,energy,natural,period,direct,weight,speed,force,bar,volume,degree,potential,focus,primary,distance,internal,pressure,surface,electric
+Accounting:stock,plan,cost,paper,interest,statement,loan,cash,capital,contract,basis,budget,trust,debt,flow,balance,gain,cycle,shares,liability
+State:north carolina,south dakota,texas,north dakota,washington,west virginia,california,florida,virginia,rhode island,ohio,georgia,michigan,colorado,illinois,kansas,arizona,pennsylvania,oregon,minnesota
+Christmas:cards,baby,white sauce,green,gold,gifts,wise men,manager,holiday,season,Christ Child,inn,traffic,vacation,Mary,Lord,Christmas cookies,spirit,birth,Jesus
+Classroom:book,map,computer,white board,bulletin board,calendar,dictionary,chair,desk,clock,notebook,pen,textbook,pencil,pencil sharpener,chalk,blackboard,blackboard eraser,bookcase,eraser
+Startup:market,model,plan,mobile,space,growth,capital,deal,round,option,interface,strategy,stage,funding,equity,beta,angel,investor,exit,acquisition
+Design:value,print,point,register,space,style,logo,dark,scale,square,poster,column,depth,height,font,row,import,layer,proof,width
+Fire Fighting:search light,fire department,volunteer fire department,fire alarm box,fire,fire chief,fire escape,fire extinguisher,fire hydrant,wrecking bar,smoke,victim,oxygen mask,smoke jumper,flame,hose,ambulance,parachute,fireman,arson
+Radio:share,radio,format,log,edit,player,copy,hour,band,bed,feed,remote,programming,monitor,credits,gain,frequency,spot,FM,engineer
+Filmmaking:light,film,director,sound,camera,speed,double,score,editor,extra,agent,filter,reader,coverage,shot,assistant,credits,designer,operator,genre
+Construction:course,story,light,run,fall,survey,valley,grade,vehicle,panel,core,frame,detail,square,joint,column,rise,circuit,hip,cap
+Restaurant:order,check,water,bill,menu,cup,coffee,breakfast,drink,tea,dinner,salt,lunch,knife,fork,dressing,dessert,spoon,hamburger,napkin
+Gaming:team,action,model,player,points,score,sport,strategy,vehicle,flight,platform,camp,adventure,flag,spam,scene,gun,plasma,rail,animation
+Tool:post hole digger,box end wrench,small hand cultivator,portable power saw,small wrecking bar,drill press,large screwdriver,hand drill,garden hoe,side cutting pliers,saw,tree pruner,bench saw,electric drill,circular saw,metal snips,tube flaring tool,sharpening stone,wire brush,router
+Algorithms:average,simple,active,mean,lower,mode,perfect,maximum,forward,abstract,internal,external,minimum,fixed,square,random,brute force,universal,extended,matching
+Country:China,North Korea,France,Germany,India,Japan,Mexico,Italy,Iraq,Spain,Israel,Russia,Brazil,Turkey,Thailand,Iran,Taiwan,Greece,Pakistan,Egypt
+Travel:class,space,conference,transfer,agent,pass,driver,trip,suite,flight,checkout,origin,destination,seat,ticket,operator,transit,coach,leisure,carrier
+Color:green,gold,yellow green,yellow,silver,violet red,brown,steel,coffee,pink,orange,snow,cream,chocolate,navy,gray,bone,jet,purple,desert
+Weather:weather,clear,nice,degree,cool,dry season,pressure,dark,wind,temperature,ice,cold,heat,rainy season,snow,dry,forecast,moon,sky,rain
+Typography:color,style,en,weight,copy,river,modern,leading,character,column,em,font,width,symbol,bold,roman,margin,baseline,bullet,headline
+Manupulation:create,put,edit,sort,turn,copy,lower,connect,separate,delete,replace,modify,raise,split,throw,extend,combine,stretch,swap,organize
+Network:domain,active,port,client,traffic,resolution,session,patch cable,driver,path,switch,multi hop,bridge,protocol,layer,transmission,adapter,node,transaction,gateway
+Catering:dining room,environment,menu,glass,secure,kitchen,wine,restaurant,cup,breakfast,prepared,tip,dinner,salt,cook,plate,cooking,chocolate,dish,rice
+Car Parts:engine block,sun visor,turn signal,door,license plate,filter,oil cap,battery,oil gauge,switch,gear,door handle,oil dipstick,motor,joint,master cylinder,fan belt,seat,clock,temperature gauge
+Smoking:tax,legal age,smoking section,non smoker,package,light smoker,filter,lung cancer,vending machine,heavy smoker,chain smoker,smoke,passive smoke,cigarette butt,addiction,ash,ash tray,tar,smoker,nicotine
+City:road,building,bank,fire station,police station,station,bus stop,train station,square,avenue,train,parking meter,downtown,parade,subway entrance,pedestrian crossing,fountain,mailbox,sidewalk,roadway
+Creation:start,create,base,build,improve,develop,begin,produce,establish,expand,launch,generate,extend,boost,construct,forge,multiply,spawn,invent,actualize
+Insurance:rate,value,agreement,agent,benefit,limit,audit,accident,asset,attachment,clause,assurance,participant,assumption,appraisal,arbitration,annuity,amortization,adjuster,actuary
+Real Estate:lot,mortgage,taking,contract,survey,option,agent,rent,grant,buyer,equity,inventory,lease,yield,broker,margin,inflation,assumption,appreciation,zoning
+Water:bay,river,port,channel,spring,sea,pool,stream,creek,falls,ocean,delta,mouth,neck,harbor,gulf,wash,shore,surf,basin
+Data Structure:field,record,union,tree,bin,filter,string,dictionary,bag,matrix,array,vector,buffer,graph,container,stack,queue,hash,heap,zipper
+Body:face,blood,hair,feet,skin,eye,hands,eyes,foot,brain,hip,arm,mouth,legs,muscle,bone,leg,neck,ear,throat
+Education:student,president,graduate student,head teacher,vice president,teacher,graduate assistant,lab assistant,principal,instructor,undergraduate,qualify,qualification,educate,lecturer,pupil,educator,schoolgirl,headmaster,schoolboy
+People Related:responsible,friendly,happy,beautiful,poor,creative,interesting,helpful,successful,rich,famous,practical,crazy,cute,dangerous,exciting,thin,athletic,lucky,romantic
+Character:independent,happy,strong,creative,helpful,patient,soft,serious,smart,religious,funny,proper,plain,warm,bright,sensitive,bold,proud,quiet,tough
+Stationery:paper clips,paper punch,expanding files,letter scales,letter opener,clip,tape,label maker,ring binder,desk pad,correction tape,magic marker,desk tray,folder,tape dispenser,pen,hanging folder,rubber stamp,glue stick,correction fluid
+Material:skin,wood,steel,leather,stone,diamond,plastic,golden,felt,cast iron,iron,cotton,carbon,concrete,rubber,vinyl,sand,fiber,copper,brass
+Newspaper:morning edition,evening edition,editor,feature,extra,advice column,advertisement,editorial,comics,cartoon,reporter,photographer,circulation,headline,correspondent,columnist,obituary,interviewer,newsstand,tabloid
+Shoe and Footwear:golf shoes,shoes,basketball shoes,dress shoes,tennis shoes,casual shoes,steel toed shoes,spike shoes,boots,rubber boots,thongs,cowboy boots,pumps,sandals,slippers,spikes,sneakers,clogs,loafers,moccasins
+Food:fish,coffee,ice,roll,drink,tea,recipe,cream,plate,chocolate,fruit,pan,dish,rice,milk,beer,meat,taste,cheese,cake
+Age:young,mature,modern,fresh,vintage,contemporary,raw,ancient,novel,antique,aged,juvenile,worn,obsolete,immature,shabby,stale,ragged,archaic,primordial
+Corporate job:buyer,developer,assistant,associate,designer,representative,administrator,writer,specialist,engineer,consultant,controller,instructor,analyst,producer,coordinator,supervisor,clerk,planner,trainer
+Machine Learning:feature,prior,transfer,factor,accuracy,instance,objective,parameter,cluster,precision,generator,dimension,boundary,recall,bias,correlation,batch,confusion,hypothesis,regression
+Driving:pass,coast,avenue,bridge,handle,lane,circle,exit,highway,loop,shift,rev,median,shoulder,curve,tail,brake,tunnel,barrier,terrace
+Justice:trial,death penalty,justice,capital punishment,defense,judge,lawyer,appeal,prison,sentence,witness,guilty,jury,innocent,jail,punishment,caution,prosecution,offence,corporal punishment
+Movement:turn,race,stand,skip,jump,walk,hop,sit,rush,spin,sprint,dash,bolt,hike,hurry,crawl,stroll,tread,sway,roam
+Container:basket,bag,pocket,plate,carrier,bowl,pan,folder,bottle,holder,tube,cabinet,packet,rack,drum,chest,pot,container,trunk,tin
+Job:professor,doctor,criminal,judge,lawyer,coach,engineer,pilot,nurse,actor,baker,broker,clerk,farmer,soldier,chef,priest,actress,poet,musician
+Nationality:Chinese,German,Australian,Russian,Italian,Greek,Swiss,Mexican,Korean,Swedish,Turkish,Norwegian,Cuban,Romanian,Ukrainian,Belgian,Armenian,Venezuelan,Guatemalan,Yugoslavian
+3D Printing:bed,resolution,sheet,motor,concept,accuracy,mesh,shell,belt,frog,envelope,catalyst,carriage,slice,deposition,filler,raft,facet,filament,monomer
+Communicate:talk,chat,express,ring,speak,remark,gossip,scream,shout,bark,jaw,converse,whisper,chatter,yak,drone,babble,murmur,gulp,blather
+Writing:canon,draft,editorial,proposal,hardcover,biography,genre,novel,plot,assignment,deadline,pace,outline,dialogue,bibliography,hook,narrative,formatting,myth,imprint
+Shape:flat,square,solid,straight,compact,circle,broad,narrow,thin,irregular shape,thick,pointed,slim,triangle,oval,cylinder,sphere,bent,cone,pentagon
+Motorcycle:turn signal,front tire,gas tank,chain,gear shift,seat,disk brake,inner tube,drum brake,rearview mirror,shock absorber,brake pedal,brake lever,fender,clutch lever,headlight,muffler,spokes,handlebar,speedometer
+Sports:hit,block,trip,jump,fight,catch,rush,kick,shoot,spin,chase,grip,tackle,leap,bounce,cheer,slash,sack,intercept,dunk
+Linear Algebra:basis,column,flag,row,matrix,combination,identity,kernel,vector,independence,dimension,projection,span,norm,similarity,inverse,tensor,determinant,subspace,transpose
+Chemistry:charge,element,atom,acid,frequency,wave,concentration,radiation,ion,compound,velocity,electron,mixture,particle,catalyst,decay,molecule,combustion,nucleus,proton
+Plants:palm,root,flower,fruit,seed,grove,leaf,grass,shoot,blade,trunk,stem,grain,brush,bean,sage,sap,berry,jungle,nut
+Dessert:ice cream,sweet roll,apple pie,birthday cake,fruit,sweet rolls,chocolate cake,chocolate chip cookie,cookies,cake,whip cream,candy,cookie,potato chips,pie,pudding,muffin,donut,doughnuts,doughnut
+Drink:coffee,ice coffee,ice tea,soft drink,tea,orange juice,milk,beer,juice,tomato juice,punch,cocktail,liquor,soda,cocoa,coke,brandy,whiskey,lemonade,milkshake
+Animal:bird,fly,turkey,fox,chicken,eagle,seal,tiger,wolf,lion,camel,rat,bull,deer,monkey,spider,rabbit,sheep,beaver,bee
+Clothes:cap,hat,sweat shirt,suit,boots,belt,jacket,pants,tie,shorts,coat,jeans,gloves,pantyhose,skirt,stockings,socks,jumper,trousers,sweater
+Refrigerator:fan,switch,handle,freezer door,ice cube tray,drain pan,shelf,meat keeper,egg tray,butter compartment,dairy compartment,refrigerator compartment,defrost timer,freezer compartment,compressor,condenser coil,defrost heater,evaporator coil,gasket,crisper
+Vehicle:road grader,bus,container truck,tank,dump truck,crane truck,motorcycle,concrete mixer,jeep,bicycle,taxi,tractor,ambulance,scooter,minibus,taxicab,bulldozer,wrecker,sidecar,snowplow
+Car:joint,wheel,transmission,converter,mirror,rack,sensor,valve,starter,differential,cabin,cylinder,bumper,heater,booster,clutch,compressor,radiator,manifold,rotor
+Grphics:fill,delete,zoom,replace,mask,stretch,extract,translate,trim,composite,paste,distribute,flip,transform,align,rotate,warp,tweak,skew,invert
+Head:eye,lower jaw,mouth,upper jaw,temple,ear,nose,tongue,lip,tooth,chin,cheek,mole,forehead,wrinkles,gums,eyebrow,freckles,dimple,pimple
+Transportation:boat,truck,train,swimming,jet,motorcycle,ferry,bicycle,taxi,yacht,helicopter,airplane,scooter,subway,canoe,submarine,kayak,raft,dinghy,sailboat
+Bread:brown bread,coffee cake,sweet rolls,cookies,cake,corn bread,cheese sticks,wheat bread,garlic bread,pie,rolls,rye bread,sourdough bread,biscuits,crackers,muffins,pancakes,waffles,doughnuts,croissant
+Thanksgiving:native,turkey,dinner,sweet potato,corn,autumn,harvest,treaty,parade,pumpkin pie,cranberry sauce,grateful,colony,feast,cranberry,pilgrim,stuffing,gravy,yam,carve
+Men's Clothes:shirt,sport coat,belt,pants,suit coat,crew neck sweater,bow tie,socks,boxer shorts,briefs,vest,turtleneck sweater,trench,cardigan,parka,suspenders,necktie,raincoat,overcoat,undershirt
+Winter:cold,Merry Christmas,hat,boots,coat,candle,frost,freeze,fireplace,chill,scarf,sleigh bells,skates,blizzard,snowman,sled,shovel,snowflake,mittens,snowstorm
+Art:mix,draw,paint,chip,exhibit,coat,outline,trace,restore,shade,sketch,chalk,stencil,carve,doodle,etch,chisel,sculpt,emboss,daub
+Bicycle:chain guard,rear brake,rear tire,tire pump,baggage carrier,spoke,hub,brake,tire,grip,fork,rim,brake lever,saddle,fender,pedal,headlight,handlebar,gearshift,kickstand
+Vegetable:Japanese radish,snow peas,sweet potato,broad beans,corn,beans,chick peas,potato,onion,tomatoes,garlic,peas,tomato,bean sprouts,Brussels sprouts,pumpkin,popcorn,cabbage,spinach,carrot
+Furniture:desk,seat,cabinet,lamp,chest,shelf,bench,sofa,closet,couch,stool,sectional,ottoman,dresser,futon,armchair,bookcase,cupboard,chaise,sideboard
+Meat:chicken leg,chicken wing,buffalo,beef,tongue,rabbit,duck,kidney,ham,lamb,pork,bacon,goat,elk,lamb chop,steak,roast,sausage,bison,hamburger
+Olympic:tennis,hockey,shooting,athletics,cycling,sailing,boxing,volleyball,softball,fencing,gymnastics,equestrian,archery,rowing,badminton,triathlon,canoeing,judo,aquatics,handball
+Cooking:mixing bowl,burn,knife,steam,grill,microwave,fork,measuring spoon,timer,dip,stir,slice,fry,spoon,bake,barbecue,toast,roast,melt,boil
+Emotions:mad,glad,sad,afraid,excited,sunny,angry,calm,worried,scared,shy,lively,jolly,tense,furious,cheerful,weary,icy,wary,tranquil
+Predator:python,eagle,tiger,wolf,lion,jaguar,shark,owl,cobra,lynx,badger,viper,leopard,coyote,marlin,boa,crocodile,wolverine,cougar,osprey
+Apex Predators:python,eagle,tiger,wolf,lion,jaguar,shark,owl,cobra,lynx,badger,viper,leopard,coyote,marlin,boa,crocodile,wolverine,cougar,osprey
+Bird:eagle,duck,chick,hawk,swift,penguin,owl,swan,raven,crow,falcon,drake,swallow,goose,hen,dove,pigeon,parrot,canary,pelican
+Automobile:truck,hybrid,jeep,taxi,convertible,wagon,coupe,sedan,suv,limousine,limo,hatchback,roadster,minivan,cabriolet,dragster,hearse,humvee,hotrod,subcompact
+Astronomy:fusion,omega,electron,radius,gravity,envelope,magnitude,flux,halo,brightness,nucleus,proton,corona,photon,neutron,relativity,convection,pulsar,photometry,neutrino
+Appearance:burning,brilliant,sunny,worn,pale,wan,colorful,vivid,vibrant,dull,shiny,glossy,matte,sleek,radiant,faded,glowing,blazing,weathered,muted
+Taste:dry,plain,mild,bitter,sour,spicy,creamy,moist,tart,oily,salty,gritty,savory,greasy,crispy,crunchy,chewy,tangy,zesty,chalky
+Cat:tom,oriental,persian,ginger,bombay,bengal,siberian,burmese,himalayan,calico,siamese,marmalade,tabby,balinese,angora,javanese,birman,longhair,bobtail,korat
+Fruit:lemon,berry,blackberry,banana,lime,pear,strawberry,coconut,citrus,peach,grape,plum,grapes,pineapple,mango,cranberry,kiwi,raspberry,blueberry,apricot
+Instruments:ride cymbal,bell lyre,orchestra bells,tenor drum,crash cymbals,triangle,snare drum,splash cymbal,gong,chimes,celeste,cymbals,cymbal,scraper,sizzle cymbal,cowbell,conga,marimba,xylophone,bongos
+Condiment:honey,butter,pepper,olive,onion,garlic,chili,salsa,mustard,vinegar,dill pickle,relish,margarine,mayonnaise,ketchup,pesto,horseradish,miso,chutney,wasabi
+Fast Food:frank,wrap,sandwich,burger,melt,philly,taco,clubhouse,slider,hamburger,muffin,reuben,bagel,pita,burrito,BLT,pretzel,cheeseburger,panini,hoagie
+Dental Care:breath,teeth,filling,tooth fairy,erosion,dentist,enamel,chew,whitening,fluoride,toothbrush,floss,gums,toothpaste,cavities,molar,periodontal,toothpick,mouthwash,gingivitis
+Architecture:arch,patio,terrace,pavilion,bracket,courtyard,balcony,brace,molding,truss,setback,facade,belvedere,spire,turret,gallerie,veranda,archway,portico,frieze
+Fish and Things in Water:salmon,shark,trout,pike,shrimp,crab,lobster,tuna,oyster,carp,herring,perch,sturgeon,eel,halibut,swordfish,crayfish,tadpole,sardine,crawdad
+Seasoning:lemon,sage,ginger,curry,soda,cinnamon,rosemary,sesame,basil,parsley,mace,thyme,cayenne,dill,nutmeg,oregano,cumin,coriander,cilantro,fennel
+Instrument:triangle,snare drum,violin,flute,trumpet,harp,viola,clarinet,saxophone,gong,trombone,oboe,tuba,baritone,piccolo,bassoon,cymbal,bugle,cornet,euphonium
+Word Ending in ful:painful,harmful,awful,colorful,handful,thoughtful,lawful,playful,graceful,doubtful,dreadful,shameful,rightful,bountiful,mouthful,spoonful,mournful,tearful,boastful,teaspoonful
+Cotton:fleece,velvet,denim,plaid,twill,flannel,chino,corduroy,jacquard,velour,chenille,pique,gingham,pinstripe,damask,poplin,voile,broadcloth,chambray,moleskin
+Fish:trout,tuna,carp,herring,marlin,pollock,perch,barracuda,angler,eel,snapper,halibut,flounder,mullet,mackerel,grouper,blowfish,scallop,betta,haddock
+Flower:orchid,jasmine,tulip,thistle,sunflower,poppy,lilac,carnation,geranium,dahlia,crocus,pansy,peony,daffodil,hyacinth,mimosa,narcissus,begonia,foxglove,gladiolus
+Dog:retriever,hound,maltese,husky,pug,spaniel,rottweiler,beagle,collie,setter,poodle,dachshund,harrier,dingo,pinscher,feist,spitz,westie,whippet,borzoi
+Wine:sherry,mead,cabernet,sauvignon,madeira,chardonnay,pinot,merlot,shiraz,chianti,muscat,riesling,zinfandel,claret,chablis,beaujolais,chinon,grappa,barolo,malbec
+Cheese:brick,colby,romano,cheddar,parmesan,mozzarella,brie,feta,ricotta,gouda,muenster,gorgonzola,provolone,camembert,asiago,mascarpone,edam,fontina,havarti,limburger
+Post Office:mail,post card,post office box,personal mail,address,picture post car,air mail,return address,insurance,sea mail,postal money order,deliver mail,zip code,junk mail,PO box,letter,printed matter,stamp machine,postal clerk,postage,stamp,cancelled stamp,commemorative stamp,mailman,mailbox,postbox
+Newspaper:back page,front page,TV guide,newspaper office,lead story,morning edition,evening edition,editor,feature,extra,advice column,advertisement,editorial,comics,cartoon,reporter,photographer,circulation,headline,correspondent,columnist,obituary,interviewer,newsstand,tabloid,newsprint
+Linear Algebra:map,form,image,space,function,basis,column,flag,row,matrix,combination,identity,kernel,vector,independence,dimension,projection,span,norm,similarity,inverse,tensor,determinant,subspace,transpose,congruence
+3D Printing:support,model,step,printer,structure,bed,resolution,sheet,motor,concept,accuracy,mesh,shell,belt,frog,envelope,catalyst,carriage,slice,deposition,filler,raft,facet,filament,monomer,overhang
+Olympic:table tennis,football,baseball,basketball,modern pentathlon,tennis,hockey,shooting,athletics,cycling,sailing,boxing,volleyball,softball,fencing,gymnastics,equestrian,archery,rowing,badminton,triathlon,canoeing,judo,aquatics,handball,weightlifting
+Word Ending in ful:beautiful,useful,helpful,powerful,careful,painful,harmful,awful,colorful,handful,thoughtful,lawful,playful,graceful,doubtful,dreadful,shameful,rightful,bountiful,mouthful,spoonful,mournful,tearful,boastful,teaspoonful,cupful
+Appearance:light,dark,flat,clean,bright,burning,brilliant,sunny,worn,pale,wan,colorful,vivid,vibrant,dull,shiny,glossy,matte,sleek,radiant,faded,glowing,blazing,weathered,muted,drab,pallid
+Cotton:jersey,oxford,terry,canvas,heather,fleece,velvet,denim,plaid,twill,flannel,chino,corduroy,jacquard,velour,chenille,pique,gingham,pinstripe,damask,poplin,voile,broadcloth,chambray,moleskin,gabardine,pointelle
+Hotel:check in,single with bath,information desk,room service,hotel,service charge,room number,gift shop,single room,tax,money exchange,coffee shop,double room,morning call,twin room,room maid,inn,extra bed,floor,restaurant,suite,checkout,tip,youth hostel,reservation,motel,newsstand,bellboy
+Justice:community service,court case,court,cell,fine,trial,death penalty,justice,capital punishment,defense,judge,lawyer,appeal,prison,sentence,witness,guilty,jury,innocent,jail,punishment,caution,prosecution,offence,corporal punishment,probation,verdict,imprisonment
+Data Structure:list,set,map,image,table,field,record,union,tree,bin,filter,string,dictionary,bag,matrix,array,vector,buffer,graph,container,stack,queue,hash,heap,zipper,trie,deque,octree,quadtree
+Sports:board,save,stop,score,pass,hit,block,trip,jump,fight,catch,rush,kick,shoot,spin,chase,grip,tackle,leap,bounce,cheer,slash,sack,intercept,dunk,fumble,huddle,dribble,deke
+Furniture:table,baby bed,bed,hall stand,chair,desk,seat,cabinet,lamp,chest,shelf,bench,sofa,closet,couch,stool,sectional,ottoman,dresser,futon,armchair,bookcase,cupboard,chaise,sideboard,loveseat,settee,pouf,banquette
+Seasoning:bay,salt,sugar,mint,pepper,lemon,sage,ginger,curry,soda,cinnamon,rosemary,sesame,basil,parsley,mace,thyme,cayenne,dill,nutmeg,oregano,cumin,coriander,cilantro,fennel,paprika,turmeric,tarragon,arrowroot
+Time Related:now and then,once in a while,in a few minutes,from time to time,for a long time,once upon a time,after,later than,last week,before,earlier than,many times,many years ago,today,during,long ago,never,always,usually,often,soon,recently,sometimes,yesterday,frequently,tomorrow,occasionally,rarely,afterwards,lately
+Prepositions:through,under,off,before,within,between,down,following,without,since,during,times,save,around,against,below,above,until,past,upon,plus,far,along,among,near,across,inside,outside,round,behind
+Business:sales,market,industry,plan,feedback,complete,payment,equipment,sell,experience,pay,result,offer,interest,share,delivery,environment,costs,present,bill,risk,production,choose,knowledge,receive,purchase,loss,brand,discount,increase
+Corporate:market,action,model,human,application,staff,language,experience,paper,issue,result,future,space,learning,central,direct,district,resource,material,global,corporate,practice,availability,regional,dog,solution,capital,lead,channel,idea
+Frequency:every third day,very often,three times,every week,four times,every night,every month,several times,never,every Monday,every hour,always,once,almost never,daily,almost always,usually,often,nearly always,quite often,hardly ever,sometimes,monthly,weekly,generally,frequently,twice,normally,regularly,constantly
+Job Related:country,elementary school,college,present address,previous experience,zip code,street,experience,single,age,junior college,weight,position,apply,skills,criminal record,male,marital status,female,felony record,employee,vision,physical examination,hearing,height,married,birthday,gender,certification,employer
+Military:director,island,front,cover,watch,magazine,step,base,commission,engine,dog,leave,division,contract,glass,survey,secure,station,ship,distance,charge,battery,block,father,driver,jack,frame,chief,installation,gear
+Web:browse,event,share,log,close,url,document,error,receive,domain,chat,object,button,transfer,traffic,valid,filter,host,fixed,frame,connect,module,monitor,bug,keyword,stream,load,touch,chart,script
+Music:region,record,lyrics,step,bit,notes,engine,stop,bar,effect,volume,score,sample,channel,song,hold,cut,session,skin,rest,string,flat,scale,frame,clean,switch,gear,listen,canon,bus
+Computer:comment,memory,format,close,database,function,method,hardware,copy,printer,menu,object,cut,command,input,output,processing,string,block,keyword,argument,multimedia,interactive,icon,delete,mouse,graphic,font,scope,replace
+School:technical school,graduate school,elementary school,college,library,student,president,junior college,locker room,baseball field,soccer field,teacher,secretary,professor,swimming pool,lab,principal,coach,cook,classroom,bathroom,gym,nursery,librarian,playground,kindergarten,cafeteria,janitor,classmate,headmaster
+Baseball:three balls,run,farm team,visiting team,short stop,left fielder,four ball,major league,second baseman,four balls,fast ball,field umpire,hit,batting average,block,third baseman,face mask,ball,spiked shoes,walk,straight ball,minor league,signal,extra inning,baseball cap,cap,coach,switch hitter,slide,knuckle ball
+Shopping:box,category,market,cart,payment,seller,purchase,discount,cash,owner,retail,membership,fair,buyer,balance,bag,chain,vendor,outlet,bargain,mall,receipt,refund,mart,rebate,booth,boutique,debit,emporium,bazaar
+Quantity:many,both,another,every,few,several,either,none,increase,remove,reduce,grow,raise,numerous,extend,boost,decrease,maximize,shrink,multiply,subtract,diminish,lessen,augment,shorten,accrue,magnify,deflate,condense,abridge
+Bank:security guard,bounced check,joint account,interest,savings account,checking account,foreign currency rate,bill,loan,manager,cash,mortgage,foreign exchange,currency,savings,guard,deposit,bills,alarm,coins,ATM,burglar alarm,vault,withdraw,borrow,lend,cashier,teller,forgery,passbook
+Communicate:message,phone,text,call,talk,chat,express,ring,speak,remark,gossip,scream,shout,bark,jaw,converse,whisper,chatter,yak,drone,babble,murmur,gulp,blather,slur,rasp,stammer,blurt,cackle,schmooze
+Manupulation:place,change,create,put,edit,sort,turn,copy,lower,connect,separate,delete,replace,modify,raise,split,throw,extend,combine,stretch,swap,organize,trash,merge,shrink,tweak,compress,widen,shorten,lengthen
+Sport:win,sport,golf clothes,fitness,football,pool,race,target,horse racing,gear,jump,ball,goal,ice,league,exercise,diamond,walk,defense,quarter,baseball,basketball,skin diving,winning,tag,baseball hat,row,cycle,ski wear,ski
+House:furniture,foundation,bed,glass,hall,kitchen,wall,front yard,door,floor,television,wood,studio,fan,master bedroom,chair,workshop,desk,wire,apartment,bedroom,lock,paint,rocking chair,mirror,bath tub,concrete,trailer,castle,bathroom
+3D Graphics:move,object,sample,hair,distance,pass,surface,flow,scale,frame,path,motion,edge,birth,draft,lighting,script,ray,depth,clip,font,scene,import,alpha,sky,spot,shape,tracking,array,export
+Algorithm:tree,string,block,capacity,flow,parent,path,certificate,forest,edge,root,dictionary,bag,factor,configuration,branch,chain,sequence,bridge,pattern,depth,height,cycle,reduction,matrix,combination,circuit,array,relation,bound
+City Name:mexico,saint paul,los angeles,boston,paris,las vegas,goes,fort worth,tours,colorado springs,houston,seattle,hong kong,atlanta,el paso,dallas,austin,toronto,philadelphia,miami,singapore,phoenix,le mans,orlando,sydney,le havre,le tampon,fort wayne,denver,santa ana
+Geography:capital,channel,degree,hill,valley,sea,earth,mountain,scale,nation,forest,stream,creek,chart,ocean,cape,delta,peak,plain,border,territory,parallel,legend,desert,woods,globe,gulf,atlas,canyon,projection
+Physics:distance,internal,pressure,surface,electric,critical,closed,league,phase,foot,mass,heat,chain,inch,electrical,laser,nuclear,binding,frequency,cycle,henry,beat,optical,relative,stress,wave,meter,mile,shift,magnetic
+Building:apartment building,airport,gas station,station,hall,hospital,plant,restaurant,museum,train station,bridge,fort,laboratory,bus terminal,theater,factory,lodge,terminal,tower,stable,cinema,garage,cafe,temple,prison,mall,palace,arena,mill,stadium
+Age:old,advanced,recent,young,mature,modern,fresh,vintage,contemporary,raw,ancient,novel,antique,aged,juvenile,worn,obsolete,immature,shabby,stale,ragged,archaic,primordial,tattered,hoary,frayed,trite,senile,grizzled,threadbare
+State:kansas,arizona,pennsylvania,oregon,minnesota,indiana,wisconsin,hawaii,massachusetts,iowa,maryland,alaska,missouri,tennessee,oklahoma,alabama,utah,kentucky,maine,louisiana,mississippi,connecticut,nevada,arkansas,montana,idaho,nebraska,vermont,delaware,wyoming
+Geometry:normal,surface,fixed,square,couple,edge,minute,solid,rank,disk,ray,height,translation,circuit,interior,circle,linear,slide,node,formula,grid,parallel,plane,leg,angle,vertical,dimension,alternate,axis,median
+Accounting:capital,contract,basis,budget,trust,debt,flow,balance,gain,cycle,shares,liability,bond,inventory,asset,lease,bankruptcy,expense,expenditure,appreciation,auditor,dividend,collateral,annuity,ledger,contingency,accrual,buyout,actuary,callable
+Network:resolution,session,patch cable,driver,path,switch,multi hop,bridge,protocol,layer,transmission,adapter,node,transaction,gateway,router,twisted pair,ethernet,packet,segment,lan,firewall,mask,hub,passive,ping,collision,backbone,latency,unshielded
+Algorithms:random,brute force,universal,extended,matching,reduced,dynamic,connected,proper,hidden,linear,constant,offline,objective,exact,formal,terminal,ordered,parallel,stable,oriented,absolute,visible,covering,nearest,partial,uniform,median,binary,inclusive
+Corporate job:executive,agent,officer,buyer,developer,assistant,associate,designer,representative,administrator,writer,specialist,engineer,consultant,controller,instructor,analyst,producer,coordinator,supervisor,clerk,planner,trainer,architect,technician,facilitator,comptroller,strategist,liason,orchestrator
+Book:chapter,contents,inside margin,edge,explanatory notes,dictionary,paperback,joint,column,encyclopedia,hardcover,appendix,novel,jacket,brochure,bibliography,heading,textbook,groove,spine,booklet,dedication,footnote,almanac,flap,preface,periodical,acknowledgments,pamphlet,flyleaf
+Startup:option,interface,strategy,stage,funding,equity,beta,angel,investor,exit,acquisition,seed,deck,venture,burn,crowd,cloud,founder,preference,pitch,startup,entrepreneur,valuation,accelerator,capitalist,iteration,liquidation,incubator,wireframe,influencer
+Christmas:Lord,Christmas cookies,spirit,birth,Jesus,festival,Joseph,turkey,holy,babe,sweet potato,stable,trips,spice tea,announcement,tradition,candy,angels,bread,camel,sauce,butter,pie,candles,sacred,stockings,celebrate,mince meat,candy cane,Jerusalem
+Car Parts:master cylinder,fan belt,seat,clock,temperature gauge,emergency brake,rear seat,wheel,transmission,headlight switch,converter,emergency flare,mirror,boot,wheels,steering wheel,bucket seat,rack,sensor,valve,trunk,distributor,rearview mirror,starter,brake,tire,differential,cabin,horn,cylinder
+Subject:medicine,German,literature,architecture,economics,physics,philosophy,math,mathematics,chemistry,psychology,biology,drama,geography,PE,astronomy,gym,geometry,sociology,anatomy,algebra,geology,anthropology,archaeology,calculus,botany,zoology,archeology,trigonometry,keyboarding
+Time:hour,recently,century,sometimes,zone,minute,yesterday,cycle,moon,tomorrow,alarm,era,decade,atomic,millennium,rarely,timer,lately,quartz,rotate,epoch,chimes,equinox,pendulum,fortnight,hourglass,revolve,stopwatch,sundial,millisecond
+Construction:column,rise,circuit,hip,cap,plate,template,soil,clearance,adapter,paint,router,concrete,flashing,layout,ridge,cabinet,roof,offset,beam,cricket,threshold,brad,trim,grain,soldier,tongue,gauge,pitch,blend
+Design:row,import,layer,proof,width,sharp,export,spread,template,circle,border,bright,landscape,banner,smooth,contrast,convert,layout,vector,thumbnail,mask,crop,curve,portrait,margin,pixel,transform,texture,coating,caption
+Phones:voice,skin,coverage,touch,speaker,frequency,carrier,wallpaper,upload,ringtone,modem,packet,bandwidth,analog,binary,app,antenna,subscriber,headset,activation,byte,pixel,tap,stylus,infrared,firmware,duplex,codec,latency,accelerometer
+Movement:stay,turn,race,stand,skip,jump,walk,hop,sit,rush,spin,sprint,dash,bolt,hike,hurry,crawl,stroll,tread,sway,roam,crouch,ramble,gallop,stagger,slog,amble,hobble,scamper,hurtle
+Travel:checkout,origin,destination,seat,ticket,operator,transit,coach,leisure,carrier,mile,delay,pilot,gate,leg,passenger,confirmation,hub,passport,taxi,porter,mileage,fare,continent,itinerary,concierge,consulate,kilometer,concourse,layover
+Real Estate:option,agent,rent,grant,buyer,equity,inventory,lease,yield,broker,margin,inflation,assumption,appreciation,zoning,appraisal,tenant,rehab,deed,leverage,foreclosure,lien,originator,easement,recourse,guaranty,underwriter,guarantor,grantor,encumbrance
+Country:Iran,Taiwan,Greece,Pakistan,Egypt,Poland,Vietnam,Malaysia,Philippines,Indonesia,Argentina,Ukraine,Afghanistan,Kenya,Saudi Arabia,Peru,Romania,Colombia,Venezuela,Nepal,Nigeria,Bangladesh,Morocco,Congo,Tanzania,Sudan,Uganda,Syria,Ghana,Ethiopia
+Stationery:letter opener,clip,tape,label maker,ring binder,desk pad,correction tape,magic marker,desk tray,folder,tape dispenser,pen,hanging folder,rubber stamp,glue stick,correction fluid,stamp rack,fountain pen,ballpoint pen,pencil,staples,clamp binder,clipboard,pencil sharpener,staple remover,ruler,fastener binder,eraser,stapler,dater
+Weather:dry,forecast,moon,sky,rain,warm,storm,hurricane,radar,cloudy,flood,rainbow,cloud,sunny,clouds,humidity,calm,lightning,arctic,precipitation,fog,mild,thunder,tsunami,frost,freeze,dew,chill,freezing,hail
+Gaming:adventure,flag,spam,scene,gun,plasma,rail,animation,horror,skill,combat,weapon,squad,trigger,particle,geometry,reward,rocket,clan,bind,texture,tactics,burst,bot,HUD,lag,cockpit,polygon,grenade,twitch
+Tool:metal snips,tube flaring tool,sharpening stone,wire brush,router,chain pipe wrench,plane,ball peen hammer,wire stripper,paint brush,rib joint pliers,soldering gun,knife,tube cutter,pipe clamp,pipe wrench,pitch fork,drill,hammer,adjustable wrench, basin wrench,putty knife,lawn rake,monkey wrench,lawn edger,finishing sander,spading fork,torch,locking pliers,jigsaw
+Food:beer,meat,taste,cheese,cake,pizza,candy,bread,pot,egg,cookie,juice,sauce,eggs,soup,grill,butter,pie,oils,olive,vegetables,nuts,salad,paste,wheat,cuisine,beans,spice,nut,sandwich
+Filmmaking:assistant,credits,designer,operator,genre,loop,plot,cinema,producer,analog,supervisor,costume,spec,synopsis,composer,grip,boom,microphone,adaptation,bounce,prop,wardrobe,loader,foley,dolly,callback,stunt,antagonist,decorator,protagonist
+Catering:plate,cooking,chocolate,dish,rice,lunch,chicken,beer,cheese,meal,knife,sauce,soup,grill,starter,pepper,vegetables,salad,fork,vegetarian,bacon,buffet,freezer,dessert,spoon,roast,slices,pastry,weighed,utensils
+Radio:gain,frequency,spot,FM,engineer,broadcast,console,producer,pot,analog,announce,hook,pitch,playlist,queue,promo,amplifier,interference,bumper,transmit,transmitter,liner,ramp,cue,clutter,sting,billboard,jingle,narrator,turntable
+Typography:character,column,em,font,width,symbol,bold,roman,margin,baseline,bullet,headline,gothic,italic,hint,flush,align,oblique,kern,serif,slab,orphan,indent,gutter,ragged,humanist,pica,ellipsis,ligature,ascender
+Color:gray,bone,jet,purple,desert,ebony,brass,mint,coal,amber,camel,corn,bronze,salmon,tan,olive,heather,ash,coral,ivory,auburn,emerald,champagne,tomato,lime,denim,beige,violet,charcoal,rust
+Body:bone,leg,neck,ear,throat,toe,finger,chest,shoulder,thumbs,nose,tongue,teeth,fingers,lips,nail,knee,lip,nipple,ears,thumb,stomach,flesh,wrist,tooth,waist,shoulders,toes,knees,ankle
+Character:sensitive,bold,proud,quiet,tough,wise,careful,pleasant,honest,violent,elegant,excited,sophisticated,tender,curious,intense,nervous,calm,accepting,gentle,silly,mild,merry,refined,charitable,lazy,generous,brutal,annoying,brave
+Car:motor,joint,wheel,transmission,converter,mirror,rack,sensor,valve,starter,differential,cabin,cylinder,bumper,heater,booster,clutch,compressor,radiator,manifold,rotor,condenser,strut,canister,gearbox,muffler,alternator,caliper,drivetrain,crankshaft
+Crime:illegal,alarm,rob,prison,escape,fraud,murder,armed,ban,knife,investigate,assault,weapon,burglar alarm,arrest,jail,conspiracy,steal,bail,genocide,riot,robbery,homicide,burglary,kidnapping,smuggling,espionage,treason,arson,burglar
+Condiment:oil,salt,sweet pickle,sour cream,sauce,honey,butter,pepper,olive,onion,garlic,chili,salsa,mustard,vinegar,dill pickle,relish,margarine,mayonnaise,ketchup,pesto,horseradish,miso,chutney,wasabi,chives,sauerkraut,catsup,remoulade,sriracha
+Meat:turkey,chicken,chicken leg,chicken wing,buffalo,beef,tongue,rabbit,duck,kidney,ham,lamb,pork,bacon,goat,elk,lamb chop,steak,roast,sausage,bison,hamburger,alligator,quail,caribou,yak,veal,pheasant,venison,mutton
+Material:vinyl,sand,fiber,copper,brass,aluminum,wooden,nylon,bronze,brick,wool,titanium,acrylic,metallic,polyester,alloy,cement,linen,glue,ceramics,cardboard,fiberglass,epoxy,wicker,silica,oily,watery,gilded,viscose,woolen
+Clothes:boots,belt,jacket,pants,tie,shorts,coat,jeans,gloves,pantyhose,skirt,stockings,socks,jumper,trousers,sweater,vest,sweatshirt,scarf,slippers,pajamas,blouse,cardigan,overalls,slacks,underpants,raincoat,overcoat,undershirt,underclothes
+People Related:exciting,thin,athletic,lucky,romantic,sad,attractive,careful,angry,confident,ugly,boring,horrible,charming,brave,clever,outgoing,cruel,humble,wealthy,skinny,humorous,energetic,overweight,amusing,selfish,dependable,graceful,careless,crafty
+Instrument:double bass,French horn,bass drum,piano,recorder,triangle,snare drum,violin,flute,trumpet,harp,viola,clarinet,saxophone,gong,trombone,oboe,tuba,baritone,piccolo,bassoon,cymbal,bugle,cornet,euphonium,xylophone,timpani,flugelhorn,sousaphone,castanet
+Shape:circle,broad,narrow,thin,irregular shape,thick,pointed,slim,triangle,oval,cylinder,sphere,bent,cone,pentagon,rounded,pyramid,skinny,wedge,rectangle,chunky,ellipse,hexagon,octagon,whorl,trapezoid,boxy,blocky,parallelogram,semicircle
+Chemistry:frequency,wave,concentration,radiation,ion,compound,velocity,electron,mixture,particle,catalyst,decay,molecule,combustion,nucleus,proton,wavelength,solvent,photon,neutron,octet,mole,entropy,cathode,anode,hydrolysis,electrolysis,solute,anion,effusion
+Instruments:tom tom,steel drums,bass drum,drum,ride cymbal,bell lyre,orchestra bells,tenor drum,crash cymbals,triangle,snare drum,splash cymbal,gong,chimes,celeste,cymbals,cymbal,scraper,sizzle cymbal,cowbell,conga,marimba,xylophone,bongos,timpani,vibraphone,maracas,timbales,castanets,glockenspiel
+Water:gulf,wash,shore,surf,basin,bend,oasis,pond,dam,coral,canal,fork,rapids,reef,brook,cove,reservoir,marsh,playa,inlet,glacier,strait,lagoon,swamp,kettle,loch,arroyo,bayou,estuary,bog
+Container:chest,pot,container,trunk,tin,basin,luggage,tub,tray,cube,cooler,barrel,jar,purse,vault,pod,drawer,backpack,bucket,vase,pouch,locker,tote,sack,baggage,crate,carton,urn,briefcase,jug
+Animal:spider,rabbit,sheep,beaver,bee,duck,cow,frog,bat,snake,pig,jaguar,puppy,lamb,ant,elephant,shark,turtle,goat,owl,dolphin,goose,hen,puma,lynx,panther,panda,kitten,lobster,zebra
+Emotions:crazy,mad,glad,sad,afraid,excited,sunny,angry,calm,worried,scared,shy,lively,jolly,tense,furious,cheerful,weary,icy,wary,tranquil,upbeat,rosy,frigid,seething,livid,crabby,jovial,glum,ornery
+Transportation:train,swimming,jet,motorcycle,ferry,bicycle,taxi,yacht,helicopter,airplane,scooter,subway,canoe,submarine,kayak,raft,dinghy,sailboat,surfboard,catamaran,streetcar,hovercraft,seaplane,freighter,motorboat,speedboat,rowboat,hydrofoil,ferryboat,dogsled
+Driving:rev,median,shoulder,curve,tail,brake,tunnel,barrier,terrace,boulevard,intersection,merge,alley,ramp,parkway,curb,accelerate,freeway,sidewalk,stall,roadway,skid,motorway,gutter,causeway,detour,overpass,cobblestone,underpass,cloverleaf
+Plants:sage,sap,berry,jungle,nut,weed,herb,moss,cork,spine,lily,resin,bulb,flora,bud,bamboo,ivy,vine,bark,vein,clover,cactus,pollen,juniper,fern,acorn,shrub,thorn,corolla,nectar
+Cooking:knife,steam,grill,microwave,fork,measuring spoon,timer,dip,stir,slice,fry,spoon,bake,barbecue,toast,roast,melt,boil,chop,scramble,simmer,thaw,saute,strainer,broil,spatula,sear,poach,potholder,braise
+Job:chef,priest,actress,poet,musician,pastor,athlete,carpenter,sailor,dentist,accountant,barber,mechanic,banker,pharmacist,rabbi,tailor,politician,fisherman,butcher,magician,craftsman,veterinarian,salesman,waiter,policeman,waitress,crook,burglar,chauffeur
+Machine Learning:recall,bias,correlation,batch,confusion,hypothesis,regression,ensemble,variance,convergence,residual,gradient,dataset,inference,entropy,epoch,estimator,embedding,boosting,histogram,neuron,covariance,classifier,bayes,convolution,outlier,bagging,centroid,discriminator,dataframe
+Astronomy:omega,electron,radius,gravity,envelope,magnitude,flux,halo,brightness,nucleus,proton,corona,photon,neutron,relativity,convection,pulsar,photometry,neutrino,conduction,opacity,luminosity,quasar,supernova,singularity,redshift,parallax,hadron,lepton,radian
+Writing:hook,narrative,formatting,myth,imprint,manuscript,autobiography,anthology,premise,motif,analogy,metaphor,parody,haiku,pun,ambiance,antagonist,parable,byline,cliche,pseudonym,novella,allegory,diction,boilerplate,euphemism,backlist,denotation,denouement,epigram
+Architecture:arch,patio,terrace,pavilion,bracket,courtyard,balcony,brace,molding,truss,setback,facade,belvedere,spire,turret,gallerie,veranda,archway,portico,frieze,colonnade,pergola,cornice,cupola,parapet,balustrade,roundel,pediment,baluster,pilaster
+Fruit:coconut,citrus,peach,grape,plum,grapes,pineapple,mango,cranberry,kiwi,raspberry,blueberry,apricot,melon,grapefruit,mulberry,tangerine,avocado,watermelon,raisin,prune,papaya,pomegranate,currant,citron,guava,persimmon,cantaloupe,nectarine,kumquat
+Predator:shark,owl,cobra,lynx,badger,viper,leopard,coyote,marlin,boa,crocodile,wolverine,cougar,osprey,cheetah,barracuda,eel,salamander,chimpanzee,dingo,jackal,komodo,petrel,fossa,mamba,ocelot,skua,civet,mandrill,serval
+Apex Predators:shark,owl,cobra,lynx,badger,viper,leopard,coyote,marlin,boa,crocodile,wolverine,cougar,osprey,cheetah,barracuda,eel,salamander,chimpanzee,dingo,jackal,komodo,petrel,fossa,mamba,ocelot,skua,civet,mandrill,serval
+Fish:salmon,shark,trout,tuna,carp,herring,marlin,pollock,perch,barracuda,angler,eel,snapper,halibut,flounder,mullet,mackerel,grouper,blowfish,scallop,betta,haddock,cobbler,tilapia,anchovy,sardine,ayu,barbel,amberjack,burbot
+Bird:dove,pigeon,parrot,canary,pelican,sparrow,finch,flamingo,heron,condor,quail,osprey,warbler,partridge,cuckoo,lark,pheasant,loon,fowl,ostrich,grouse,thrush,seagull,stork,covey,vulture,rook,rhea,albatross,puffin
+Vegetable:pumpkin,popcorn,cabbage,spinach,carrot,cucumber,lettuce,broccoli,pumpkins,celery,asparagus,soybeans,yam,eggplant,beet,cauliflower,Brussel sprouts,leek,kale,lentils,chard,turnip,radish,okra,turnips,chicory,shallot,parsnip,chive,scallion
+Wine:sherry,mead,cabernet,sauvignon,madeira,chardonnay,pinot,merlot,shiraz,chianti,muscat,riesling,zinfandel,claret,chablis,beaujolais,chinon,grappa,barolo,malbec,moscato,barbaresco,prosecco,amarone,bardolino,dolcetto,marsanne,auslese,lambrusco,arneis
+Frequency:every year,most times,many times,every two months,every third day,very often,three times,every week,four times,every night,every month,several times,never,every Monday,every hour,always,once,almost never,daily,almost always,usually,often,nearly always,quite often,hardly ever,sometimes,monthly,weekly,generally,frequently,twice,normally,regularly,constantly,occasionally,rarely,hourly,yearly,continuously,seldom
+Prepositions:without,since,during,times,save,around,against,below,above,until,past,upon,plus,far,along,among,near,across,inside,outside,round,behind,except,regarding,mid,towards,toward,despite,till,opposite,absent,beneath,beside,alongside,aboard,underneath,amid,atop,amidst,excepting
+Business:purchase,loss,brand,discount,increase,advertise,growth,commission,build,exchange,supply,lower,advice,decision,facilities,structure,fund,distribution,schedule,option,improve,budget,success,charge,opinion,output,develop,responsibility,consider,pack,goods,target,debt,instructions,remove,transport,employee,difference,accept,goal
+Job Related:college,present address,previous experience,zip code,street,experience,single,age,junior college,weight,position,apply,skills,criminal record,male,marital status,female,felony record,employee,vision,physical examination,hearing,height,married,birthday,gender,certification,employer,notify,salary,occupation,quit,separated,diploma,fired,relatives,citizenship,handicap,divorced,dependents
+Computer:close,database,function,method,hardware,copy,printer,menu,object,cut,command,input,output,processing,string,block,keyword,argument,multimedia,interactive,icon,delete,mouse,graphic,font,scope,replace,parameter,keyboard,modem,syntax,scanner,integer,paste,float,numeric,peripheral,literal,CDROM,snippet
+Corporate:solution,capital,lead,channel,idea,opportunity,interface,forward,strategy,senior,internal,surface,relationship,creative,benefit,chief,vision,architecture,task,platform,admin,improvement,procedure,leadership,chain,partnership,portal,dynamic,infrastructure,delta,principal,investor,initiative,transition,ownership,innovation,expertise,deck,vector,skill
+Time:second,never,always,month,usually,often,watch,soon,season,hour,recently,century,sometimes,zone,minute,yesterday,cycle,moon,tomorrow,alarm,era,decade,atomic,millennium,rarely,timer,lately,quartz,rotate,epoch,chimes,equinox,pendulum,fortnight,hourglass,revolve,stopwatch,sundial,millisecond,chronometer
+Military:jack,frame,chief,installation,gear,ball,shot,bag,pocket,rank,element,quarter,column,bridge,draft,chart,fort,boat,void,fix,truck,wire,bird,mine,delta,dot,hop,gun,engineer,tank,pilot,boot,shell,chip,formation,captain,liberty,gang,pipe,lay
+Music:switch,gear,listen,canon,bus,patch,stream,theme,guitar,column,chain,sequence,mix,disk,measure,gain,zoom,perform,conduct,minor,dynamic,import,beat,signature,circuit,layer,bass,peak,bell,sharp,lane,export,template,wave,meter,paint,delay,pan,loop,instrument
+Sport:baseball hat,row,cycle,ski wear,ski,soccer,tennis,ride,motorcycle racing,baseball uniform,coach,bike,lose,crew,stick,hockey,winner,guard,swimming,catch,swimming suit,lawn tennis,throw,tie,arena,rugby,athletics,cycling,arrow,tee,cricket,skiing,stadium,bowling,mat,gym,pitch,bow,para gliding,pole
+Web:bug,keyword,stream,load,touch,chart,script,alert,query,wire,static,dynamic,bookmark,mirror,grid,tab,upload,exception,buffer,graph,app,interval,debug,drag,float,tap,scroll,reload,inline,fork,timer,sync,prefix,align,refresh,popup,modal,git,embed,shim
+City Name:le havre,le tampon,fort wayne,denver,santa ana,portland,orleans,lincoln,vancouver,baltimore,charlotte,bergen op zoom,pittsburgh,cleveland,detroit,buffalo,tampa,melbourne,columbus,madison,richmond,sacramento,cincinnati,dublin,nashville,milwaukee,amsterdam,tokyo,montreal,minneapolis,memphis,ottawa,durham,jacksonville,oakland,indianapolis,norfolk,barcelona,moscow,madrid
+Country:Spain,Israel,Russia,Brazil,Turkey,Thailand,Iran,Taiwan,Greece,Pakistan,Egypt,Poland,Vietnam,Malaysia,Philippines,Indonesia,Argentina,Ukraine,Afghanistan,Kenya,Saudi Arabia,Peru,Romania,Colombia,Venezuela,Nepal,Nigeria,Bangladesh,Morocco,Congo,Tanzania,Sudan,Uganda,Syria,Ghana,Ethiopia,Myanmar,Uzbekistan,Algeria,Burma
+3D Graphics:spot,shape,tracking,array,export,logic,mesh,lens,node,paint,loop,scan,bone,tube,smoke,simulation,buffer,pipeline,graph,shadow,atmosphere,lamp,ghost,fluid,trace,curve,highlight,cloth,intensity,velocity,pixel,particle,reflection,geometry,flip,horizon,transform,gravity,cube,rotation
+Physics:wave,meter,mile,shift,magnetic,plasma,mechanical,density,voltage,angle,absolute,vector,fundamental,progressive,electricity,yard,radiation,pound,fluid,quantum,acoustic,grain,atomic,newton,velocity,electron,strain,ton,particle,volt,reflection,watt,gravity,acre,momentum,crest,absorption,dense,gallon,gram
+Material:plastic,golden,felt,cast iron,iron,cotton,carbon,concrete,rubber,vinyl,sand,fiber,copper,brass,aluminum,wooden,nylon,bronze,brick,wool,titanium,acrylic,metallic,polyester,alloy,cement,linen,glue,ceramics,cardboard,fiberglass,epoxy,wicker,silica,oily,watery,gilded,viscose,woolen,chalky
+Catering:tip,dinner,salt,cook,plate,cooking,chocolate,dish,rice,lunch,chicken,beer,cheese,meal,knife,sauce,soup,grill,starter,pepper,vegetables,salad,fork,vegetarian,bacon,buffet,freezer,dessert,spoon,roast,slices,pastry,weighed,utensils,waiter,waitress,napkin,sausages,hygienic,cloakroom
+Algorithm:combination,circuit,array,relation,bound,node,tournament,sum,grid,algorithm,graph,segment,leaf,median,diameter,pointer,stack,tail,complexity,interval,conjunction,sink,queue,rotation,prefix,hash,vertex,occurrence,relaxation,alphabet,bucket,collision,heap,suffix,iteration,exponential,ancestor,predicate,recurrence,fractal
+House:bath tub,concrete,trailer,castle,bathroom,villa,garage,roof,lamp,den,vacuum cleaner,entrance,carpet,shelf,bedding,ranch,cottage,ceiling,oven,toilet,laundry,nail,microwave,screw,sink,brick,cabin,plumbing,cave,patio,rug,sofa,tent,condo,basement,pillow,refrigerator,dryer,washer,blanket
+Baseball:signal,extra inning,baseball cap,cap,coach,switch hitter,slide,knuckle ball,catch,strike,throw,plate umpire,curve,pitch,chest protector,protest,underhand throw,overhand throw,bat,runner,fence,steal,helmet,foul,glove,shin guards,scoreboard,pitcher,innings,inning,catcher,slider,batter,catcher mitt,umpire,fumble,dugout,bunt,sinker,screwball
+Filmmaking:shot,assistant,credits,designer,operator,genre,loop,plot,cinema,producer,analog,supervisor,costume,spec,synopsis,composer,grip,boom,microphone,adaptation,bounce,prop,wardrobe,loader,foley,dolly,callback,stunt,antagonist,decorator,protagonist,dailies,publicist,storyboard,backstory,clapper,gaffer,squib,recordist,gofer
+Construction:soldier,tongue,gauge,pitch,blend,bow,stud,mason,span,landing,aggregate,reveal,volt,watt,ribbon,scotia,sap,patio,trap,fitting,penny,subdivision,marble,partition,buck,acre,wax,slope,rehab,flush,heel,groove,cement,bracket,insulation,arbor,resin,granite,primer,adhesive
+Geometry:vertical,dimension,alternate,axis,median,diameter,transformation,acute,curve,horizontal,distinct,adjacent,composite,pole,coordinate,reflection,triangle,cube,envelope,rational,cylinder,vertex,sphere,altitude,cone,pentagon,oblique,pyramid,apex,symmetry,chord,irregular,locus,diagonal,kite,rectangle,perimeter,prism,manifold,convex
+Radio:spot,FM,engineer,broadcast,console,producer,pot,analog,announce,hook,pitch,playlist,queue,promo,amplifier,interference,bumper,transmit,transmitter,liner,ramp,cue,clutter,sting,billboard,jingle,narrator,turntable,teaser,sweeper,announcer,ident,rundown,crossfade,inflection,segue,simulcast,adlib,stager,cume
+Body:ear,throat,toe,finger,chest,shoulder,thumbs,nose,tongue,teeth,fingers,lips,nail,knee,lip,nipple,ears,thumb,stomach,flesh,wrist,tooth,waist,shoulders,toes,knees,ankle,chin,elbow,beard,cheek,hips,thigh,cheeks,forehead,navel,eyebrows,armpit,moustache,buttock
+Design:landscape,banner,smooth,contrast,convert,layout,vector,thumbnail,mask,crop,curve,portrait,margin,pixel,transform,texture,coating,caption,gradient,rectangle,palette,saturation,serif,bleed,blur,folio,hue,raster,gutter,tint,opacity,swatch,skew,vignette,pantone,bevel,emboss,dither,bezier,halftone
+Building:mall,palace,arena,mill,stadium,cottage,arch,depot,motel,chapel,capitol,embassy,marina,jail,bowling alley,manor,shed,pavilion,barn,hostel,cathedral,dome,vault,monument,abbey,bakery,observatory,duplex,lighthouse,chateau,supermarket,fortress,chalet,shrine,foundry,monastery,mosque,bunker,crypt,kiosk
+People Related:cute,dangerous,exciting,thin,athletic,lucky,romantic,sad,attractive,careful,angry,confident,ugly,boring,horrible,charming,brave,clever,outgoing,cruel,humble,wealthy,skinny,humorous,energetic,overweight,amusing,selfish,dependable,graceful,careless,crafty,unlucky,touchy,stingy,likable,talkative,forgetful,inconsiderate,easygoing
+Geography:globe,gulf,atlas,canyon,projection,pole,oasis,pond,prairie,canal,cave,latitude,mesa,reef,peninsula,elevation,cliff,cove,reservoir,continent,longitude,marsh,altitude,compass,meridian,contour,wetland,volcano,glacier,strait,lagoon,swamp,butte,plateau,waterfall,dune,estuary,tundra,archipelago,equator
+Algorithms:partial,uniform,median,binary,inclusive,optimal,balanced,spatial,threaded,counting,boolean,finite,approximate,weighted,blocking,adaptive,persistent,relaxed,concurrent,feasible,descent,inverse,bounded,randomized,symmetric,polynomial,shortest,recursive,cyclic,exponential,planar,naive,greedy,sparse,inverted,exhaustive,ascent,quadratic,deterministic,orthogonal
+Writing:genre,novel,plot,assignment,deadline,pace,outline,dialogue,bibliography,hook,narrative,formatting,myth,imprint,manuscript,autobiography,anthology,premise,motif,analogy,metaphor,parody,haiku,pun,ambiance,antagonist,parable,byline,cliche,pseudonym,novella,allegory,diction,boilerplate,euphemism,backlist,denotation,denouement,epigram,frontlist
+Job:nurse,actor,baker,broker,clerk,farmer,soldier,chef,priest,actress,poet,musician,pastor,athlete,carpenter,sailor,dentist,accountant,barber,mechanic,banker,pharmacist,rabbi,tailor,politician,fisherman,butcher,magician,craftsman,veterinarian,salesman,waiter,policeman,waitress,crook,burglar,chauffeur,shoemaker,watchmaker,beautician
+Crime:prison,escape,fraud,murder,armed,ban,knife,investigate,assault,weapon,burglar alarm,arrest,jail,conspiracy,steal,bail,genocide,riot,robbery,homicide,burglary,kidnapping,smuggling,espionage,treason,arson,burglar,bribery,perjury,forgery,slander,blackmail,manslaughter,hijacking,alibi,trespassing,shoplifting,strangle,mugging,bigamy
+Container:container,trunk,tin,basin,luggage,tub,tray,cube,cooler,barrel,jar,purse,vault,pod,drawer,backpack,bucket,vase,pouch,locker,tote,sack,baggage,crate,carton,urn,briefcase,jug,hutch,suitcase,canister,flask,vial,casket,canteen,satchel,cask,attache,beaker,coffer
+Christmas:stockings,celebrate,mince meat,candy cane,Jerusalem,greetings,punch,egg nog,ham,pumpkin pie,cranberry sauce,merry,dressing,miracle,Gloria,Advent,Noel,goodwill,prophecy,donkey,ceremonies,plum pudding,stocking stuffers,Bethlehem,brandy,jubilee,Savior,Emmanuel,proclamation,pageant,nativity,Epiphany,incarnation,shepherds,angelic,flocks,parades,Magi,tidings,Scrooge
+Food:cuisine,beans,spice,nut,sandwich,yeast,pasta,flour,poultry,liquor,soy,chili,steak,dessert,shrimp,salsa,mayo,soda,foie gras,cocoa,mushroom,toast,burger,syrup,sweets,cereal,fats,vinegar,pastry,pudding,aroma,peanuts,yogurt,cider,biscuit,stew,batter,noodles,hamburger,glaze
+Plants:brush,bean,sage,sap,berry,jungle,nut,weed,herb,moss,cork,spine,lily,resin,bulb,flora,bud,bamboo,ivy,vine,bark,vein,clover,cactus,pollen,juniper,fern,acorn,shrub,thorn,corolla,nectar,alfalfa,stalk,petal,kelp,sprout,twig,spore,kudzu
+Car Parts:starter,brake,tire,differential,cabin,horn,cylinder,bumper,heater,alternator gauge,dashboard,booster,clutch,glove compartment,accelerator,compressor,radiator,manifold,rotor,windshield,windshield wiper,headlight,condenser,strut,canister,gearbox,muffler,alternator,caliper,windscreen,ashtray,drivetrain,odometer,crankshaft,tachometer,speedometer,taillight,hubcap,blinker,gearshift
+Water:pond,dam,coral,canal,fork,rapids,reef,brook,cove,reservoir,marsh,playa,inlet,glacier,strait,lagoon,swamp,kettle,loch,arroyo,bayou,estuary,bog,iceberg,cataract,fen,tributary,gully,puddle,narrows,gulch,moat,islet,shoal,fjord,geyser,meander,bight,shallows,rivulet
+Character:lazy,generous,brutal,annoying,brave,savage,clever,neat,stern,relaxed,loyal,cruel,eager,humble,rude,ambitious,messy,energetic,grim,vain,humane,vicious,tense,polite,cautious,selfish,daring,witty,cheerful,respectful,graceful,adventurous,brute,trusting,stubborn,inventive,meek,obnoxious,forgiving,timid
+Color:coral,ivory,auburn,emerald,champagne,tomato,lime,denim,beige,violet,charcoal,rust,crimson,indigo,asphalt,burgundy,plum,chestnut,maroon,cobalt,canary,bordeaux,magenta,cyan,teal,khaki,caramel,sienna,celeste,azure,avocado,aquamarine,bisque,fuchsia,claret,feldspar,citron,chartreuse,ecru,cerulean
+Weather:fog,mild,thunder,tsunami,frost,freeze,dew,chill,freezing,hail,tornado,rainy,cyclone,windy,thermometer,blizzard,damp,arid,overcast,meteorology,Fahrenheit,snowy,icy,typhoon,barometer,stormy,chilly,breezy,Celsius,humid,thunderstorm,frosty,cirrus,foggy,drizzle,sleet,snowstorm,wintry,rainstorm,smoggy
+Tool:hammer,adjustable wrench, basin wrench,putty knife,lawn rake,monkey wrench,lawn edger,finishing sander,spading fork,torch,locking pliers,jigsaw,propane torch,bulb dibble,scissors,hedge shears,brace,wrench,rake,spade,hoe,screwdriver,pliers,pruning shears,shovel,weeding hoe,mallet,chisel,vise,scraper,stapler,plunger,lopping shears,trowel,hacksaw,dibble,seeder,mattock,handsaw,weeder
+Vegetable:potato,onion,tomatoes,garlic,peas,tomato,bean sprouts,Brussels sprouts,pumpkin,popcorn,cabbage,spinach,carrot,cucumber,lettuce,broccoli,pumpkins,celery,asparagus,soybeans,yam,eggplant,beet,cauliflower,Brussel sprouts,leek,kale,lentils,chard,turnip,radish,okra,turnips,chicory,shallot,parsnip,chive,scallion,rutabaga,kohlrabi
+Animal:puma,lynx,panther,panda,kitten,lobster,zebra,donkey,calf,badger,squirrel,leopard,gorilla,kangaroo,crocodile,snail,rooster,hamster,cougar,scorpion,alligator,octopus,cheetah,llama,giraffe,goldfish,ostrich,bobcat,porcupine,aardvark,chimpanzee,gazelle,armadillo,baboon,rhinoceros,hyena,hippopotamus,wallaby,ocelot,anteater
+Bird:fowl,ostrich,grouse,thrush,seagull,stork,covey,vulture,rook,rhea,albatross,puffin,gander,kestrel,buzzard,starling,magpie,snipe,skylark,gosling,quetzal,toucan,cormorant,shrike,macaw,duckling,cockatoo,chickadee,parakeet,budgie,tanager,coot,goldfinch,cockatiel,avocet,pintail,ptarmigan,darter,jackdaw,razorbill
+Business:transport,employee,difference,accept,goal,install,count,permission,reduce,guarantee,competition,limit,prevent,improvement,suggest,avoid,manage,separate,reach,comparison,produce,profit,advertisement,promote,advantage,maintain,fix,measure,obtain,rise,reduction,signature,factory,promotion,establish,employer,participate,agenda,respond,deliver,confirm,inventory,objective,estimate,encourage,cancel,salary,raise,decide,split
+Music:paint,delay,pan,loop,instrument,split,shift,piano,echo,reverse,pulse,strip,strike,opera,duration,gate,tone,stereo,tube,cache,console,composition,solo,repeat,drum,amp,phrase,pad,slip,swing,offset,jam,singer,plugin,arrangement,stretch,timing,sing,carol,stack,stem,tune,compression,trim,interval,pitch,midi,bend,vocal,organ
+Military:captain,liberty,gang,pipe,lay,deck,yard,radar,rack,brass,wake,sight,charlie,shoot,hook,knife,founder,stack,stem,bearing,trim,fleet,commander,interval,directive,mate,bow,bingo,pole,sword,tap,anchor,pit,drill,raid,withdrawal,screw,cabin,boom,trap,alignment,latitude,judy,envelope,mess,retreat,hull,buck,reef,basement
+Business:cancel,salary,raise,decide,split,calculate,mention,possibility,promise,explanation,extend,penalty,decrease,refund,deadline,confirmation,inform,mistake,afford,repairs,authorization,retailer,margin,suggestion,invest,approve,admit,distribute,advise,enquiry,refuse,organize,invoice,succeed,reminder,divide,deficit,reject,dispatch,employ,remind,turnover,complain,authorize,recruit,borrow,convince,competitor,owe,lend
+Business:explanation,extend,penalty,decrease,refund,deadline,confirmation,inform,mistake,afford,repairs,authorization,retailer,margin,suggestion,invest,approve,admit,distribute,advise,enquiry,refuse,organize,invoice,succeed,reminder,divide,deficit,reject,dispatch,employ,remind,turnover,complain,authorize,recruit,borrow,convince,competitor,owe,lend,debtor,disadvantage,dismiss,apology,creditor,wholesaler,resign,shorten,lengthen
+City Name:indianapolis,norfolk,barcelona,moscow,madrid,raleigh,beijing,calgary,honolulu,omaha,vienna,arlington,bangkok,geneva,reno,brussels,shanghai,albuquerque,riverside,wichita,henderson,chula vista,monaco,den haag,aurora,milan,grave,den helder,mesa,edmonton,lexington,anaheim,munich,gilbert,dubai,mumbai,vatican,gibraltar,greensboro,tulsa,newark,istanbul,baton rouge,frankfurt,sao paulo,fresno,anchorage,chandler,toledo,boise
+Music:pitch,midi,bend,vocal,organ,paste,composer,mono,timber,horn,snap,triangle,arrange,dominant,marker,envelope,rhythm,symphony,grave,punch,sync,microphone,surround,amplifier,alto,accent,musician,merge,align,groove,violin,render,pause,notation,auxiliary,percussion,bounce,melody,flute,cue,sweep,fade,trumpet,tempo,shortcut,compressor,chord,hum,modulation,latency
+Corporate:innovation,expertise,deck,vector,skill,brass,legacy,functionality,bandwidth,talent,sunset,dialogue,methodology,scenario,baseline,alignment,cowboy,schema,ping,convergence,lateral,paradigm,niche,deploy,metrics,shrink,linkage,runway,upside,empowerment,sidebar,synergy,imperative,onboard,disconnect,scrub,pivot,kudos,kicker,noodle,simmer,whiteboard,deliverable,ballpark,populate,gatekeeper,unpack,silo,hardball,resonate
+Algorithm:sum,grid,algorithm,graph,segment,leaf,median,diameter,pointer,stack,tail,complexity,interval,conjunction,sink,queue,rotation,prefix,hash,vertex,occurrence,relaxation,alphabet,bucket,collision,heap,suffix,iteration,exponential,ancestor,predicate,recurrence,fractal,adversary,recursion,clique,permutation,negation,automaton,radix,factorial,centroid,trie,polytope,digraph,deque,poset,octree,quadtree,bisector
+Sport:gym,pitch,bow,para gliding,pole,relay,compete,scuba diving,swim,bicycle,dive,offense,polo,olympics,medal,bat,volleyball,scuba,helmet,hang gliding,softball,vault,sail,snowboard,skate,athlete,jumper,lacrosse,snowboarding,squash,canoe,racer,fencing,gymnastics,referee,kite,archer,karate,kayak,loser,diver,hoops,dart,paddle,hoop,inning,badminton,triathlon,surfer,batter
+Geography:desert,woods,globe,gulf,atlas,canyon,projection,pole,oasis,pond,prairie,canal,cave,latitude,mesa,reef,peninsula,elevation,cliff,cove,reservoir,continent,longitude,marsh,altitude,compass,meridian,contour,wetland,volcano,glacier,strait,lagoon,swamp,butte,plateau,waterfall,dune,estuary,tundra,archipelago,equator,tropics,azimuth,atoll,tributary,fjord,geyser,riverbed,landform
+Building:mill,stadium,cottage,arch,depot,motel,chapel,capitol,embassy,marina,jail,bowling alley,manor,shed,pavilion,barn,hostel,cathedral,dome,vault,monument,abbey,bakery,observatory,duplex,lighthouse,chateau,supermarket,fortress,chalet,shrine,foundry,monastery,mosque,bunker,crypt,kiosk,refinery,barracks,gazebo,hangar,armory,dormitory,spire,silo,pagoda,skyscraper,cabana,rectory,triplex
+Military:retreat,hull,buck,reef,basement,extraction,exec,gig,breach,mud,dip,nest,ladder,heel,heater,cannon,bracket,longitude,pike,rifle,pile,glove,stern,infantry,bounce,pier,fender,surrender,deploy,goo,shooter,compartment,turbine,relieve,knot,spear,pistol,haul,rig,axe,fortress,artillery,siege,mast,wharf,shotgun,swell,chow,mortar,helm
+Christmas:pie,candles,sacred,stockings,celebrate,mince meat,candy cane,Jerusalem,greetings,punch,egg nog,ham,pumpkin pie,cranberry sauce,merry,dressing,miracle,Gloria,Advent,Noel,goodwill,prophecy,donkey,ceremonies,plum pudding,stocking stuffers,Bethlehem,brandy,jubilee,Savior,Emmanuel,proclamation,pageant,nativity,Epiphany,incarnation,shepherds,angelic,flocks,parades,Magi,tidings,Scrooge,myrrh,astrologers,alleluia,frankincense,creche,Yuletide,fruitcake
+3D Graphics:horizon,transform,gravity,cube,rotation,fur,hull,cylinder,texture,cage,ambient,merge,shine,vertex,sphere,pose,render,constraint,cone,bucket,bounce,collision,sketch,simplify,sweep,helper,lattice,skeleton,rotate,rig,prism,simulate,diffuse,polygon,dope,integrator,tangent,attenuation,teapot,animate,skew,spline,intersect,distort,occlusion,torus,shader,specular,ragdoll,voxel
+Construction:arbor,resin,granite,primer,adhesive,gum,saddle,rigid,pier,lumber,slate,stain,elbow,gloss,porch,notch,gravel,jigsaw,asphalt,solvent,stool,fuse,knot,radial,runoff,insulated,fixture,darby,enamel,soluble,siding,warp,limestone,filler,datum,laminated,molding,laminate,slab,mortar,pedestal,faucet,drip,conduit,ply,plaster,sleeper,biscuit,piles,tread
+City Name:fresno,anchorage,chandler,toledo,boise,scottsdale,irvine,jakarta,macau,corpus christi,irving,lyon,santiago,stein,johannesburg,warsaw,lisbon,buenos aires,zurich,stockton,seoul,taipei,garland,fremont,glendale,oss,chesapeake,kuala lumpur,bordeaux,gland,cannes,basel,bakersfield,sion,plano,rotterdam,wil,lubbock,toulouse,bern,marseille,baden,utrecht,strasbourg,thorn,versailles,laredo,metz,lille,lausanne
+Physics:crest,absorption,dense,gallon,gram,rigid,diffusion,vibration,acceleration,resonance,nucleus,radioactive,thrust,scattering,displacement,ounce,impulse,coherent,wavelength,pascal,amplitude,resolving,photon,dispersion,kinetic,calorie,radiant,quark,mole,ohm,quart,polarization,convection,latent,alternating,pint,capacitor,hertz,gravitational,diffraction,magnification,trough,inertia,resultant,isotope,tesla,conduction,luminosity,solenoid,chromatic
+3D Graphics:cylinder,texture,cage,ambient,merge,shine,vertex,sphere,pose,render,constraint,cone,bucket,bounce,collision,sketch,simplify,sweep,helper,lattice,skeleton,rotate,rig,prism,simulate,diffuse,polygon,dope,integrator,tangent,attenuation,teapot,animate,skew,spline,intersect,distort,occlusion,torus,shader,specular,ragdoll,voxel,subdivide,deform,keyframe,radiosity,extrude,biped,falloff
+House:pillow,refrigerator,dryer,washer,blanket,cement,fireplace,bolt,curtain,closet,couch,stairs,mansion,stove,cushion,hut,porch,attic,chateau,cellar,furnace,loft,shack,condominium,chimney,townhouse,faucet,plaster,bungalow,hinge,dresser,hallway,plywood,bathtub,pantry,staircase,bookcase,cupboard,doorstep,drapes,ashtray,tenement,igloo,playroom,wigwam,brownstone,rafter,yurt,rowhouse,tepee
+Music:compressor,chord,hum,modulation,latency,sax,sonata,whistle,harp,viola,tenor,scrub,cello,mute,compose,clarinet,automate,dolce,octave,saxophone,gong,allegro,climax,banjo,largo,forte,fiddle,soprano,glide,resize,tweak,synth,compress,triad,trombone,outboard,tonic,snare,riff,mandolin,accordion,harmonica,cadence,oboe,vibes,equalizer,treble,jog,presto,tuba
+Geometry:cylinder,vertex,sphere,altitude,cone,pentagon,oblique,pyramid,apex,symmetry,chord,irregular,locus,diagonal,kite,rectangle,perimeter,prism,manifold,convex,polygon,inversion,fractal,perpendicular,resultant,inscribed,concave,midpoint,concentric,hexagon,octagon,cosine,congruent,coincident,discriminant,centroid,obtuse,equidistant,collinear,equilateral,monoid,rhombus,coplanar,secant,abscissa,tessellation,tetrad,hypotenuse,bisector,involute
+Sport:squash,canoe,racer,fencing,gymnastics,referee,kite,archer,karate,kayak,loser,diver,hoops,dart,paddle,hoop,inning,badminton,triathlon,surfer,batter,axel,puck,golfer,jogging,goalie,rink,sled,judo,jog,swimmer,skier,wrestler,umpire,slalom,frisbee,cyclist,cleats,mallet,mitt,javelin,handball,volley,infield,tracksuit,luge,quiver,gymnast,rower,bocce
+Character:stern,relaxed,loyal,cruel,eager,humble,rude,ambitious,messy,energetic,grim,vain,humane,vicious,tense,polite,cautious,selfish,daring,witty,cheerful,respectful,graceful,adventurous,brute,trusting,stubborn,inventive,meek,obnoxious,forgiving,timid,devout,ferocious,impulsive,indulgent,heartless,shrewd,merciless,amiable,callous,lenient,odious,amicable,grouchy,urbane,genteel,affable,obliging,courtly
+Food:soda,foie gras,cocoa,mushroom,toast,burger,syrup,sweets,cereal,fats,vinegar,pastry,pudding,aroma,peanuts,yogurt,cider,biscuit,stew,batter,noodles,hamburger,glaze,caramel,broth,caviar,noodle,skillet,pancakes,waffle,muffin,seasoning,margarine,mousse,bagel,wok,mayonnaise,ketchup,marinade,entree,filet,crumble,lard,cobbler,tartar,curd,omelette,croissant,raclette,poutine
+Algorithms:persistent,relaxed,concurrent,feasible,descent,inverse,bounded,randomized,symmetric,polynomial,shortest,recursive,cyclic,exponential,planar,naive,greedy,sparse,inverted,exhaustive,ascent,quadratic,deterministic,orthogonal,asymptotic,swarm,associative,ragged,concave,amortized,oscillating,unsorted,commutative,isomorphic,intractable,factorial,ternary,augmenting,unary,acyclic,bipartite,tractable,undirected,extremal,decidable,nondeterministic,dyadic,rectilinear,undecidable,unsolvable
+Military:shotgun,swell,chow,mortar,helm,recon,bunker,chit,breakout,blower,cadet,trench,quay,overhaul,bunk,gator,skipper,ordnance,revolver,sonar,bandit,tanker,billet,grenade,fluke,cadence,nugget,splice,funnel,melee,galley,keel,winch,azimuth,buoy,ensign,blockade,torpedo,muster,skunk,flank,hoist,sniffer,duffel,ambush,gizmo,brig,reeve,lanyard,echelon
+Corporate:paradigm,niche,deploy,metrics,shrink,linkage,runway,upside,empowerment,sidebar,synergy,imperative,onboard,disconnect,scrub,pivot,kudos,kicker,noodle,simmer,whiteboard,deliverable,ballpark,populate,gatekeeper,unpack,silo,hardball,resonate,dovetail,marinate,verbiage,ideation,downsize,potentiality,jawbone,evangelize,skillset,mindshare,sandbag,boondoggle,pushback,backburner,triangulate,flunky,gofer,kowtow,flub,infomediary,insource
+Construction:plaster,sleeper,biscuit,piles,tread,rake,pigment,apron,glazing,strata,casing,hearth,airway,sandstone,truss,plywood,jig,tempered,setback,easement,gutter,veneer,taper,plank,thinner,radon,cellulose,valance,condensation,footing,drywall,putty,tint,lacquer,riser,warped,inlay,sash,rubble,taping,sanding,spline,gable,sill,flashed,varnish,flue,damper,edging,centerline
+Physics:quark,mole,ohm,quart,polarization,convection,latent,alternating,pint,capacitor,hertz,gravitational,diffraction,magnification,trough,inertia,resultant,isotope,tesla,conduction,luminosity,solenoid,chromatic,volumetric,projectile,quanta,resistivity,positron,refraction,isobaric,coulomb,buoyant,brownian,albedo,adiabatic,cyclotron,advection,radian,ampere,baryon,decibel,joule,isothermal,candela,maser,rectilinear,exothermic,achromatic,farad,endothermic
+City Name:versailles,laredo,metz,lille,lausanne,limoges,calais,grenoble,buren,leiden,davos,montpellier,pau,maastricht,eindhoven,delft,nantes,groningen,lucerne,dijon,hialeah,avignon,brest,harlingen,rennes,dordrecht,nijmegen,rouen,caen,biel,cham,angers,tilburg,dunkirk,lugano,arnhem,montreux,reims,montfort,toulon,breda,antibes,wageningen,ede,gouda,haarlem,kessel,zug,poitiers,winterthur
+Music:equalizer,treble,jog,presto,tuba,baritone,coda,reverb,bongo,adagio,piccolo,counterpoint,bassoon,normalize,triplet,cymbal,limiter,bugle,metronome,transpose,molto,fader,convolution,legato,truncate,fugue,dissonance,andante,libretto,harmonize,crescendo,stave,clef,tambourine,marimba,sempre,improvise,xylophone,slur,vibrato,strum,timpani,staccato,vivace,trill,orchestrate,flam,moderato,diatonic,formant
+Construction:varnish,flue,damper,edging,centerline,fascia,lumen,scaffold,sealer,sump,plumb,mantel,grout,stucco,outrigger,trellis,bevel,preservative,rout,wattage,beveled,shim,miter,eaves,transom,burl,isometric,nailer,gusset,scab,bulldozer,girder,dowel,ampere,pumice,dado,rosin,rafter,dormer,caulk,berm,pergola,cornice,mastic,swale,joist,flagstone,coped,rasp,turpentine
+Military:gizmo,brig,reeve,lanyard,echelon,drone,jarhead,fathom,barrage,bastion,helo,grunt,semaphore,bayonet,napalm,rout,cordon,chock,overtake,armament,bulkhead,snipe,swab,bilge,cleat,yaw,landfall,bogey,skirmish,yeoman,phalanx,freighter,belay,shackle,sortie,wingman,highline,frock,kapok,lightship,bulwark,frogman,sheave,lifer,bollard,halbert,barnacles,jettison,jetsam,capstan
+Music:cymbal,limiter,bugle,metronome,transpose,molto,fader,convolution,legato,truncate,fugue,dissonance,andante,libretto,harmonize,crescendo,stave,clef,tambourine,marimba,sempre,improvise,xylophone,slur,vibrato,strum,timpani,staccato,vivace,trill,orchestrate,flam,moderato,diatonic,formant,overtone,pizzicato,segno,vocoder,arpeggio,pentatonic,yodel,croon,quantize,tritone,celesta,vocalize,animato,fermata,quaver
+Military:bayonet,napalm,rout,cordon,chock,overtake,armament,bulkhead,snipe,swab,bilge,cleat,yaw,landfall,bogey,skirmish,yeoman,phalanx,freighter,belay,shackle,sortie,wingman,highline,frock,kapok,lightship,bulwark,frogman,sheave,lifer,bollard,halbert,barnacles,jettison,jetsam,capstan,bosun,deadhead,fantail,davit,sickbay,gunwale,sitrep,longshoreman,coastie,landlubber,foremast,mainmast,tincan
+Construction:miter,eaves,transom,burl,isometric,nailer,gusset,scab,bulldozer,girder,dowel,ampere,pumice,dado,rosin,rafter,dormer,caulk,berm,pergola,cornice,mastic,swale,joist,flagstone,coped,rasp,turpentine,screed,aerator,jamb,louver,balustrade,lath,knurled,inflammable,lintel,nosing,newel,subfloor,mullion,sapwood,chamfer,kerf,chamfered,breezeway,firestop,pilaster,purlin,scarfing
+City Name:haarlem,kessel,zug,poitiers,winterthur,fribourg,chur,perpignan,vernier,colmar,enschede,amiens,thun,ajaccio,kampen,tiel,nimes,mellen,mulhouse,locarno,zwolle,hasselt,tuscon,almere,assen,alkmaar,amersfoort,apeldoorn,baar,deventer,hilversum,willemstad,bourges,leeuwarden,roubaix,nanterre,muri,laren,meyrin,heerenveen,onex,middelburg,schaffhausen,argenteuil,edam,beziers,bulle,buchs,heerlen,hoorn
+City Name:beziers,bulle,buchs,heerlen,hoorn,solothurn,sneek,hoofddorp,zoetermeer,venlo,roosendaal,nyon,helmond,vevey,montreuil,lelystad,hulst,dieren,amstelveen,aarau,emmen,hengelo,veendam,zutphen,arbon,villeurbanne,uster,oosterhout,schwyz,kriens,sluis,kloten,pully,bellinzona,vlissingen,martigny,kerkrade,sierre,weert,burgdorf,creteil,almelo,veldhoven,heusden,courbevoie,sittard,schlieren,waalwijk,hoogeveen,nieuwegein
+City Name:creteil,almelo,veldhoven,heusden,courbevoie,sittard,schlieren,waalwijk,hoogeveen,nieuwegein,morges,olten,schagen,roermond,terneuzen,veenendaal,naarden,purmerend,lancy,horgen,enkhuizen,merignac,deil,reinach,emmeloord,harderwijk,dokkum,rheinfelden,winterswijk,ravenstein,liestal,geleen,wijchen,mendrisio,gorinchem,einsiedeln,carouge,meppel,tourcoing,neuhausen,landgraaf,drachten,medemblik,lyss,velsen,dietikon,frauenfeld,franeker,delfzijl,spiez
