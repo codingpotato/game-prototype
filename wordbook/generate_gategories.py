@@ -28,43 +28,38 @@ def frequency_of(phrase):
     return min(frequencies) - len(frequencies) + 1
 
 
-def split_levels(levels, line):
+def parse_category(line):
     category, phrases = line.split(':')
-    phrases = phrases.split(',')
-    start = 0
-    length = 10
-    while start < len(phrases):
-        end = start + length if start + \
-            length <= len(phrases) - length / 2 else len(phrases)
-        words = phrases[start:end]
-        frequency = sum(map(lambda phrase: frequency_of(phrase), words)) / len(words)
-        print(category, frequency, words)
-        levels.append((category, words, frequency))
-        start = end
-        length += 5 if length < 30 else 0
+    phrases = list(set(phrases.split(',')))
+    return category, list(filter(is_valid, phrases))
 
 
-def write_levels(levels):
-    with open('Level/level.data', 'w') as f:
-        for level in levels:
-            f.write(level[0])
+def write_categories(categories):
+    with open('Level/categories.txt', 'w') as f:
+        for category, phrases in categories.items():
+            f.write(category)
             start = True
-            for phrase in level[1]:
+            for phrase in phrases:
                 f.write(':' if start == True else ',')
                 start = False
                 f.write(phrase)
             f.write('\n')
 
 
-def generate_levels():
-    with open('Level/categories.txt', 'r') as f:
-        levels = []
+def generate_categories():
+    with open('Level/categories-original.txt', 'r') as f:
+        categories = {}
         for line in f:
             line = line.replace('\n', '')
-            split_levels(levels, line)
+            category, phrases = parse_category(line)
+            categories[category] = set.union(categories[category], set(
+                phrases)) if category in categories else set(phrases)
 
-        levels = sorted(levels, key=lambda level: level[2], reverse=True)
-        write_levels(levels)
+        for category, phrases in categories.items():
+            print('sort: ', category)
+            categories[category] = sorted(phrases, key=frequency_of, reverse=True)
+            print(categories[category])
+        write_categories(categories)
 
 
-generate_levels()
+generate_categories()
